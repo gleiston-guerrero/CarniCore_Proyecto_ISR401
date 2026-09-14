@@ -4,7 +4,7 @@
 > Universidad Técnica Estatal de Quevedo (UTEQ) · Facultad de Ciencias de la Computación
 > Período 2026–2027 PPA · Docente: PhD. Gleiston Cicerón Guerrero Ulloa
 
-**Repositorio:** https://github.com/EdhuXav/CarniCore_Proyecto_ISR401
+**Repositorio:** https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git
 
 \---
 
