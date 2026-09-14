@@ -2,12 +2,12 @@
   {
     "id": "RF-01",
     "nombre": "Registrar proveedor",
-    "descripcion": "El sistema deberá permitir registrar un proveedor de animales o derivados cárnicos, almacenando su RUC, nombre y estado de regularización ante el SRI."
+    "descripcion": "El sistema deberá permitir registrar un proveedor de animales o derivados cárnicos, almacenando su RUC (validado con el algoritmo de verificación del SRI, dígito verificador módulo 11), nombre y estado de regularización."
   },
   {
     "id": "RF-02",
     "nombre": "Registrar guía de origen",
-    "descripcion": "El sistema deberá permitir registrar la guía de origen entregada por el proveedor, incluyendo número de guía, cantidad de canales y confirmación de firma del médico veterinario de planta."
+    "descripcion": "El sistema deberá permitir registrar la guía de origen entregada por el proveedor, incluyendo número de guía, cantidad de canales y confirmación de firma del médico veterinario de planta (RFC-03 aprobado: firma veterinaria digitalizada)."
   },
   {
     "id": "RF-03",
@@ -17,17 +17,17 @@
   {
     "id": "RF-04",
     "nombre": "Registrar pesaje de producto",
-    "descripcion": "El sistema deberá permitir registrar el peso en libras de un producto y calcular automáticamente el costo total según el precio por libra configurado."
+    "descripcion": "El sistema deberá permitir registrar el peso en libras de un producto y calcular automáticamente el costo total según el precio por libra configurado, completándose en menos de 1 segundo."
   },
   {
     "id": "RF-05",
     "nombre": "Emitir comprobante de pesaje",
-    "descripcion": "El sistema deberá generar un comprobante (ticket) con peso, precio por libra y costo total, imprimible o exportable en formato digital."
+    "descripcion": "El sistema deberá generar un comprobante con peso, precio por libra y costo total, imprimible o exportable en formato digital."
   },
   {
     "id": "RF-06",
     "nombre": "Registrar despiece y clasificación de cortes",
-    "descripcion": "El sistema deberá permitir registrar los cortes obtenidos al despostar un animal (brazos, piernas, costillas, lomos, cabezas) y su peso individual."
+    "descripcion": "El sistema deberá permitir registrar los cortes obtenidos al despostar un animal y su peso individual, validando que la suma de pesos no supere el peso del animal más el margen de merma de despiece configurable (valor por defecto: 3%, rango permitido: 1–8%)."
   },
   {
     "id": "RF-07",
@@ -37,12 +37,12 @@
   {
     "id": "RF-08",
     "nombre": "Calcular y alertar vida útil del producto",
-    "descripcion": "El sistema deberá calcular los días restantes de vida útil de un producto según su tipo (por ejemplo, máximo 3 días para pollo) y generar una alerta visual cuando esté próximo a vencer."
+    "descripcion": "El sistema deberá calcular los días restantes de vida útil de un producto según su tipo (pollo: 3 días; res: 7 días; cerdo: 5 días; embutidos: 15 días) y generar una alerta visual cuando falte 1 día o menos."
   },
   {
     "id": "RF-09",
     "nombre": "Registrar baja de producto",
-    "descripcion": "El sistema deberá permitir registrar la baja de un producto por vencimiento o mal estado, adjuntando peso, motivo y evidencia fotográfica, con aprobación del administrador general."
+    "descripcion": "El sistema deberá permitir registrar la baja de un producto por vencimiento o mal estado, adjuntando peso, motivo y evidencia fotográfica, con aprobación del administrador general. Una baja no se refleja en el inventario hasta que sea aprobada."
   },
   {
     "id": "RF-10",
@@ -52,17 +52,17 @@
   {
     "id": "RF-11",
     "nombre": "Consultar trazabilidad de producto",
-    "descripcion": "El sistema deberá permitir consultar, a partir del número de arete o código de lote, la cadena completa de trazabilidad: granja de origen, guía de origen, faenamiento, pesaje, cámara y venta."
+    "descripcion": "El sistema deberá permitir consultar, a partir del número de arete o código de lote, la cadena completa de trazabilidad: granja de origen, guía de origen, faenamiento, pesaje, cámara y venta. Cuando la cadena esté incompleta, el sistema muestra la etiqueta \"En proceso\" en el eslabón faltante."
   },
   {
     "id": "RF-12",
     "nombre": "Realizar conteo de inventario",
-    "descripcion": "El sistema deberá permitir registrar un conteo físico semanal de inventario por cámara y comparar el resultado contra el inventario del sistema, calculando diferencias."
+    "descripcion": "El sistema deberá permitir registrar un conteo físico semanal de inventario por cámara y comparar contra el inventario del sistema, calculando diferencias en libras y valor monetario."
   },
   {
     "id": "RF-13",
     "nombre": "Generar reportes de ventas, compras y pérdidas",
-    "descripcion": "El sistema deberá generar reportes filtrables por rango de fechas y tipo de producto, mostrando totales de ventas, compras y pérdidas por baja de producto."
+    "descripcion": "El sistema deberá generar reportes filtrables por rango de fechas y tipo de producto, mostrando totales de ventas, compras y pérdidas por baja. Los reportes también son filtrables por proveedor (derivado en RF-27)."
   },
   {
     "id": "RF-14",
@@ -72,61 +72,61 @@
   {
     "id": "RF-15",
     "nombre": "Gestionar usuarios y roles",
-    "descripcion": "El sistema deberá permitir crear, editar y desactivar usuarios, asignándoles uno de los roles definidos (propietaria, administrador general, encargado de bodega, carnicero)."
+    "descripcion": "El sistema deberá permitir crear, editar y desactivar usuarios, asignándoles uno de los roles definidos (propietaria, administrador general, encargado de bodega, carnicero). La autenticación MFA (TOTP) es obligatoria para roles con capacidad de aprobar bajas y configurar precios (RFC-02 aprobado)."
   },
   {
     "id": "RF-16",
     "nombre": "Registrar movimientos de inventario por fecha",
-    "descripcion": "El sistema deberá registrar cada ingreso y egreso de producto por cámara y fecha, permitiendo consultar el stock disponible en cada local en un momento determinado."
+    "descripcion": "El sistema deberá registrar cada ingreso y egreso de producto por cámara y fecha, permitiendo consultar el stock disponible en un momento determinado. Las operaciones offline pendientes de sincronización no se incluyen en el cálculo de stock visible hasta que se sincronicen."
   },
   {
     "id": "RF-17",
     "nombre": "Registrar georreferencia de proveedor/granja",
-    "descripcion": "El sistema deberá permitir asociar coordenadas geográficas aproximadas de la granja de origen al perfil del proveedor, para enriquecer la consulta de trazabilidad."
+    "descripcion": "El sistema deberá permitir asociar coordenadas geográficas de la granja de origen al perfil del proveedor, como flujo alternativo del CU-01. El campo es opcional pero, si se ingresa, valida rango de latitud/longitud de Ecuador continental con precisión mínima de 10 metros (+/-0,0001 grados decimales)."
   },
   {
     "id": "RF-18",
     "nombre": "Consultar historial de precios por libra",
-    "descripcion": "El sistema deberá permitir consultar el histórico de precios por libra configurados para cada tipo de producto en un rango de fechas."
+    "descripcion": "El sistema deberá permitir consultar el histórico de precios por libra configurados para cada tipo de producto en un rango de fechas, mostrando fecha de cambio, precio anterior, precio nuevo y usuario que lo modificó."
   },
   {
     "id": "RF-19",
     "nombre": "Configurar precios por tipo de producto y temporada",
-    "descripcion": "El sistema deberá permitir a la propietaria o al administrador general configurar el precio por libra vigente para cada tipo de producto, con posibilidad de definir una fecha de vigencia futura."
+    "descripcion": "El sistema deberá permitir configurar el precio por libra vigente para cada tipo de producto, con posibilidad de definir una fecha de vigencia futura. No se permiten dos precios futuros con fechas de vigencia solapadas para el mismo tipo de producto."
   },
   {
     "id": "RF-20",
     "nombre": "Registrar incidentes de corte de energía",
-    "descripcion": "El sistema deberá permitir registrar un incidente de corte de energía eléctrica, indicando fecha, hora de inicio, hora de restablecimiento y cámaras afectadas, como insumo para sustentar posibles bajas de producto."
+    "descripcion": "El sistema deberá permitir registrar un incidente de corte de energía, indicando fecha, hora de inicio, hora de restablecimiento y cámaras afectadas, como insumo para sustentar posibles bajas de producto."
   },
   {
     "id": "RF-21",
     "nombre": "Operar en modo de contingencia offline",
-    "descripcion": "El sistema deberá permitir registrar operaciones críticas de bodega (ingreso, pesaje) sin conexión a internet y sincronizarlas automáticamente al restablecerse la conectividad."
+    "descripcion": "El sistema deberá permitir registrar operaciones críticas de bodega (ingreso, pesaje) sin conexión a internet y sincronizarlas automáticamente al restablecerse la conectividad, en un máximo de 5 minutos. El modo offline se sostiene al menos 8 horas continuas. El fallback de MFA (pregunta de seguridad) está disponible en modo offline para los roles que lo requieren (RF-15)."
   },
   {
     "id": "RF-22",
     "nombre": "Registrar devoluciones de clientes",
-    "descripcion": "El sistema deberá permitir registrar la devolución total o parcial de un producto vendido, reingresándolo al inventario o dándolo de baja según su estado."
+    "descripcion": "El sistema deberá permitir registrar la devolución total o parcial de un producto vendido, reingresándolo al inventario o dándolo de baja según su estado. El contador de vida útil del producto devuelto se conserva desde la fecha de ingreso original a cámara."
   },
   {
     "id": "RF-23",
     "nombre": "Exportar evidencia de trazabilidad para auditoría",
-    "descripcion": "El sistema deberá permitir exportar, en PDF o CSV, la cadena de trazabilidad completa de un lote o animal para su presentación ante auditorías de Agrocalidad."
+    "descripcion": "El sistema deberá permitir exportar, en PDF o CSV, la cadena de trazabilidad completa de un lote o animal para presentarla ante auditorías de Agrocalidad. El PDF incluye la firma veterinaria digitalizada (RFC-03 aprobado)."
   },
   {
     "id": "RF-24",
-    "nombre": "Buscar producto por código de lote en catálogo de cámaras",
-    "descripcion": "El sistema deberá permitir buscar y filtrar productos almacenados en cámaras frigoríficas por código de lote, tipo de producto o sección."
+    "nombre": "Buscar producto por código de lote en cámaras",
+    "descripcion": "El sistema deberá permitir buscar y filtrar productos almacenados en cámaras frigoríficas por código de lote, tipo de producto o sección, retornando resultados en menos de 2 segundos."
   },
   {
     "id": "RF-25",
     "nombre": "Generar código QR de trazabilidad",
-    "descripcion": "El sistema deberá generar un código QR asociado a cada lote o animal que, al ser escaneado, dirija a la consulta pública de trazabilidad (RF-11) con los datos autorizados para consulta externa."
+    "descripcion": "El sistema deberá generar un código QR asociado a cada lote o animal que, al ser escaneado, dirija a la vista pública de trazabilidad con los datos autorizados para consulta externa (campos delimitados según RF-26)."
   },
   {
     "id": "RF-26",
-    "nombre": "Vista pública de trazabilidad vía QR -- campos delimitados",
+    "nombre": "Vista pública de trazabilidad vía QR – campos delimitados",
     "descripcion": "El sistema deberá exponer, a través del enlace generado por el código QR (RF-25), únicamente los siguientes campos de la cadena de trazabilidad: nombre del proveedor, tipo de producto, fecha de ingreso a cámara, fecha de venta y número de guía de origen. No se exponen costos internos, datos personales de clientes ni información de inventario."
   },
   {
