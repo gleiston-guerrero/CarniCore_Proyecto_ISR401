@@ -83,13 +83,19 @@
 % ============================================================
 \begin{notaerratum}
 La versión 1.0 de este documento identificaba el registro con el enlace
-\url{https://osf.io/wud69}. Ese identificador corresponde al \textbf{proyecto} de
-OSF, de visibilidad \textbf{privada}, no al \textbf{registro} (\textit{registration})
-propiamente dicho. \texttt{README.md} y \texttt{CHANGELOG.md} ya documentaban esta
-corrección --el identificador correcto del registro es \url{https://osf.io/yp7t3},
-público desde su creación-- y la propagaron a los demás archivos del repositorio,
-pero este documento, que es precisamente el comprobante, había quedado sin corregir.
-Esta versión 2.0 lo corrige y ajusta los campos que dependían del objeto equivocado.
+\url{https://osf.io/wud69}. Ese identificador corresponde al \textbf{proyecto}
+de OSF del que partió el estudio (público, al igual que el registro), no al
+\textbf{registro} (\textit{registration}) propiamente dicho. La distinción
+importa porque un proyecto de OSF es un espacio de trabajo editable en
+cualquier momento, mientras que una \textit{registration} finalizada queda
+congelada de forma permanente con un sello \textit{Date Registered} que ya no
+puede alterarse: es ese carácter inmutable, y no la visibilidad, lo que la
+hace válida como comprobante de precedencia temporal. \texttt{README.md} y
+\texttt{CHANGELOG.md} ya documentaban esta corrección --el identificador del
+registro es \url{https://osf.io/yp7t3}-- y la propagaron a los demás archivos
+del repositorio, pero este documento, que es precisamente el comprobante,
+había quedado sin corregir. Esta versión 2.0 lo corrige y ajusta los campos
+que dependían del objeto equivocado.
 \end{notaerratum}
 
 % ============================================================
@@ -106,9 +112,11 @@ Campo & Valor \\
 \endhead
 
 Enlace del registro & \url{https://osf.io/yp7t3} \\
-Naturaleza del objeto & \textit{Registration} pública de OSF (no el proyecto
-\texttt{osf.io/wud69}, que es privado y no constituye por sí mismo comprobante
-verificable por un tercero) \\
+Naturaleza del objeto & \textit{Registration} de OSF (no el proyecto
+\texttt{osf.io/wud69} del que partió el estudio: ambos son públicos, pero solo
+la \textit{registration} queda congelada de forma permanente con un sello
+\textit{Date Registered} inalterable, que es lo que exige el gatekeeper de
+precedencia temporal) \\
 Fecha de creación (\textit{Date Created}) &
 02 de agosto de 2026, 12:31~PM \textit{(leída directamente del sello que OSF
 muestra en la página del registro \texttt{yp7t3})} \\
@@ -158,13 +166,18 @@ fecha es anterior a la ejecución del análisis y del panel experto del componen
 empírico, que el equipo inicia únicamente después de este registro, conforme al
 procedimiento de la Sección 8 del protocolo.
 
-A diferencia del objeto \texttt{wud69} (privado, solo verificable con capturas
-tomadas por el propio equipo), \textbf{\texttt{yp7t3} es un registro público}: el
-sello de fecha que OSF le asigna es visible y verificable por cualquier tercero
---incluido el tribunal evaluador-- visitando el enlace directamente, sin depender de
-una captura de pantalla del equipo. Esa verificabilidad independiente es, en
-sentido estricto, lo que convierte el enlace en comprobante y no en un simple
-indicio.
+Tanto el proyecto \texttt{wud69} como el registro \texttt{yp7t3} son públicos,
+así que ambos enlaces son visitables por cualquier tercero --incluido el
+tribunal evaluador-- sin sesión autenticada. La diferencia relevante no es la
+visibilidad sino la mutabilidad: un proyecto de OSF sigue siendo editable
+después de creado, por lo que su fecha de creación no certifica que su
+contenido no haya cambiado desde entonces. Una \textit{registration}
+finalizada, en cambio, queda congelada de forma permanente; el sello
+\textit{Date Registered} certifica el estado exacto del plan de análisis en
+ese instante, y es precisamente esa propiedad --no la mera existencia de una
+fecha pública-- la que exige el gatekeeper de precedencia temporal. Por eso el
+comprobante debe anclarse en \texttt{yp7t3} y no en \texttt{wud69}, aunque
+ambos sean consultables por un tercero.
 
 El propio formulario de registro declara explícitamente, en el campo
 \textit{Foreknowledge of data or evidence}:
@@ -196,27 +209,25 @@ versión 1.0. No se detectaron contradicciones entre ambos documentos.
 
 \begin{notaerratum}
 La v1.0 de este documento describía ambas capturas como pertenecientes al
-proyecto privado \texttt{wud69}. Revisando el contenido real de las imágenes,
-eso solo es cierto para la primera: es un recorte del campo \textit{Associated
-Project} del panel lateral del propio registro \texttt{yp7t3}, que indica que
-su proyecto de origen (\texttt{osf.io/wud69}) es privado -- un dato normal y
-esperado, no un error: en OSF una \textit{registration} puede tener un
-proyecto de origen privado sin que eso afecte la visibilidad pública del
-registro en sí. La segunda captura es en realidad el \textbf{Overview del
-propio registro} \texttt{yp7t3} (pestaña \textit{Registry Details ->
-Overview}), no del proyecto: muestra el contenido íntegro del preregistro y,
-en su panel lateral, \textit{Registration Type: OSF Preregistration},
-\textit{Registry: OSF Registries} y los sellos \textit{Date Created} /
-\textit{Date Registered} -- exactamente los que se citan en la tabla de esta
-página. Se corrigen aquí las leyendas de ambas figuras.
+proyecto \texttt{wud69}. Revisando el contenido real de las imágenes, eso solo
+es cierto para la primera: es un recorte del campo \textit{Associated Project}
+del panel lateral del propio registro \texttt{yp7t3}, que enlaza a su proyecto
+de origen, \texttt{osf.io/wud69} (público, igual que el registro). La segunda
+captura es en realidad el \textbf{Overview del propio registro} \texttt{yp7t3}
+(pestaña \textit{Registry Details -> Overview}), no del proyecto: muestra el
+contenido íntegro del preregistro y, en su panel lateral, \textit{Registration
+Type: OSF Preregistration}, \textit{Registry: OSF Registries} y los sellos
+\textit{Date Created} / \textit{Date Registered} -- exactamente los que se
+citan en la tabla de esta página. Se corrigen aquí las leyendas de ambas
+figuras.
 \end{notaerratum}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/osf_proyecto_asociado.png}
     \caption{Campo \textit{Associated Project} del panel lateral del registro
-    \texttt{osf.io/yp7t3}, mostrando que su proyecto de origen
-    (\texttt{osf.io/wud69}) es privado.}
+    \texttt{osf.io/yp7t3}, que enlaza a su proyecto de origen
+    (\texttt{osf.io/wud69}, público).}
 \end{figure}
 
 \begin{figure}[H]
