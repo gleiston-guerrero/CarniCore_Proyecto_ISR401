@@ -70,6 +70,8 @@ DEV-02 & Ubicación de las notas de desacuerdo & 01/09/2026 & Ninguno; material
 suplementario \\
 COR-01 & Reporte erróneo en el manuscrito preliminar & 03/09/2026 & Corregido;
 ver Sección 5 \\
+DEV-03 & Corpus \texttt{rf27.json} desactualizado respecto del ERS v2.0 & 03/09/2026
+(detectado) · 18/09/2026 (corregido) & Ninguno sobre la conclusión; ver Sección 5 bis \\
 \bottomrule
 \end{longtable}
 
@@ -185,6 +187,41 @@ no coincide con el consenso experto en ningún caso, y el propio panel muestra
 un acuerdo bajo, lo que obliga a discutir simultáneamente el límite del
 detector y la estabilidad del criterio de referencia.
 
+\section*{5 bis. DEV-03 --- El corpus \texttt{rf27.json} no coincidía con el
+ERS entregado}
+
+\textbf{Qué se registró.} El README del paquete de datos afirmaba que
+\texttt{rf27.json} es una salida regenerada de forma determinista desde
+\texttt{01\_ERS/ERS\_SRS\_2B\_v2.0.tex}, y que el pipeline es reproducible de
+extremo a extremo desde la fuente del ERS.
+
+\textbf{Qué se ejecutó en realidad.} \texttt{rf27.json} se mantenía a mano
+desde la Entrega 3 (2A). No recogía las precisiones (umbrales, rangos,
+condiciones y aprobaciones de CCB) incorporadas al ERS en la versión 2.0.
+
+\textbf{Momento de detección.} 3 de septiembre de 2026, en auditoría interna
+del equipo, que comparó argumento por argumento cada \verb|\rfitem| del .tex
+contra el JSON. Resultado: 21 de los 27 requisitos no coincidían.
+
+\textbf{Causa raíz.} Se escribió un extractor determinista
+(\texttt{07\_Datos/scripts/extraer\_rf\_desde\_tex.py}) inmediatamente después
+de la auditoría, pero no se llegó a ejecutar sobre el corpus real antes de la
+entrega evaluada el 13 de septiembre de 2026: el README quedó afirmando una
+regeneración que no había ocurrido.
+
+\textbf{Mitigación aplicada, 18/09/2026.} Se ejecutó
+\texttt{extraer\_rf\_desde\_tex.py --salida rf27.json} sobre el .tex vigente y
+se reejecutó \texttt{run\_all.py} de punta a punta sobre un clon limpio. Las
+cifras publicadas (kappa de Fleiss 0,2636; matriz de confusión
+VP\,=\,0, FP\,=\,0, FN\,=\,4, VN\,=\,23; bootstrap IC95; análisis de potencia)
+son \textbf{idénticas byte a byte} a las obtenidas con el corpus anterior: el
+detector congelado se ejecutó sobre ambas versiones y no marcó ningún
+requisito en ninguna de las dos.
+
+\textbf{Efecto sobre las conclusiones.} Ninguno. El hallazgo es de veracidad
+documental (el README afirmaba una regeneración que no se había hecho), no de
+validez de los resultados publicados.
+
 \section*{6. Elementos del protocolo que NO se desviaron}
 
 Se deja constancia expresa de que los siguientes elementos se ejecutaron tal
@@ -203,7 +240,7 @@ como fueron registrados, sin cambio alguno:
 \item El carácter ciego e independiente de la clasificación experta.
 \end{itemize}
 
-\section*{7. Firma y trazabilidad}
+\section*{7. Trazabilidad}
 
 Este documento se genera desde \texttt{06\_Experimento/osf\_deviations.tex} y
 se versiona junto al resto del repositorio. Su contenido se replica en el
@@ -212,10 +249,6 @@ apartado \textit{Deviations from pre-registration} del registro
 
 \vspace{10pt}
 \noindent
-\begin{tabular}{@{}p{7cm}p{7cm}@{}}
-\rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
-Por el equipo CarniCore & PhD. Gleiston Cicerón Guerrero Ulloa \\
-& Docente responsable, ISR-401 \\
-\end{tabular}
+Aprobado por el equipo CarniCore: Castro, Crespo, Gamarra, Pérez y Quintero.
 
 \end{document}
