@@ -3,6 +3,7 @@
 % ============================================================
 % Comprobante de Registro OSF — CarniCore — Entrega 3 (2A)
 % ISR-401 / 20303 — UTEQ
+% Versión 2.0 — corrige el identificador OSF citado (ver Erratum)
 % ============================================================
 
 \usepackage[utf8]{inputenc}
@@ -28,6 +29,7 @@
 % -------------------- Colores institucionales --------------------
 \definecolor{uteqverde}{RGB}{0,90,60}
 \definecolor{griscelda}{RGB}{240,240,240}
+\definecolor{alerta}{RGB}{140,20,20}
 
 % -------------------- Encabezado y pie de página --------------------
 \pagestyle{fancy}
@@ -43,7 +45,7 @@
     linkcolor=uteqverde,
     urlcolor=uteqverde,
     citecolor=uteqverde,
-    pdftitle={Comprobante de Registro OSF -- CarniCore -- Entrega 3 (2A)},
+    pdftitle={Comprobante de Registro OSF -- CarniCore -- Entrega 3 (2A) -- v2.0},
     pdfauthor={Equipo CarniCore -- UTEQ ISR-401},
 }
 
@@ -52,9 +54,13 @@
 \titleformat{\subsection}
   {\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
-% -------------------- Entorno para notas de cumplimiento --------------------
+% -------------------- Entornos de nota --------------------
 \newenvironment{notacumplimiento}
   {\begin{framed}\small\noindent\textbf{Nota de cumplimiento.}~}
+  {\end{framed}}
+
+\newenvironment{notaerratum}
+  {\begin{framed}\small\noindent\textbf{\color{alerta}Erratum (corrige la v1.0 de este documento).}~}
   {\end{framed}}
 
 \begin{document}
@@ -73,6 +79,20 @@
 \vspace{1em}
 
 % ============================================================
+% ERRATUM
+% ============================================================
+\begin{notaerratum}
+La versión 1.0 de este documento identificaba el registro con el enlace
+\url{https://osf.io/wud69}. Ese identificador corresponde al \textbf{proyecto} de
+OSF, de visibilidad \textbf{privada}, no al \textbf{registro} (\textit{registration})
+propiamente dicho. \texttt{README.md} y \texttt{CHANGELOG.md} ya documentaban esta
+corrección --el identificador correcto del registro es \url{https://osf.io/yp7t3},
+público desde su creación-- y la propagaron a los demás archivos del repositorio,
+pero este documento, que es precisamente el comprobante, había quedado sin corregir.
+Esta versión 2.0 lo corrige y ajusta los campos que dependían del objeto equivocado.
+\end{notaerratum}
+
+% ============================================================
 % DATOS DEL REGISTRO
 % ============================================================
 \section*{Datos del registro}
@@ -85,20 +105,28 @@ Campo & Valor \\
 \midrule
 \endhead
 
-Enlace persistente & \url{https://osf.io/wud69} \\
-Fecha y hora de creación del proyecto & 02 de agosto de 2026, 1:12 AM \\
-Fecha y hora de registro (\textit{Registered:}) & 02 de agosto de 2026, 12:31 PM \\
+Enlace del registro & \url{https://osf.io/yp7t3} \\
+Naturaleza del objeto & \textit{Registration} pública de OSF (no el proyecto
+\texttt{osf.io/wud69}, que es privado y no constituye por sí mismo comprobante
+verificable por un tercero) \\
+Fecha de creación (\textit{Date Created}) &
+02 de agosto de 2026, 12:31~PM \textit{(leída directamente del sello que OSF
+muestra en la página del registro \texttt{yp7t3})} \\
+Fecha de registro (\textit{Date registered}) &
+02 de agosto de 2026, 12:31~PM \textit{(idéntica a la fecha de creación: OSF
+registra que este objeto se creó y se registró en el mismo acto, sin período de
+borrador previo; leída directamente de la página del registro \texttt{yp7t3})} \\
 Título del registro &
 Detección automática de ambigüedad en requisitos funcionales: un estudio de caso
 en el dominio de trazabilidad cárnica (CarniCore) \newline
-\textit{(asumido igual al título del protocolo; confirmar que coincide con el guardado en OSF)} \\
-Plantilla de registro OSF &
-Preregistration (formato con campos de \textit{Foreknowledge of data}, \textit{Starting
-and stopping rules}, \textit{Indices}) \\
-DOI &
-No hay DOI asignado (confirmado en el panel lateral de OSF, campo ``Registro DOI'') \\
-Licencia & CC0 1.0 Universal \\
-Visibilidad & Privada \\
+\textit{(confirmar contra el título literal guardado en osf.io/yp7t3)} \\
+Visibilidad & Pública (\textit{Public registration}) --- verificable por
+cualquier persona con el enlace, sin necesidad de sesión autenticada \\
+Plantilla, licencia y DOI &
+\textit{[Pendiente: completar leyendo directamente el panel lateral de
+osf.io/yp7t3. Los valores de la v1.0 (Preregistration, CC0 1.0, sin DOI)
+describían el proyecto \texttt{wud69} y no deben arrastrarse sin confirmar contra
+el registro correcto.]} \\
 Protocolo adjunto &
 \texttt{protocolo.pdf} (versión 1.0, 02/08/2026), consistente con el contenido del
 formulario de registro \\
@@ -114,10 +142,20 @@ Conforme al gatekeeper G6 de la Guía y Rúbrica de la Entrega 3 (2A), el regist
 tener fecha anterior a toda recolección de datos (envío de la primera ficha de
 clasificación experta y ejecución del detector).
 
-El proyecto asociado se creó el 02/08/2026 a la 1:12 AM y el registro se completó ese
-mismo día a las 12:31 PM. Ambos eventos son, por tanto, anteriores a cualquier
-recolección de datos del componente empírico, que el equipo inicia únicamente después
-de este registro, conforme al procedimiento de la Sección 8 del protocolo.
+El registro \url{https://osf.io/yp7t3} tiene fecha de creación y de registro
+coincidentes: 02/08/2026, 12:31~PM (ambos sellos, \textit{Date Created} y
+\textit{Date registered}, leídos directamente de la página del registro). Esa
+fecha es anterior a la ejecución del análisis y del panel experto del componente
+empírico, que el equipo inicia únicamente después de este registro, conforme al
+procedimiento de la Sección 8 del protocolo.
+
+A diferencia del objeto \texttt{wud69} (privado, solo verificable con capturas
+tomadas por el propio equipo), \textbf{\texttt{yp7t3} es un registro público}: el
+sello de fecha que OSF le asigna es visible y verificable por cualquier tercero
+--incluido el tribunal evaluador-- visitando el enlace directamente, sin depender de
+una captura de pantalla del equipo. Esa verificabilidad independiente es, en
+sentido estricto, lo que convierte el enlace en comprobante y no en un simple
+indicio.
 
 El propio formulario de registro declara explícitamente, en el campo
 \textit{Foreknowledge of data or evidence}:
@@ -128,8 +166,8 @@ El propio formulario de registro declara explícitamente, en el campo
 plan exists, and no part will be generated until after this plan is registered.''
 \end{quote}
 
-Esta declaración, hecha por el equipo al momento de registrar, constituye la evidencia
-de precedencia temporal exigida por el gatekeeper.
+Esta declaración, hecha por el equipo al momento de registrar, constituye evidencia
+adicional de precedencia temporal.
 
 % ============================================================
 % CONSISTENCIA CON EL PROTOCOLO
@@ -145,52 +183,63 @@ versión 1.0. No se detectaron contradicciones entre ambos documentos.
 % ============================================================
 % CAPTURAS DE PANTALLA
 % ============================================================
-\section*{Captura de pantalla -- proyecto asociado}
+\section*{Capturas de pantalla}
 
-% Reemplazar el bloque siguiente por:
-%   \begin{figure}[H]
-%       \centering
-%       \includegraphics[width=0.6\textwidth]{figures/osf_proyecto_asociado.png}
-%       \caption{Proyecto asociado en OSF.}
-%   \end{figure}
+\begin{notaerratum}
+La v1.0 de este documento describía ambas capturas como pertenecientes al
+proyecto privado \texttt{wud69}. Revisando el contenido real de las imágenes,
+eso solo es cierto para la primera: es un recorte del campo \textit{Associated
+Project} del panel lateral del propio registro \texttt{yp7t3}, que indica que
+su proyecto de origen (\texttt{osf.io/wud69}) es privado -- un dato normal y
+esperado, no un error: en OSF una \textit{registration} puede tener un
+proyecto de origen privado sin que eso afecte la visibilidad pública del
+registro en sí. La segunda captura es en realidad el \textbf{Overview del
+propio registro} \texttt{yp7t3} (pestaña \textit{Registry Details ->
+Overview}), no del proyecto: muestra el contenido íntegro del preregistro y,
+en su panel lateral, \textit{Registration Type: OSF Preregistration},
+\textit{Registry: OSF Registries} y los sellos \textit{Date Created} /
+\textit{Date Registered} -- exactamente los que se citan en la tabla de esta
+página. Se corrigen aquí las leyendas de ambas figuras.
+\end{notaerratum}
+
 \begin{figure}[H]
     \centering
-    \fbox{\parbox[c][4cm][c]{0.7\textwidth}{\centering
-        \textbf{Associated Project}\\[0.4em]
-        \url{https://osf.io/wud69}\\[0.6em]
-        \small [Insertar captura: \texttt{figures/osf\_proyecto\_asociado.png}]
-    }}
+    \includegraphics[width=0.6\textwidth]{figures/osf_proyecto_asociado.png}
+    \caption{Campo \textit{Associated Project} del panel lateral del registro
+    \texttt{osf.io/yp7t3}, mostrando que su proyecto de origen
+    (\texttt{osf.io/wud69}) es privado.}
 \end{figure}
 
-\section*{Captura de pantalla -- detalle del registro (privado)}
-
-% Reemplazar el bloque siguiente por:
-%   \begin{figure}[H]
-%       \centering
-%       \includegraphics[width=\textwidth]{figures/osf_detalle_registro.png}
-%       \caption{Detalle del registro OSF (visibilidad privada).}
-%   \end{figure}
 \begin{figure}[H]
     \centering
-    \fbox{\parbox[c][6cm][c]{\textwidth}{\centering
-        \small [Insertar captura: \texttt{figures/osf\_detalle\_registro.png}]\\
-        (panel lateral con Proyecto Asociado, Licencia CC0 1.0 Universal y
-        Registro DOI: \textit{No hay DOI})
-    }}
+    \includegraphics[width=\textwidth]{figures/osf_detalle_registro.png}
+    \caption{Overview del registro \texttt{osf.io/yp7t3} en OSF, con la barra
+    de direcciones del navegador visible (\texttt{osf.io/yp7t3/overview}):
+    contenido del preregistro (preguntas de investigación, H0/H1,
+    \textit{Foreknowledge of data}, diseño de la investigación), autores, y
+    panel lateral con \textit{Registration Type: OSF Preregistration} y los
+    sellos \textit{Date Created} / \textit{Date Registered}: 2 de agosto de
+    2026, 12:31~PM.}
 \end{figure}
 
-\noindent
-Captura tomada desde la sesión autenticada del equipo (registro de visibilidad
-privada), mostrando el panel lateral con el proyecto asociado
-(\url{https://osf.io/wud69}), la licencia CC0 1.0 Universal y la confirmación de que
-aún no hay DOI asignado.
+\begin{notacumplimiento}
+Esta captura incluye, en una sola imagen, los tres elementos que exige el
+comprobante: la barra de direcciones del navegador con la URL
+\texttt{osf.io/yp7t3/overview}, el contenido del registro, y el sello
+\textit{Date Registered} que asigna OSF. Al ser generada por la propia interfaz
+de OSF -no redactada por el equipo- y mostrar una URL de un registro público,
+es verificable de forma independiente por cualquier tercero que visite ese
+enlace. Con esto queda cerrado el punto señalado sobre el comprobante externo
+con sello temporal.
+\end{notacumplimiento}
 
 \vspace{1em}
 \begin{notacumplimiento}
 Este comprobante documenta únicamente los datos confirmados directamente por el
-equipo (enlace, fecha y hora de registro, visibilidad, licencia y estado del DOI) y
-las capturas de pantalla correspondientes. No se completa ningún campo por
-inferencia.
+equipo contra el objeto correcto de OSF (\texttt{yp7t3}). Los campos que aún no se
+han releído sobre ese objeto se marcan explícitamente como pendientes en la tabla
+anterior; no se completa ningún campo por inferencia ni se reutilizan valores del
+objeto \texttt{wud69}.
 \end{notacumplimiento}
 
 \end{document}
