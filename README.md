@@ -321,9 +321,17 @@ en `07\_Datos/resultados/`.
 |Software Heritage|`swh:1:dir:5741b167af89a201c815b061cc965309d8167069`|Árbol de código|
 
 > \*\*Corrección del 3 de septiembre de 2026.\*\* Las versiones anteriores de este archivo
-> citaban `osf.io/wud69`. Ése es el identificador del \*\*proyecto\*\*, no del \*\*registro\*\*,
-> y `06\_Experimento/osf\_registration.pdf` lo describe con visibilidad \*\*privada\*\*. El
-> registro público es `osf.io/yp7t3`. Son objetos distintos en OSF.
+> citaban `osf.io/wud69`. Ése es el identificador del \*\*proyecto\*\*, no del \*\*registro\*\*.
+> Son objetos distintos en OSF: el proyecto es editable en cualquier momento, mientras que
+> el registro queda congelado de forma permanente al finalizarse. El registro es
+> `osf.io/yp7t3`, con sello \*\*Date Registered\*\* del 2 de agosto de 2026.
+>
+> \*\*Corrección del 14 de septiembre de 2026.\*\* La nota anterior describía a `wud69` como
+> privado, tomando esa afirmación de la v1.0 de `06\_Experimento/osf\_registration.pdf`. Al
+> revisar el proyecto directamente se confirmó que también es público, igual que el
+> registro. La v2.0 de ese comprobante ya no describe a `wud69` como privado; el motivo por
+> el que el comprobante debe anclarse en `yp7t3` y no en `wud69` es la inmutabilidad del
+> registro frente al proyecto, no su visibilidad.
 
 
 
@@ -430,4 +438,3 @@ Metadatos completos en `CITATION.cff`.
 \---
 
 *Universidad Técnica Estatal de Quevedo · ISR-401 · 2026–2027 PPA*
-
