@@ -2,7 +2,7 @@
 
 **Protocolo de referencia:** `06_Experimento/protocolo.pdf`, versión 1.0, 2 de agosto de 2026
 **Registro OSF:** `https://osf.io/yp7t3` — *Public registration*, sello temporal del 2 de agosto de 2026
-**Documento extenso equivalente:** `06_Experimento/osf_deviations.pdf`
+**Documento extenso equivalente:** `06_Experimento/osf_deviations.pdf` (fuente versionada en `06_Experimento/osf_deviations.tex`)
 
 Este archivo es el exigido por el §7 de la guía dentro de `07_Datos/`. Recoge las
 desviaciones ya documentadas en `osf_deviations.pdf` (DEV-01, DEV-02, COR-01) y añade
@@ -20,7 +20,7 @@ ejecutar un análisis distinto del registrado y no decirlo.
 | **Fecha de detección** | 3 de septiembre de 2026 |
 | **Momento** | Después de la ejecución del análisis, durante auditoría técnica del repositorio |
 | **Gravedad** | Mayor (afecta a la procedencia del dato de entrada) |
-| **Responsable de la corrección** | *(asignar y firmar)* |
+| **Responsable de la corrección** | Pérez Ruiz Carlos Andrés (autor del extractor determinista, commit `4c42bd8`, 2026-09-03) y Quintero Gende Erick Jahir (ejecución final de la regeneración y limpieza del corpus obsoleto, commits `c9e90f0` y `6bc9295`, 2026-09-14) |
 
 **Qué declaraba el protocolo.** Que el detector se ejecutaría sobre los 27 requisitos
 funcionales del ERS/SRS v2.0, tomados *verbatim*, sin identificador, nombre, fuente ni
@@ -45,17 +45,30 @@ fue un *append* puro y honesto —verificado programáticamente—, pero nadie r
 25 primeros cuando el ERS evolucionó a v2.0. No hubo intención de alterar el corpus:
 hubo un artefacto mantenido a mano que se desincronizó de su fuente.
 
-**Mitigación aplicada.**
+**Mitigación aplicada — cronología real, verificada contra `git log`.**
 
-1. Se escribió `07_Datos/scripts/extraer_rf_desde_tex.py`, que extrae el corpus
-   directamente del `.tex` entregado. El corpus deja de ser un archivo mantenido y pasa
-   a ser una salida reproducible.
-2. Se regeneró `rf27.json` desde el `.tex` v2.0.
-3. **La lógica de `detector_ambiguedad.py` no se modificó en absoluto.** Ni umbrales, ni
+1. **2026-09-03.** Se escribió `07_Datos/scripts/extraer_rf_desde_tex.py`
+   (commit `4c42bd8`), que extrae el corpus directamente del `.tex` entregado. El
+   corpus deja de ser un archivo mantenido a mano y pasa a ser una salida reproducible.
+2. **2026-09-14.** Se ejecutó `extraer_rf_desde_tex.py` sobre `01_ERS/ERS_SRS_2B_v2.0.tex`
+   y se regeneró `rf27.json` con el resultado (commit `c9e90f0`). Verificado de forma
+   independiente: correr el extractor de nuevo sobre un clon limpio produce un archivo
+   **idéntico byte a byte** al `rf27.json` versionado — no es una edición manual.
+3. **2026-09-14.** Se eliminó `07_Datos/scripts/rf25.json` (commit `6bc9295`), el
+   artefacto congelado de la Entrega 3 que dio origen a la desviación, ya sin uso una
+   vez que `rf27.json` se regenera desde la fuente.
+4. **La lógica de `detector_ambiguedad.py` no se modificó en absoluto.** Ni umbrales, ni
    patrones, ni regla de decisión. Corregir el corpus para que sea el declarado es
    reparar una desviación de ejecución; tocar el detector después de ver los resultados
    sería un ajuste post-hoc y no se ha hecho.
-4. Se reejecutó el pipeline completo con `python 07_Datos/scripts/run_all.py`.
+5. **2026-09-14.** Se reejecutó el pipeline completo con `python 07_Datos/scripts/run_all.py`
+   sobre un clon limpio, de extremo a extremo, sin error.
+
+> **Nota de consistencia:** `06_Experimento/osf_deviations.tex` registra la fecha de esta
+> mitigación como «18/09/2026». Esa fecha es posterior a la de hoy y no coincide con el
+> historial real de commits (`c9e90f0`, `6bc9295`, ambos del 14/09/2026). Es una errata
+> de tecleo — probablemente `14/09` mal escrito como `18/09` — que debe corregirse en el
+> `.tex` para que ambos documentos digan la misma fecha real.
 
 **Efecto sobre los resultados — verificado.** Ninguno.
 
@@ -85,9 +98,10 @@ El `docstring` de `detector_ambiguedad.py` y el `README` del pipeline, que afirm
 Documentadas en `06_Experimento/osf_deviations.pdf`, versión 1.0, y replicadas en la
 sección *Deviations from pre-registration* del registro OSF.
 
-> **Pendiente de corrección documental.** `osf_deviations.pdf` está en el repositorio
-> **sin su fuente `.tex`**. Bajo el criterio de piso P2, un PDF sin fuente no es
-> reproducible. Debe versionarse `06_Experimento/osf_deviations.tex` junto al PDF.
+`osf_deviations.pdf` se genera desde `06_Experimento/osf_deviations.tex`
+(`pdflatex ×2` — sin bibliografía propia), versionado en el repositorio. Verificado en
+esta revisión: compila sin errores ni referencias sin resolver, produce un PDF de 4
+páginas. Cumple el criterio de piso P2.
 
 ---
 
@@ -95,9 +109,8 @@ sección *Deviations from pre-registration* del registro OSF.
 
 | Fecha | Entrada | Quién | Reflejado en OSF |
 |---|---|---|---|
-| 2026-09-02 | DEV-01, DEV-02, COR-01 | *(completar)* | Sí |
-| 2026-09-03 | DEV-03 | *(completar)* | **Pendiente — actualizar el registro** |
+| 2026-09-02 | Redacción inicial de `osf_deviations.pdf` v1.0 (DEV-01, DEV-02, COR-01) | Castro Bajaña Ariel Omar | Sí |
+| 2026-09-03 | DEV-03 detectada y extractor escrito | Pérez Ruiz Carlos Andrés | — |
+| 2026-09-14 | DEV-03 mitigada: `rf27.json` regenerado, `rf25.json` eliminado, pipeline reejecutado | Quintero Gende Erick Jahir | **Pendiente** |
 
-> Actualizar el registro OSF con DEV-03 **antes** de la defensa. Una desviación
-> declarada sólo en el repositorio y no en el registro deja abierta la objeción más
-> fácil que puede hacer un tribunal.
+
