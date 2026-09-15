@@ -18,7 +18,7 @@ Fecha de actualización: 2026-09-03
 | Nombre del archivo principal | CarniCore_Zenodo_Package.zip |
 | DOI de versión / Concept DOI | 10.5281/zenodo.22225854 |
 | Registro previo OSF | https://osf.io/yp7t3 (Fecha: 2026-08-02) |
-| Repositorio de trabajo (GitHub) | https://github.com/EdhuXav/CarniCore_Proyecto_ISR401 |
+| Repositorio de trabajo (GitHub) | https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git |
 | Licencia del dataset abierto | CC BY 4.0 |
 | Institución | Universidad Técnica Estatal de Quevedo |
 | Proyecto | CarniCore — Sistema de Distribución y Trazabilidad de Carne |
