@@ -315,7 +315,7 @@ en `07\_Datos/resultados/`.
 
 |Plataforma|Identificador|Objeto|
 |-|-|-|
-|GitHub|https://github.com/EdhuXav/CarniCore\_Proyecto\_ISR401|Repositorio|
+|GitHub|https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git|Repositorio|
 |OSF|**https://osf.io/yp7t3**|**Registro** previo del protocolo|
 |Zenodo|`10.5281/zenodo.22225854`|Paquete de replicación|
 |Software Heritage|`swh:1:dir:5741b167af89a201c815b061cc965309d8167069`|Árbol de código|
