@@ -134,6 +134,7 @@ Nota: las salidas CSV se escriben con CRLF. `.gitattributes` (raíz) las marca c
 make clean
 ```
 
-Borra sólo los artefactos generados. Nunca toca `etiquetas\_expertos.csv`, que es dato
-crudo real, ni `rf25.json`.
+Borra sólo los artefactos generados. Nunca toca `etiquetas_expertos.csv`, que es dato
+crudo real. (`rf25.json` ya no existe en el repositorio; se eliminó el 14/09/2026 al
+mitigar DEV-03 — ver `07_Datos/desviaciones.md`.)
 
