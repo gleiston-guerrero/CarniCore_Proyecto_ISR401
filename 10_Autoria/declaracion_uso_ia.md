@@ -48,7 +48,7 @@ escribe «Ninguna» y se firma igual. Dejarla en blanco no equivale a declarar a
 ## 2. Declaración por artefacto (fuera del ERS)
 
 > Completado a partir de una revisión directa del repositorio
-> (`github.com/EdhuXav/CarniCore_Proyecto_ISR401`), incluyendo el historial de commits,
+> (`https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git`), incluyendo el historial de commits,
 > cabeceras de scripts, `.tex` del manuscrito y contenido extraído de `presentacion.pptx`
 > y `guion.pdf`. Donde no se halló evidencia textual de uso de IA, se declara «Ninguna».
 

@@ -71,10 +71,11 @@ comparación mecánica contra el `.tex` demostró que **21 de los 27 no coincid�
 `rf27.json` conservaba la redacción de la Entrega 3 (2A). El corpus analizado no era el
 documento entregado. Documentado como **DEV-03** en `07\_Datos/desviaciones.md`.
 
-`rf25.json → rf27.json` **sí es un *append* puro** —verificado programáticamente, los 25
-primeros son idénticos—. El defecto no estaba en la extensión, sino en que los 25
-heredados nunca se reextrajeron cuando el ERS evolucionó. `rf25.json` se conserva como
-prueba documental de ese hecho.
+`rf25.json → rf27.json` fue un *append* puro —verificado programáticamente, los 25
+primeros eran idénticos—. El defecto no estaba en la extensión, sino en que los 25
+heredados nunca se reextrajeron cuando el ERS evolucionó. `rf25.json` se eliminó el
+14/09/2026 al mitigar DEV-03, una vez cumplida su función como prueba documental (ver
+`07_Datos/desviaciones.md`).
 
 \---
 
@@ -133,6 +134,7 @@ Nota: las salidas CSV se escriben con CRLF. `.gitattributes` (raíz) las marca c
 make clean
 ```
 
-Borra sólo los artefactos generados. Nunca toca `etiquetas\_expertos.csv`, que es dato
-crudo real, ni `rf25.json`.
+Borra sólo los artefactos generados. Nunca toca `etiquetas_expertos.csv`, que es dato
+crudo real. (`rf25.json` ya no existe en el repositorio; se eliminó el 14/09/2026 al
+mitigar DEV-03 — ver `07_Datos/desviaciones.md`.)
 

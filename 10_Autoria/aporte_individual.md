@@ -2,7 +2,7 @@
 
 **Proyecto:** CarniCore — Detección automática de patrones de ambigüedad en requisitos funcionales (Paquete de replicación, Entrega 2B)
 
-**Repositorio:** https://github.com/EdhuXav/CarniCore_Proyecto_ISR401
+**Repositorio:** https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401
 
 **Institución:** Universidad Técnica Estatal de Quevedo (UTEQ) — Ecuador
 

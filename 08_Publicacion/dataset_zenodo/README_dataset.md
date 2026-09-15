@@ -8,7 +8,7 @@ traceability"*
 |-|-|
 |**DOI**|[10.5281/zenodo.22225854](https://doi.org/10.5281/zenodo.22225854)|
 |**Pre-registro OSF**|https://osf.io/yp7t3|
-|**Repositorio**|https://github.com/EdhuXav/CarniCore\_Proyecto\_ISR401|
+|**Repositorio**|https://github.com/gleiston-guerrero/CarniCore\_Proyecto\_ISR401|
 |**Software Heritage**|`swh:1:dir:5741b167af89a201c815b061cc965309d8167069`|
 |**Licencia datos**|CC BY 4.0|
 |**Licencia código**|MIT|
@@ -79,10 +79,13 @@ LICENSE.txt                    CC BY 4.0 (datos) + MIT (código)
 
 datos/
   rf27.json                    27 RF del ERS/SRS v2.0 (corpus analizado)
-  rf25.json                    25 RF de la Entrega 3 (para verificar DEV-01)
   etiquetas\_expertos.csv       clasificación de cada uno de los 3 evaluadores
   dataset\_consolidado.csv      detector + los 3 expertos, una fila por RF
   clasificaciones\_detector.csv salida del detector con la evidencia por categoría
+
+Nota: `rf25.json` (25 RF de la Entrega 3, usado para verificar que DEV-01 fue
+un append puro) se eliminó el 14/09/2026 al mitigar DEV-03, una vez cumplida
+su función. Ver `07_Datos/desviaciones.md` para el detalle de esa verificación.
 
 resultados/
   kappa\_resultados.json        κ de Cohen por pares y κ de Fleiss
@@ -155,13 +158,13 @@ pipeline.
 ## Cómo reproducir el análisis
 
 ```bash
-git clone https://github.com/EdhuXav/CarniCore\_Proyecto\_ISR401.git
+git clone https://github.com/gleiston-guerrero/CarniCore\_Proyecto\_ISR401.git
 cd CarniCore\_Proyecto\_ISR401
 
 python -m venv .venv \&\& source .venv/bin/activate
-pip install -r 06\_Experimento/scripts\_analisis/requirements.txt
+pip install -r 07\_Datos/scripts/requirements.txt
 
-python 06\_Experimento/scripts\_analisis/run\_all.py
+python 07\_Datos/scripts/run\_all.py
 ```
 
 El pipeline es determinista: semilla fija en 42 y sin llamadas a servicios
@@ -169,8 +172,8 @@ externos. Debe reproducir exactamente las cifras de la tabla de resultados de
 más arriba. Si no lo hace, algo está mal en el entorno y conviene abrir una
 incidencia en el repositorio.
 
-Salidas en `06\_Experimento/resultados/`, `07\_Publicacion/figuras/` y
-`07\_Publicacion/tablas/`.
+Salidas en `07\_Datos/resultados/`, `08\_Publicacion/figuras/` y
+`08\_Publicacion/tablas/`.
 
 \---
 
@@ -206,4 +209,3 @@ heredados.
   doi       = {10.5281/zenodo.22225854}
 }
 ```
-
