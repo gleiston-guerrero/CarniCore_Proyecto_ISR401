@@ -429,7 +429,7 @@ verificación, responsable y frecuencia de medición
   version = {2.0.0},
   year    = {2026},
   doi     = {10.5281/zenodo.22225854},
-  url     = {https://github.com/EdhuXav/CarniCore\_Proyecto\_ISR401}
+  url     = {https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401}
 }
 ```
 
