@@ -79,7 +79,6 @@ LICENSE.txt                    CC BY 4.0 (datos) + MIT (código)
 
 datos/
   rf27.json                    27 RF del ERS/SRS v2.0 (corpus analizado)
-  rf25.json                    25 RF de la Entrega 3 (para verificar DEV-01)
   etiquetas\_expertos.csv       clasificación de cada uno de los 3 evaluadores
   dataset\_consolidado.csv      detector + los 3 expertos, una fila por RF
   clasificaciones\_detector.csv salida del detector con la evidencia por categoría
