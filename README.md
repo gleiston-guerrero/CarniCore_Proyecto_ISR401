@@ -379,6 +379,7 @@ el **rol**, nunca el nombre.
 
 Todas las casillas fueron comprobadas sobre el repositorio ya corregido (línea base
 `v2.4.0`) y confirmadas por el equipo. Verificación firmada en
+`10\_Autoria/verificacion\_previa.pdf`.
 
 ### Criterios de piso
 
@@ -387,8 +388,8 @@ Todas las casillas fueron comprobadas sobre el repositorio ya corregido (línea 
 * \[x] **P2 bis** — `fair\_assessment.tex` y `osf\_deviations.pdf` versionados junto a sus PDF
 * \[x] **P3** — Ningún archivo de 0 o 1 byte cuyo nombre anuncie evidencia
 * \[x] **P4** — Todos los autores del historial son integrantes declarados con correo institucional
-* [x] **P5** — Etiqueta anotada publicada y alcanzable: `v2.3.2`
 * [x] **P5** — Etiqueta anotada publicada y alcanzable: `v2.4.0`
+* \[x] **P6** — `07\_Datos/` existe y `python 07\_Datos/scripts/run\_all.py` termina sin error
 * \[x] **P7** — `10\_Autoria/` contiene la documentación de autoría con contenido real
 * \[x] **P8** — Cada integrante acredita contribución verificable en el repositorio
 
