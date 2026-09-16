@@ -117,6 +117,6 @@ que su contenido refleja el desarrollo real del proyecto.
 |---|---|
 | Castro Bajaña Ariel Omar | Castro Bajaña Ariel Omar |
 | Crespo Espinoza Kleber Obed | Crespo Espinoza Kleber Obed |
-| Gamarra Araujo Edhu Xavier | |
+| Gamarra Araujo Edhu Xavier | Gamarra Araujo Edhu Xavier |
 | Pérez Ruiz Carlos Andrés | Pérez Ruiz Carlos Andrés |
 | Quintero Gende Erick Jahir | |
