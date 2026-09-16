@@ -794,6 +794,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \cuitem{CU-04}{Registrar despiece/cortes}{Carnicero}{El animal fue pesado (CU-03).}{(1) El carnicero registra cada corte (tipo, peso). (2) El sistema valida que la suma de pesos no exceda el peso del animal más el margen de merma de despiece (defecto 3\%, configurable 1--8\%). (3) El sistema almacena los cortes.}{Los cortes quedan disponibles para clasificación (CU-05).}
 
 \cuitem{CU-05}{Clasificar producto por parte}{Carnicero}{Existen cortes registrados (CU-04).}{(1) El carnicero asigna una categoría de venta a cada corte. (2) El sistema asocia la categoría al corte.}{El producto clasificado queda disponible para ingreso a cámara (CU-06).}
+\noindent\textbf{Flujo alternativo:} el corte no corresponde a ninguna categoría de venta vigente. (a) El sistema no encuentra categoría aplicable. (b) El carnicero asigna la categoría ``por definir'' temporalmente. (c) Un administrador completa la categorización antes del ingreso a cámara (CU-06).\\
+\textbf{Poscondición (flujo alternativo):} el corte permanece clasificado como pendiente hasta su categorización definitiva.\\
+\noindent\textbf{Excepción:} se intenta asignar dos categorías simultáneas al mismo corte $\Rightarrow$ el sistema rechaza la doble asignación y conserva la última categoría válida.\\
+\textbf{Poscondición (excepción):} cada corte conserva una única categoría vigente.
+\vspace{0.35cm}
 
 \cuitem{CU-06}{Registrar ingreso a cámara}{Encargado de bodega}{Existe producto clasificado o pesado disponible.}{(1) El encargado selecciona el producto y la cámara/sección destino. (2) El sistema registra el ingreso con fecha y calcula la vida útil inicial según el tipo. (3) El sistema actualiza el inventario.}{El producto queda disponible para control de vida útil (CU-07), venta (CU-09) o conteo (CU-11).}
 \noindent\textbf{Flujo alternativo:} la cámara/sección destino está a capacidad máxima configurada. (a) El sistema advierte que no hay espacio disponible. (b) El encargado selecciona una cámara/sección alterna. (c) El sistema recalcula la vida útil inicial si el tipo de cámara lo requiere.\\
