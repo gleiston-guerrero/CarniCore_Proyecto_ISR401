@@ -103,7 +103,9 @@
 \hline
 3.0 & 02/08/2026 & Equipo CarniCore & Entrega 3 (2A): ERS completo (25 RF, 15 RNF) con 8 atributos y EV-XX; modelado UML completo; priorización MoSCoW+Kano+WSJF; matriz de trazabilidad extendida (40 filas); componente empírico y puente hacia publicación; registro en OSF. \\
 \hline
-\textbf{4.0 / v2.0} & \textbf{21/08/2026} & \textbf{Equipo CarniCore} & \textbf{Entrega 4 (2B) -- Versión definitiva:} incorporación de RF-26 y RF-27 (CCB aprobados); diagrama i* SR completado; requisitos de IA (IA-01 e IA-02); auditoría de calidad con seis métricas ISO/IEC 25010:2023; trazabilidad end-to-end (60 filas: 42 base + 18 IA); re-inspección Fagan PE5 con 4 defectos adicionales corregidos; retrospectiva del equipo; conclusiones integradoras; enlace al DOI de Zenodo en portada. \\
+\textbf{4.0 / v2.0} & \textbf{21/08/2026} & \textbf{Equipo CarniCore} & \textbf{Entrega 4 (2B) -- Versión definitiva:} incorporación de RF-26 y RF-27 (CCB aprobados); diagrama i* SR completado; requisitos de IA (IA-01 e IA-02); auditoría de calidad con seis métricas ISO/IEC 25010:2023; trazabilidad end-to-end (60 filas: 42 base + 18 IA; ampliada a 84 en el examen suspenso del 16/09/2026 con 24 filas de flujos alternativos y excepciones); re-inspección Fagan PE5 con 4 defectos adicionales corregidos; retrospectiva del equipo; conclusiones integradoras; enlace al DOI de Zenodo en portada. \\
+\hline
+\textbf{4.1 / v2.1} & \textbf{16/09/2026} & \textbf{Equipo CarniCore} & \textbf{Corrección de cierre (examen suspenso):} se especificó al menos un flujo alternativo y una excepción, con condición de disparo y poscondición propias, en los 12 casos de uso (antes solo dos tenían flujo alternativo explícito y cuatro excepción); se resolvieron cinco contradicciones entre precondición y flujo detectadas en revisión (CU-01, CU-02, CU-08, CU-11, CU-12); se incorporó la georreferencia de RF-17 como flujo alternativo propio de CU-01; se crearon HU-05 y HU-12 para cubrir los flujos de CU-05 y CU-11, que no tenían historia de usuario asociada; matriz de trazabilidad ampliada de 60 a 84 filas (24 filas nuevas de flujos alternativos y excepciones, columna Flujo añadida) y sincronizada con \texttt{04\_Trazabilidad/Matriz\_Trazabilidad.csv} (90 filas totales, incluidas 6 filas de RNF/CU sin correspondencia directa en esta tabla). \\
 \hline
 \end{longtable}
 
@@ -124,7 +126,7 @@
 %==========================================================
 \subsection{Propósito}
 
-El presente documento constituye la Especificación de Requisitos de Software (ERS/SRS) definitiva del sistema CarniCore, elaborada siguiendo la estructura y terminología del estándar ISO/IEC/ IEEE~29148:2018 \cite{iso29148}. Esta versión final (Entrega 4 -- 2B) cierra el ciclo abierto en la Entrega 1A: incorpora la totalidad de las observaciones docentes de la Entrega 3 (2A), los requisitos adicionales aprobados por el CCB (RF-26 y RF-27), el diagrama i*~SR completo, la especificación de dos componentes de Inteligencia Artificial (IA-01 e IA-02), la auditoría de calidad con seis métricas y la trazabilidad consolidada de 60 filas.
+El presente documento constituye la Especificación de Requisitos de Software (ERS/SRS) definitiva del sistema CarniCore, elaborada siguiendo la estructura y terminología del estándar ISO/IEC/ IEEE~29148:2018 \cite{iso29148}. Esta versión final (Entrega 4 -- 2B) cierra el ciclo abierto en la Entrega 1A: incorpora la totalidad de las observaciones docentes de la Entrega 3 (2A), los requisitos adicionales aprobados por el CCB (RF-26 y RF-27), el diagrama i*~SR completo, la especificación de dos componentes de Inteligencia Artificial (IA-01 e IA-02), la auditoría de calidad con seis métricas y la trazabilidad consolidada de 84 filas (60 base/IA + 24 de flujos alternativos y excepciones, añadidas en el cierre del examen suspenso del 16/09/2026).
 
 Este documento está dirigido a tres audiencias: (1) el equipo de desarrollo, que lo usará como insumo definitivo para el diseño arquitectónico y la construcción del MVP; (2) el personal docente y evaluador de la asignatura Ingeniería de Requerimientos [20303], que verificará el cumplimiento de los criterios C1--C13 de la rúbrica de la Entrega 4 (2B); y (3) la propietaria de la distribuidora y su equipo administrativo, en calidad de cliente y validador funcional final.
 
@@ -196,7 +198,7 @@ La bibliografía completa se gestiona en \texttt{referencias.bib} con al menos 4
 
 \subsection{Visión general del documento}
 
-El documento se organiza en: Sección~2 (descripción general, incluyendo modelos i*~SD y SR); Sección~3 (requisitos específicos completos: RF-01 a RF-27, RNF-01 a RNF-15, requisitos legales, HU y restricciones de diseño); Sección~4 (modelado UML completo); Sección~5 (priorización y matriz de trazabilidad de 60 filas); Sección~6 (MVP); Sección~7 (componente empírico y protocolo registrado en OSF); Sección~8 (requisitos de IA: IA-01 e IA-02); Sección~9 (auditoría de calidad con seis métricas); y apéndices con plan del proyecto, evidencias, retrospectiva y declaración de uso de IA.
+El documento se organiza en: Sección~2 (descripción general, incluyendo modelos i*~SD y SR); Sección~3 (requisitos específicos completos: RF-01 a RF-27, RNF-01 a RNF-15, requisitos legales, HU y restricciones de diseño); Sección~4 (modelado UML completo); Sección~5 (priorización y matriz de trazabilidad de 84 filas); Sección~6 (MVP); Sección~7 (componente empírico y protocolo registrado en OSF); Sección~8 (requisitos de IA: IA-01 e IA-02); Sección~9 (auditoría de calidad con seis métricas); y apéndices con plan del proyecto, evidencias, retrospectiva y declaración de uso de IA.
 
 %==========================================================
 \section{Descripción General}
@@ -675,6 +677,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \textit{Cuando} confirmo el registro de pesaje,\\
 \textit{Entonces} el sistema muestra el costo total calculado en menos de 1 segundo.}
 
+\huitem{HU-05}{RF-06}{carnicero, quiero asignar una categoría de venta a cada corte clasificado, para que el producto quede listo para su ingreso a cámara.}{
+\textit{Dado} que un corte ya registrado no corresponde a ninguna categoría de venta vigente,\\
+\textit{Cuando} intento clasificarlo,\\
+\textit{Entonces} el sistema lo marca como ``por definir'' y bloquea su ingreso a cámara hasta que un administrador complete la categoría.}
+
 \huitem{HU-06}{RF-06}{carnicero, quiero registrar el peso de cada corte con margen de merma configurable, para que el inventario refleje la clasificación real de productos.}{
 \textit{Dado} que registro los cortes de un animal ya pesado,\\
 \textit{Cuando} la suma de los pesos de los cortes supera el peso del animal más el margen de merma configurado (defecto 3\%),\\
@@ -704,6 +711,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \textit{Dado} que ingreso un número de arete válido,\\
 \textit{Cuando} solicito la consulta de trazabilidad,\\
 \textit{Entonces} el sistema muestra la cadena completa en menos de 3 segundos; si algún eslabón está incompleto, muestra la etiqueta ``En proceso''.}
+
+\huitem{HU-12}{RF-12}{administrador general, quiero que el sistema me alerte cuando la diferencia del conteo físico supere un umbral configurado, para investigar la desviación antes de cerrar el conteo semanal.}{
+\textit{Dado} que registro el conteo físico de una cámara,\\
+\textit{Cuando} la diferencia contra el inventario registrado supera el umbral configurado (2\% en libras o en valor monetario),\\
+\textit{Entonces} el sistema marca el conteo como ``diferencia significativa'' y exige una justificación antes de cerrarlo.}
 
 \huitem{HU-13}{RF-13}{propietaria, quiero generar reportes de ventas, compras y pérdidas por período, para tomar decisiones informadas de compra y venta.}{
 \textit{Dado} que selecciono un rango de fechas y un tipo de producto,\\
@@ -785,81 +797,89 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \vspace{0.35cm}
 }
 
-\cuitem{CU-01}{Registrar ingreso de animal/lote}{Encargado de bodega}{Existe una guía de origen con firma veterinaria registrada (RF-02) para el proveedor.}{(1) El encargado selecciona ``Registrar ingreso''. (2) El sistema solicita proveedor, guía de origen y tipo de producto. (3) Para cerdo/res solicita arete por animal; para aves, la cantidad. (4) Flujo alternativo: si el proveedor tiene georreferencia registrada, se muestra en el mapa (RF-17). (5) El encargado confirma. (6) El sistema registra el lote/animal como disponible.}{El lote/animal queda disponible para el pesaje (CU-03).}
-\noindent\textbf{Flujo alternativo:} el arete no existe en el histórico del proveedor para el animal declarado (cerdo/res, paso 3). (a) El sistema no encuentra el arete registrado. (b) El encargado confirma con el proveedor y registra el arete como nuevo. (c) El sistema da de alta el arete y continúa el flujo principal en el paso 5.\\
-\textbf{Poscondición (flujo alternativo):} el arete queda dado de alta y disponible para futuros ingresos del mismo proveedor.\\
-\noindent\textbf{Excepción:} la guía de origen no tiene firma veterinaria registrada (RF-02) $\Rightarrow$ el sistema rechaza el registro y solicita completar la guía antes de continuar.\\
+\cuitem{CU-01}{Registrar ingreso de animal/lote}{Encargado de bodega}{Existe una guía de origen registrada para el proveedor (CU-02).}{(1) El encargado selecciona ``Registrar ingreso''. (2) El sistema solicita proveedor, guía de origen y tipo de producto. (3) Para cerdo/res solicita arete por animal; para aves, la cantidad. (4) El sistema verifica la firma veterinaria de la guía (RF-02) y la georreferencia del proveedor, si existe (RF-17). (5) El encargado confirma. (6) El sistema registra el lote/animal como disponible.}{El lote/animal queda disponible para el pesaje (CU-03).}
+\noindent\textbf{\mbox{Flujo alternativo 1}:} el arete no existe en el histórico del proveedor para el animal declarado (cerdo/res, paso 3). (a) El sistema no encuentra el arete registrado. (b) El encargado confirma con el proveedor y registra el arete como nuevo. (c) El sistema da de alta el arete y continúa el flujo principal en el paso 5.\\
+\textbf{Poscondición (flujo alternativo 1):} el arete queda dado de alta y disponible para futuros ingresos del mismo proveedor.\\
+\noindent\textbf{\mbox{Flujo alternativo 2}:} el proveedor tiene georreferencia registrada (RF-17). (a) El sistema muestra la ubicación del proveedor en el mapa durante el paso 4. (b) El encargado puede usar la ubicación como apoyo para validar la coherencia del origen declarado antes de confirmar.\\
+\textbf{Poscondición (flujo alternativo 2):} la georreferencia del proveedor queda visible como apoyo a la decisión, sin bloquear el flujo principal.\\
+\noindent\textbf{\mbox{Excepción}:} la guía de origen registrada para el proveedor no tiene firma veterinaria válida (RF-02) $\Rightarrow$ el sistema rechaza el registro y solicita completar la guía antes de continuar.\\
 \textbf{Poscondición (excepción):} el ingreso no se registra hasta que la guía cuente con firma veterinaria válida.
 \vspace{0.35cm}
 
-\cuitem{CU-02}{Registrar guía de origen}{Encargado de bodega}{El proveedor está registrado (RF-01).}{(1) El encargado ingresa número de guía, cantidad de canales y confirma la firma del médico veterinario (digitalizada, RFC-03). (2) El sistema invoca ``Validar sellos veterinarios'' (\textit{include}). (3) El sistema almacena la guía.}{La guía queda disponible para asociarse a un ingreso (CU-01).}
-\noindent\textbf{Flujo alternativo:} el proveedor aún no está registrado en el sistema (RF-01). (a) El sistema detecta que el proveedor no existe. (b) El encargado registra el proveedor mínimo (nombre, identificación) antes de continuar. (c) El sistema reanuda el registro de la guía con el proveedor recién creado.\\
+\cuitem{CU-02}{Registrar guía de origen}{Encargado de bodega}{El encargado cuenta con los datos del proveedor y la guía física del lote.}{(1) El encargado ingresa número de guía, cantidad de canales y confirma la firma del médico veterinario (digitalizada, RFC-03). (2) El sistema invoca ``Validar sellos veterinarios'' (\textit{include}). (3) El sistema almacena la guía.}{La guía queda disponible para asociarse a un ingreso (CU-01).}
+\noindent\textbf{\mbox{Flujo alternativo}:} el proveedor aún no está registrado en el sistema (RF-01). (a) El sistema detecta que el proveedor no existe. (b) El encargado registra el proveedor mínimo (nombre, identificación) antes de continuar. (c) El sistema reanuda el registro de la guía con el proveedor recién creado.\\
 \textbf{Poscondición (flujo alternativo):} la guía queda asociada a un proveedor válido.\\
-\noindent\textbf{Excepción:} el servicio ``Validar sellos veterinarios'' (\textit{include}) no responde o el sello no coincide con el registro del veterinario $\Rightarrow$ el sistema marca la guía como ``pendiente de validación''.\\
+\noindent\textbf{\mbox{Excepción}:} el servicio ``Validar sellos veterinarios'' (\textit{include}) no responde o el sello no coincide con el registro del veterinario $\Rightarrow$ el sistema marca la guía como ``pendiente de validación''.\\
 \textbf{Poscondición (excepción):} la guía permanece pendiente hasta revalidación manual del administrador.
 \vspace{0.35cm}
 
 \cuitem{CU-03}{Registrar pesaje}{Encargado de bodega}{El lote/animal fue registrado previamente (CU-01).}{(1) El encargado selecciona el lote/animal. (2) Invoca ``Calcular costo por libra'' (\textit{include}) con el precio vigente (RF-19; no se aplican precios futuros pendientes). (3) Calcula costo total en $<$1s. (4) El encargado confirma. (5) El sistema emite el comprobante (RF-05).}{El producto queda disponible para despiece (CU-04) o almacenamiento directo.}
-\noindent\textbf{Flujo alternativo:} el pesaje capturado está fuera del rango esperado configurado para el tipo de animal/lote. (a) El sistema marca el pesaje como ``fuera de rango''. (b) Solicita al encargado confirmar un re-pesaje o justificar la desviación. (c) Si se confirma, el sistema continúa con ``Calcular costo por libra'' usando el valor confirmado.\\
+\noindent\textbf{\mbox{Flujo alternativo}:} el pesaje capturado está fuera del rango esperado configurado para el tipo de animal/lote. (a) El sistema marca el pesaje como ``fuera de rango''. (b) Solicita al encargado confirmar un re-pesaje o justificar la desviación. (c) Si se confirma, el sistema continúa con ``Calcular costo por libra'' usando el valor confirmado.\\
 \textbf{Poscondición (flujo alternativo):} el pesaje queda marcado con la observación de rango y auditado.\\
-\noindent\textbf{Excepción:} el precio vigente por libra no está configurado para el tipo de producto (RF-19) $\Rightarrow$ el sistema bloquea la emisión del comprobante hasta que se configure el precio.\\
+\noindent\textbf{\mbox{Excepción}:} el precio vigente por libra no está configurado para el tipo de producto (RF-19) $\Rightarrow$ el sistema bloquea la emisión del comprobante hasta que se configure el precio.\\
 \textbf{Poscondición (excepción):} no se emite comprobante mientras no exista precio vigente válido.
 \vspace{0.35cm}
 
 \cuitem{CU-04}{Registrar despiece/cortes}{Carnicero}{El animal fue pesado (CU-03).}{(1) El carnicero registra cada corte (tipo, peso). (2) El sistema valida que la suma de pesos no exceda el peso del animal más el margen de merma de despiece (defecto 3\%, configurable 1--8\%). (3) El sistema almacena los cortes.}{Los cortes quedan disponibles para clasificación (CU-05).}
-\noindent\textbf{Flujo alternativo:} la suma de pesos de los cortes se acerca al límite superior del margen de merma configurado (1--8\%). (a) El sistema advierte al carnicero que el margen está por agotarse. (b) El carnicero decide continuar registrando cortes o cerrar el despiece.\\
+\noindent\textbf{\mbox{Flujo alternativo}:} la suma de pesos de los cortes se acerca al límite superior del margen de merma configurado (1--8\%). (a) El sistema advierte al carnicero que el margen está por agotarse. (b) El carnicero decide continuar registrando cortes o cerrar el despiece.\\
 \textbf{Poscondición (flujo alternativo):} el despiece continúa dentro del margen permitido, con la advertencia registrada.\\
-\noindent\textbf{Excepción:} la suma de pesos excede el peso del animal más el margen de merma $\Rightarrow$ el sistema rechaza el registro del corte y exige corregir el peso o el margen configurado.\\
+\noindent\textbf{\mbox{Excepción}:} la suma de pesos excede el peso del animal más el margen de merma $\Rightarrow$ el sistema rechaza el registro del corte y exige corregir el peso o el margen configurado.\\
 \textbf{Poscondición (excepción):} el corte no se almacena hasta que la suma sea válida.
 \vspace{0.35cm}
 
 \cuitem{CU-05}{Clasificar producto por parte}{Carnicero}{Existen cortes registrados (CU-04).}{(1) El carnicero asigna una categoría de venta a cada corte. (2) El sistema asocia la categoría al corte.}{El producto clasificado queda disponible para ingreso a cámara (CU-06).}
-\noindent\textbf{Flujo alternativo:} el corte no corresponde a ninguna categoría de venta vigente. (a) El sistema no encuentra categoría aplicable. (b) El carnicero asigna la categoría ``por definir'' temporalmente. (c) Un administrador completa la categorización antes del ingreso a cámara (CU-06).\\
+\noindent\textbf{\mbox{Flujo alternativo}:} el corte no corresponde a ninguna categoría de venta vigente. (a) El sistema no encuentra categoría aplicable. (b) El carnicero asigna la categoría ``por definir'' temporalmente. (c) Un administrador completa la categorización antes del ingreso a cámara (CU-06).\\
 \textbf{Poscondición (flujo alternativo):} el corte permanece clasificado como pendiente hasta su categorización definitiva.\\
-\noindent\textbf{Excepción:} se intenta asignar dos categorías simultáneas al mismo corte $\Rightarrow$ el sistema rechaza la doble asignación y conserva la última categoría válida.\\
+\noindent\textbf{\mbox{Excepción}:} se intenta asignar dos categorías simultáneas al mismo corte $\Rightarrow$ el sistema rechaza la doble asignación y conserva la última categoría válida.\\
 \textbf{Poscondición (excepción):} cada corte conserva una única categoría vigente.
 \vspace{0.35cm}
 
 \cuitem{CU-06}{Registrar ingreso a cámara}{Encargado de bodega}{Existe producto clasificado o pesado disponible.}{(1) El encargado selecciona el producto y la cámara/sección destino. (2) El sistema registra el ingreso con fecha y calcula la vida útil inicial según el tipo. (3) El sistema actualiza el inventario.}{El producto queda disponible para control de vida útil (CU-07), venta (CU-09) o conteo (CU-11).}
-\noindent\textbf{Flujo alternativo:} la cámara/sección destino está a capacidad máxima configurada. (a) El sistema advierte que no hay espacio disponible. (b) El encargado selecciona una cámara/sección alterna. (c) El sistema recalcula la vida útil inicial si el tipo de cámara lo requiere.\\
+\noindent\textbf{\mbox{Flujo alternativo}:} la cámara/sección destino está a capacidad máxima configurada. (a) El sistema advierte que no hay espacio disponible. (b) El encargado selecciona una cámara/sección alterna. (c) El sistema recalcula la vida útil inicial si el tipo de cámara lo requiere.\\
 \textbf{Poscondición (flujo alternativo):} el producto ingresa a una cámara con capacidad disponible.\\
-\noindent\textbf{Excepción:} el tipo de producto no tiene parámetros de vida útil configurados $\Rightarrow$ el sistema registra el ingreso pero marca el producto como ``vida útil sin configurar''.\\
+\noindent\textbf{\mbox{Excepción}:} el tipo de producto no tiene parámetros de vida útil configurados $\Rightarrow$ el sistema registra el ingreso pero marca el producto como ``vida útil sin configurar''.\\
 \textbf{Poscondición (excepción):} el producto queda disponible en inventario, pendiente de configuración de vida útil.
 \vspace{0.35cm}
 
-\cuitem{CU-07}{Controlar vida útil (frescura)}{Administrador general (con notificación automática del sistema)}{El producto está almacenado en cámara (CU-06).}{(1) El sistema calcula diariamente los días transcurridos desde el ingreso. (2) Si falta 1 día o menos para el límite configurado, genera una alerta en el panel del administrador. (3) El administrador prioriza la venta o registra la baja (CU-10). \textit{Excepción:} producto sin tipo configurado $\Rightarrow$ notificación de ``sin configurar''.}{El estado del producto se actualiza a ``próximo a vencer'' o ``vencido''.}
-\noindent\textbf{Flujo alternativo:} la caducidad del producto está vencida sin que el administrador haya actuado sobre la alerta previa. (a) El sistema cambia el estado a ``vencido'' y bloquea la venta (CU-09). (b) Notifica al administrador con prioridad alta. (c) El administrador debe iniciar la baja (CU-10) para liberar el bloqueo.\\
-\textbf{Poscondición (flujo alternativo):} el producto vencido queda bloqueado para venta hasta su baja formal.
+\cuitem{CU-07}{Controlar vida útil (frescura)}{Administrador general (con notificación automática del sistema)}{El producto está almacenado en cámara (CU-06).}{(1) El sistema calcula diariamente los días transcurridos desde el ingreso. (2) Si falta 1 día o menos para el límite configurado, genera una alerta en el panel del administrador. (3) El administrador prioriza la venta o registra la baja (CU-10).}{El estado del producto se actualiza a ``próximo a vencer'' o ``vencido''.}
+\noindent\textbf{\mbox{Flujo alternativo}:} la caducidad del producto está vencida sin que el administrador haya actuado sobre la alerta previa. (a) El sistema cambia el estado a ``vencido'' y bloquea la venta (CU-09). (b) Notifica al administrador con prioridad alta. (c) El administrador debe iniciar la baja (CU-10) para liberar el bloqueo.\\
+\textbf{Poscondición (flujo alternativo):} el producto vencido queda bloqueado para venta hasta su baja formal.\\
+\noindent\textbf{\mbox{Excepción}:} el producto no tiene un tipo configurado con parámetros de vida útil $\Rightarrow$ el sistema genera una notificación de ``sin configurar'' en vez de la alerta de vencimiento.\\
+\textbf{Poscondición (excepción):} el producto permanece visible en inventario marcado como ``vida útil sin configurar'' hasta que un administrador complete los parámetros del tipo.
 \vspace{0.35cm}
 
-\cuitem{CU-08}{Consultar trazabilidad de producto}{Propietaria / Cliente}{El producto cuenta con número de arete o código de lote válido.}{(1) El usuario ingresa el número de arete o código. (2) El sistema recupera la cadena de trazabilidad. (3) Si hay eslabones incompletos, muestra ``En proceso''. (4) Si el usuario es cliente externo vía QR, muestra solo los campos públicos de RF-26.}{Ninguna (operación de solo lectura).}
-\noindent\textbf{Flujo alternativo:} el código de lote corresponde a un producto con trazabilidad compuesta (varios proveedores o cámaras de origen). (a) El sistema recupera todos los eslabones de cada origen. (b) Presenta la cadena consolidada, indicando cada tramo con su proveedor y cámara.\\
+\cuitem{CU-08}{Consultar trazabilidad de producto}{Propietaria / Cliente}{El usuario cuenta con un número de arete o código de lote a consultar.}{(1) El usuario ingresa el número de arete o código. (2) El sistema recupera la cadena de trazabilidad. (3) Si hay eslabones incompletos, muestra ``En proceso''. (4) Si el usuario es cliente externo vía QR, muestra solo los campos públicos de RF-26.}{Ninguna (operación de solo lectura).}
+\noindent\textbf{\mbox{Flujo alternativo}:} el código de lote corresponde a un producto con trazabilidad compuesta (varios proveedores o cámaras de origen). (a) El sistema recupera todos los eslabones de cada origen. (b) Presenta la cadena consolidada, indicando cada tramo con su proveedor y cámara.\\
 \textbf{Poscondición (flujo alternativo):} el usuario visualiza la trazabilidad completa aun cuando el producto proviene de más de un origen.\\
-\noindent\textbf{Excepción:} el número de arete o código de lote ingresado no existe en el sistema $\Rightarrow$ el sistema muestra ``código no encontrado'' sin exponer información interna.\\
+\noindent\textbf{\mbox{Excepción}:} el número de arete o código de lote ingresado no existe en el sistema $\Rightarrow$ el sistema muestra ``código no encontrado'' sin exponer información interna.\\
 \textbf{Poscondición (excepción):} no se retorna información de trazabilidad para códigos inválidos.
 \vspace{0.35cm}
 
-\cuitem{CU-09}{Registrar salida/venta de producto}{Encargado de bodega}{El producto está disponible en inventario (CU-06).}{(1) El encargado selecciona producto y cantidad. (2) El sistema valida disponibilidad. (3) Solicita el número de factura externo. (4) Descuenta el producto del inventario. \textit{Excepción:} inventario insuficiente $\Rightarrow$ rechazo.}{El inventario y los reportes (RF-13, RF-27) se actualizan.}
-\noindent\textbf{Flujo alternativo:} el cliente solicita una cantidad parcial de un lote que ya está próximo a vencer (CU-07). (a) El sistema sugiere priorizar la venta del producto con menor vida útil restante. (b) El encargado puede aceptar la sugerencia o continuar con el producto originalmente seleccionado.\\
-\textbf{Poscondición (flujo alternativo):} la venta se registra priorizando, cuando es posible, el producto próximo a vencer.
+\cuitem{CU-09}{Registrar salida/venta de producto}{Encargado de bodega}{El producto está disponible en inventario (CU-06).}{(1) El encargado selecciona producto y cantidad. (2) El sistema valida disponibilidad. (3) Solicita el número de factura externo. (4) Descuenta el producto del inventario.}{El inventario y los reportes (RF-13, RF-27) se actualizan.}
+\noindent\textbf{\mbox{Flujo alternativo}:} el cliente solicita una cantidad parcial de un lote que ya está próximo a vencer (CU-07). (a) El sistema sugiere priorizar la venta del producto con menor vida útil restante. (b) El encargado puede aceptar la sugerencia o continuar con el producto originalmente seleccionado.\\
+\textbf{Poscondición (flujo alternativo):} la venta se registra priorizando, cuando es posible, el producto próximo a vencer.\\
+\noindent\textbf{\mbox{Excepción}:} la cantidad solicitada supera el inventario disponible del producto $\Rightarrow$ el sistema rechaza la venta y no descuenta inventario.\\
+\textbf{Poscondición (excepción):} el inventario permanece sin cambios y la venta no se registra.
 \vspace{0.35cm}
 
-\cuitem{CU-10}{Registrar baja de producto}{Encargado de bodega (solicita) / Administrador general (aprueba)}{El producto está almacenado en cámara; opcionalmente existe un incidente de corte de energía asociado (RF-20).}{(1) El encargado registra peso, motivo y evidencia fotográfica. (2) El sistema envía la solicitud al administrador. (3) El administrador aprueba o rechaza. \textit{Excepción:} sin aprobación, la baja no afecta el inventario.}{El inventario se actualiza solo tras la aprobación; el registro queda auditado (RNF-07).}
-\noindent\textbf{Flujo alternativo:} existe un incidente de corte de energía asociado (RF-20) que afecta al lote. (a) El sistema vincula automáticamente la solicitud de baja al incidente registrado. (b) El administrador revisa el incidente junto con la solicitud antes de aprobar o rechazar.\\
-\textbf{Poscondición (flujo alternativo):} la baja queda trazada al incidente de corte de energía que la originó.
+\cuitem{CU-10}{Registrar baja de producto}{Encargado de bodega (solicita) / Administrador general (aprueba)}{El producto está almacenado en cámara; opcionalmente existe un incidente de corte de energía asociado (RF-20).}{(1) El encargado registra peso, motivo y evidencia fotográfica. (2) El sistema envía la solicitud al administrador. (3) El administrador aprueba o rechaza.}{El inventario se actualiza solo tras la aprobación; el registro queda auditado (RNF-07).}
+\noindent\textbf{\mbox{Flujo alternativo}:} existe un incidente de corte de energía asociado (RF-20) que afecta al lote. (a) El sistema vincula automáticamente la solicitud de baja al incidente registrado. (b) El administrador revisa el incidente junto con la solicitud antes de aprobar o rechazar.\\
+\textbf{Poscondición (flujo alternativo):} la baja queda trazada al incidente de corte de energía que la originó.\\
+\noindent\textbf{\mbox{Excepción}:} el administrador rechaza la solicitud de baja $\Rightarrow$ el sistema conserva el producto en inventario y notifica al encargado de bodega el motivo del rechazo.\\
+\textbf{Poscondición (excepción):} el inventario no se modifica y la solicitud queda registrada como rechazada, auditada (RNF-07).
 \vspace{0.35cm}
 
-\cuitem{CU-11}{Realizar conteo de inventario}{Administrador general}{Existe inventario registrado por cámara (CU-06).}{(1) El administrador registra el conteo físico semanal por cámara. (2) El sistema compara el conteo contra el inventario registrado. (3) Calcula y muestra la diferencia en libras y en valor monetario.}{Las diferencias quedan documentadas.}
-\noindent\textbf{Flujo alternativo:} la diferencia entre el conteo físico y el inventario registrado supera el umbral configurado (2\% en libras o en valor monetario). (a) El sistema marca el conteo como ``diferencia significativa''. (b) Genera una alerta para el administrador general. (c) El administrador debe justificar o investigar la diferencia antes de cerrar el conteo semanal.\\
+\cuitem{CU-11}{Realizar conteo de inventario}{Administrador general}{El sistema tiene al menos una cámara configurada (CU-06).}{(1) El administrador registra el conteo físico semanal por cámara. (2) El sistema compara el conteo contra el inventario registrado. (3) Calcula y muestra la diferencia en libras y en valor monetario.}{Las diferencias quedan documentadas.}
+\noindent\textbf{\mbox{Flujo alternativo}:} la diferencia entre el conteo físico y el inventario registrado supera el umbral configurado (2\% en libras o en valor monetario). (a) El sistema marca el conteo como ``diferencia significativa''. (b) Genera una alerta para el administrador general. (c) El administrador debe justificar o investigar la diferencia antes de cerrar el conteo semanal.\\
 \textbf{Poscondición (flujo alternativo):} el conteo con diferencia significativa queda pendiente de cierre hasta su justificación.\\
-\noindent\textbf{Excepción:} no existe inventario registrado para la cámara seleccionada $\Rightarrow$ el sistema impide iniciar el conteo para esa cámara.\\
+\noindent\textbf{\mbox{Excepción}:} no existe inventario registrado para la cámara seleccionada $\Rightarrow$ el sistema impide iniciar el conteo para esa cámara.\\
 \textbf{Poscondición (excepción):} no se genera conteo para cámaras sin inventario previo.
 \vspace{0.35cm}
 
-\cuitem{CU-12}{Generar reportes gerenciales}{Propietaria}{Existen ventas, compras y bajas registradas en el período consultado.}{(1) La propietaria selecciona rango de fechas, tipo de producto y opcionalmente proveedor (RF-27). (2) El sistema calcula totales. (3) Exporta el reporte en PDF.}{Ninguna (operación de solo lectura); el reporte queda disponible para descarga.}
-\noindent\textbf{Flujo alternativo:} el rango de fechas seleccionado no tiene ventas, compras ni bajas registradas. (a) El sistema informa que no hay datos para el período. (b) Sugiere el rango más cercano con datos disponibles.\\
+\cuitem{CU-12}{Generar reportes gerenciales}{Propietaria}{El sistema cuenta con al menos un período histórico con ventas, compras o bajas registradas.}{(1) La propietaria selecciona rango de fechas, tipo de producto y opcionalmente proveedor (RF-27). (2) El sistema calcula totales. (3) Exporta el reporte en PDF.}{Ninguna (operación de solo lectura); el reporte queda disponible para descarga.}
+\noindent\textbf{\mbox{Flujo alternativo}:} el rango de fechas seleccionado no tiene ventas, compras ni bajas registradas. (a) El sistema informa que no hay datos para el período. (b) Sugiere el rango más cercano con datos disponibles.\\
 \textbf{Poscondición (flujo alternativo):} el reporte no se genera; se informa la ausencia de datos.\\
-\noindent\textbf{Excepción:} la exportación a PDF falla por error del generador de reportes $\Rightarrow$ el sistema conserva los totales ya calculados y permite reintentar la exportación sin recalcular.\\
+\noindent\textbf{\mbox{Excepción}:} la exportación a PDF falla por error del generador de reportes $\Rightarrow$ el sistema conserva los totales ya calculados y permite reintentar la exportación sin recalcular.\\
 \textbf{Poscondición (excepción):} los totales calculados no se pierden ante un fallo de exportación.
 \vspace{0.35cm}
 
@@ -1056,83 +1076,112 @@ RF-27 & Must & Desempeño & 4.5 & Permite análisis por proveedor; aprobado por 
 \end{longtable}
 \footnotesize{*WSJF estimado en escala relativa 0--10 (costo de retraso / tamaño estimado).}
 
-\subsection{Matriz de trazabilidad final end-to-end (60 filas: 42 base + 18 IA)}
+\subsection{Matriz de trazabilidad final end-to-end (84 filas: 42 base + 18 IA + 24 flujos)}
 
 La cadena mínima implementada es: Ley/Art. $\to$ Objetivo $\to$ Interesado $\to$ EV $\to$ RF/RNF $\to$ CU $\to$ HU $\to$ CA $\to$ Componente $\to$ Mockup.
 
-La matriz completa en formato CSV se ubica en \texttt{trazabilidad/trazabilidad\_final\_2B.csv} del repositorio.
+La matriz completa en formato CSV se ubica en \texttt{04\_Trazabilidad/Matriz\_Trazabilidad.csv} del repositorio.
 
 \scriptsize
-\begin{longtable}{|p{0.3cm}|p{1.2cm}|p{2.2cm}|p{1.5cm}|p{0.7cm}|p{0.8cm}|p{0.7cm}|p{0.8cm}|p{0.8cm}|p{2.3cm}|p{1cm}|}
-\caption{Matriz de trazabilidad end-to-end (60 filas: 42 base + 18 IA)}\\
+\setlength{\tabcolsep}{2.2pt}
+\begin{longtable}{|p{0.3cm}|p{1.0cm}|p{1.9cm}|p{1.3cm}|p{0.6cm}|p{0.7cm}|p{0.6cm}|p{1.1cm}|p{0.6cm}|p{0.6cm}|p{2.0cm}|p{0.8cm}|}
+\caption{Matriz de trazabilidad end-to-end (84 filas: 42 base + 18 IA + 24 flujos)}\\
 \hline
-\textbf{ID} & \textbf{Ley-Art.} & \textbf{Objetivo} & \textbf{Interesado} & \textbf{EV} & \textbf{RF / RNF} & \textbf{CU} & \textbf{HU} & \textbf{CA} & \textbf{Componente} & \textbf{Mockup} \\
+\textbf{ID} & \textbf{Ley-Art.} & \textbf{Objetivo} & \textbf{Interesado} & \textbf{EV} & \textbf{RF / RNF} & \textbf{CU} & \textbf{Flujo} & \textbf{HU} & \textbf{CA} & \textbf{Componente} & \textbf{Mockup} \\
 \hline
-1 & -- & Trazabilidad de origen & Propietaria & EV-01 & RF-01 & CU-01 & HU-01 & CA-01 & Backend-Proveedores & MU-04 \\
-2 & Art.30 & Certificación sanitaria & Propietaria & EV-02 & RF-02 & CU-02 & HU-02 & CA-02 & Backend-Guias & MU-05 \\
-3 & -- & Registro de ingreso & Bodega & EV-03 & RF-03 & CU-01 & HU-03 & CA-03 & Backend-Ingresos & MU-06 \\
-4 & -- & Cálculo de costo & Bodega & EV-04 & RF-04 & CU-03 & HU-04 & CA-04 & Backend-Pesaje & MU-07 \\
-5 & -- & Comprobante físico & Bodega & EV-04 & RF-05 & CU-03 & -- & -- & Backend-Pesaje & MU-19 \\
-6 & -- & Registro de cortes & Carniceros & EV-05 & RF-06 & CU-04 & HU-06 & CA-06 & Backend-Despiece & MU-08 \\
-7 & -- & Control por cámara & Admin. gral. & EV-06 & RF-07 & CU-06 & HU-07 & CA-07 & Backend-Inventario & MU-09 \\
-8 & -- & Evitar pérdidas & Admin. gral. & EV-06 & RF-08 & CU-07 & HU-08 & CA-08 & Backend-VidaUtil & MU-11 \\
-9 & Art.38 & Sustentar bajas & Admin. gral. & EV-07 & RF-09 & CU-10 & HU-09 & CA-09 & Backend-Bajas & MU-13 \\
-10 & -- & Registrar ventas & Bodega / Cliente & EV-08 & RF-10 & CU-09 & HU-10 & CA-10 & Backend-Ventas & MU-14 \\
-11 & -- & Historial completo & Agrocalidad & EV-03 & RF-11 & CU-08 & HU-11 & CA-11 & Backend-Trazabilidad & MU-16 \\
-12 & -- & Diferencias inventario & Admin. gral. & EV-09 & RF-12 & CU-11 & -- & -- & Backend-Inventario & MU-17 \\
-13 & -- & Decisiones gerenciales & Propietaria & EV-08 & RF-13 & CU-12 & HU-13 & CA-13 & Backend-Reportes & MU-18 \\
-14 & -- & Desempeño del negocio & Propietaria & EV-08 & RF-14 & CU-12 & -- & -- & Backend-Reportes & MU-02 \\
-15 & Art.7,9 & Delegar por rol & Propietaria & EV-01 & RF-15 & -- & HU-15 & CA-15 & Backend-Usuarios & MU-20 \\
-16 & -- & Stock por fecha & Propietaria & EV-09 & RF-16 & CU-06 & HU-16 & CA-16 & Backend-Inventario & MU-15 \\
-17 & -- & Georreferencia & Admin. gral. & EV-10 & RF-17 & CU-01 alt. & -- & -- & Backend-Proveedores & MU-04 \\
-18 & -- & Historial de precios & Propietaria & EV-11 & RF-18 & -- & -- & -- & Backend-Precios & MU-14 \\
-19 & -- & Configurar precios & Propietaria & EV-11 & RF-19 & CU-03 & HU-19 & CA-19 & Backend-Precios & MU-07 \\
-20 & -- & Registrar apagones & Propietaria & EV-12 & RF-20 & CU-10 & HU-20 & CA-20 & Backend-Incidentes & -- \\
-21 & -- & Continuidad operativa & Bodega & EV-13 & RF-21 & CU-01/03 & HU-21 & CA-21 & Cliente-Offline & -- \\
-22 & -- & Devoluciones & Bodega & EV-14 & RF-22 & CU-09 & -- & -- & Backend-Ventas & MU-14 \\
-23 & -- & Auditoría Agrocalidad & Admin. gral. & EV-15 & RF-23 & CU-08 & HU-23 & CA-23 & Backend-Trazabilidad & MU-16 \\
-24 & -- & Búsqueda de producto & Bodega & EV-09 & RF-24 & CU-06 & -- & -- & Backend-Inventario & MU-10 \\
-25 & -- & QR de trazabilidad & Cliente & EV-03 & RF-25 & CU-08 & -- & -- & Backend-Trazabilidad & MU-16 \\
-26 & Art.R26 LOPDP & Campos públicos QR & Cliente & CCB-D01 & RF-26 & CU-08 & HU-26 & CA-26 & Backend-QrPublico & MU-16 \\
-27 & -- & Filtro por proveedor & Propietaria & CCB-RFC01 & RF-27 & CU-12 & HU-27 & CA-27 & Backend-Reportes & MU-18 \\
-28 & -- & Rendimiento pesaje & Bodega & EV-04 & RNF-01 & CU-03 & -- & -- & Backend-Pesaje & -- \\
-29 & -- & Disponibilidad & Todos & -- & RNF-02 & -- & -- & -- & Infraestructura & -- \\
-30 & Art.30 & Autenticación segura & Admin. gral. & EV-01 & RNF-03 & -- & -- & -- & Backend-Usuarios & -- \\
-31 & -- & Usabilidad bodega & Bodega & EV-09 & RNF-04 & CU-01 & -- & -- & Cliente-Web/Móvil & -- \\
-32 & -- & Arquitectura mantenible & Equipo & -- & RNF-05 & -- & -- & -- & Backend (todos) & -- \\
-33 & -- & Acceso multi-navegador & Todos & -- & RNF-06 & -- & -- & -- & Cliente-Web & -- \\
-34 & Art.38 & Auditoría de bajas & Admin. gral. & EV-07 & RNF-07 & CU-10 & -- & -- & Backend-Bajas & -- \\
-35 & -- & Cobertura RF Must MVP & Docente & EV-16 & RNF-08 & -- & -- & -- & MVP & -- \\
-36 & -- & Integración báscula & Bodega & -- & RNF-09 & CU-03 & -- & -- & Backend-Pesaje & -- \\
-37 & -- & Nuevos tipos producto & Propietaria & EV-11 & RNF-10 & -- & -- & -- & Backend-Precios & -- \\
-38 & -- & Reportes alto volumen & Propietaria & EV-08 & RNF-11 & CU-12 & -- & -- & Backend-Reportes & -- \\
-39 & Art.30 & Cifrado datos & Todos & -- & RNF-12 & -- & -- & -- & Backend/BD & -- \\
-40 & -- & Accesibilidad táctil & Bodega & EV-09 & RNF-13 & CU-01 & -- & -- & Cliente-Móvil & -- \\
-41 & -- & Recuperabilidad offline & Bodega & EV-13 & RNF-14 & CU-01/03 & HU-21 & CA-21 & Cliente-Offline & -- \\
-42 & -- & Calidad código MVP & Docente & EV-16 & RNF-15 & -- & -- & -- & MVP & -- \\
+1 & -- & Trazabilidad de origen & Propietaria & EV-01 & RF-01 & CU-01 & Ppal. & HU-01 & CA-01 & Backend-Proveedores & MU-04 \\
+2 & Art.30 & Certificación sanitaria & Propietaria & EV-02 & RF-02 & CU-02 & Ppal. & HU-02 & CA-02 & Backend-Guias & MU-05 \\
+3 & -- & Registro de ingreso & Bodega & EV-03 & RF-03 & CU-01 & Ppal. & HU-03 & CA-03 & Backend-Ingresos & MU-06 \\
+4 & -- & Cálculo de costo & Bodega & EV-04 & RF-04 & CU-03 & Ppal. & HU-04 & CA-04 & Backend-Pesaje & MU-07 \\
+5 & -- & Comprobante físico & Bodega & EV-04 & RF-05 & CU-03 & Ppal. & -- & -- & Backend-Pesaje & MU-19 \\
+6 & -- & Registro de cortes & Carniceros & EV-05 & RF-06 & CU-04 & Ppal. & HU-06 & CA-06 & Backend-Despiece & MU-08 \\
+7 & -- & Control por cámara & Admin. gral. & EV-06 & RF-07 & CU-06 & Ppal. & HU-07 & CA-07 & Backend-Inventario & MU-09 \\
+8 & -- & Evitar pérdidas & Admin. gral. & EV-06 & RF-08 & CU-07 & Ppal. & HU-08 & CA-08 & Backend-VidaUtil & MU-11 \\
+9 & Art.38 & Sustentar bajas & Admin. gral. & EV-07 & RF-09 & CU-10 & Ppal. & HU-09 & CA-09 & Backend-Bajas & MU-13 \\
+10 & -- & Registrar ventas & Bodega / Cliente & EV-08 & RF-10 & CU-09 & Ppal. & HU-10 & CA-10 & Backend-Ventas & MU-14 \\
+11 & -- & Historial completo & Agrocalidad & EV-03 & RF-11 & CU-08 & Ppal. & HU-11 & CA-11 & Backend-Trazabilidad & MU-16 \\
+12 & -- & Diferencias inventario & Admin. gral. & EV-09 & RF-12 & CU-11 & Ppal. & -- & -- & Backend-Inventario & MU-17 \\
+13 & -- & Decisiones gerenciales & Propietaria & EV-08 & RF-13 & CU-12 & Ppal. & HU-13 & CA-13 & Backend-Reportes & MU-18 \\
+14 & -- & Desempeño del negocio & Propietaria & EV-08 & RF-14 & CU-12 & Ppal. & -- & -- & Backend-Reportes & MU-02 \\
+15 & Art.7,9 & Delegar por rol & Propietaria & EV-01 & RF-15 & -- & -- & HU-15 & CA-15 & Backend-Usuarios & MU-20 \\
+16 & -- & Stock por fecha & Propietaria & EV-09 & RF-16 & CU-06 & Ppal. & HU-16 & CA-16 & Backend-Inventario & MU-15 \\
+17 & -- & Georreferencia & Admin. gral. & EV-10 & RF-17 & CU-01 & Alt. & -- & -- & Backend-Proveedores & MU-04 \\
+18 & -- & Historial de precios & Propietaria & EV-11 & RF-18 & -- & -- & -- & -- & Backend-Precios & MU-14 \\
+19 & -- & Configurar precios & Propietaria & EV-11 & RF-19 & CU-03 & Ppal. & HU-19 & CA-19 & Backend-Precios & MU-07 \\
+20 & -- & Registrar apagones & Propietaria & EV-12 & RF-20 & CU-10 & Ppal. & HU-20 & CA-20 & Backend-Incidentes & -- \\
+21 & -- & Continuidad operativa & Bodega & EV-13 & RF-21 & CU-01/03 & Ppal. & HU-21 & CA-21 & Cliente-Offline & -- \\
+22 & -- & Devoluciones & Bodega & EV-14 & RF-22 & CU-09 & Ppal. & -- & -- & Backend-Ventas & MU-14 \\
+23 & -- & Auditoría Agrocalidad & Admin. gral. & EV-15 & RF-23 & CU-08 & Ppal. & HU-23 & CA-23 & Backend-Trazabilidad & MU-16 \\
+24 & -- & Búsqueda de producto & Bodega & EV-09 & RF-24 & CU-06 & Ppal. & -- & -- & Backend-Inventario & MU-10 \\
+25 & -- & QR de trazabilidad & Cliente & EV-03 & RF-25 & CU-08 & Ppal. & -- & -- & Backend-Trazabilidad & MU-16 \\
+26 & Art.R26 LOPDP & Campos públicos QR & Cliente & CCB-D01 & RF-26 & CU-08 & Ppal. & HU-26 & CA-26 & Backend-QrPublico & MU-16 \\
+27 & -- & Filtro por proveedor & Propietaria & CCB-RFC01 & RF-27 & CU-12 & Ppal. & HU-27 & CA-27 & Backend-Reportes & MU-18 \\
+28 & -- & Rendimiento pesaje & Bodega & EV-04 & RNF-01 & CU-03 & Ppal. & -- & -- & Backend-Pesaje & -- \\
+29 & -- & Disponibilidad & Todos & -- & RNF-02 & -- & -- & -- & -- & Infraestructura & -- \\
+30 & Art.30 & Autenticación segura & Admin. gral. & EV-01 & RNF-03 & -- & -- & -- & -- & Backend-Usuarios & -- \\
+31 & -- & Usabilidad bodega & Bodega & EV-09 & RNF-04 & CU-01 & Ppal. & -- & -- & Cliente-Web/Móvil & -- \\
+32 & -- & Arquitectura mantenible & Equipo & -- & RNF-05 & -- & -- & -- & -- & Backend (todos) & -- \\
+33 & -- & Acceso multi-navegador & Todos & -- & RNF-06 & -- & -- & -- & -- & Cliente-Web & -- \\
+34 & Art.38 & Auditoría de bajas & Admin. gral. & EV-07 & RNF-07 & CU-10 & Ppal. & -- & -- & Backend-Bajas & -- \\
+35 & -- & Cobertura RF Must MVP & Docente & EV-16 & RNF-08 & -- & -- & -- & -- & MVP & -- \\
+36 & -- & Integración báscula & Bodega & -- & RNF-09 & CU-03 & Ppal. & -- & -- & Backend-Pesaje & -- \\
+37 & -- & Nuevos tipos producto & Propietaria & EV-11 & RNF-10 & -- & -- & -- & -- & Backend-Precios & -- \\
+38 & -- & Reportes alto volumen & Propietaria & EV-08 & RNF-11 & CU-12 & Ppal. & -- & -- & Backend-Reportes & -- \\
+39 & Art.30 & Cifrado datos & Todos & -- & RNF-12 & -- & -- & -- & -- & Backend/BD & -- \\
+40 & -- & Accesibilidad táctil & Bodega & EV-09 & RNF-13 & CU-01 & Ppal. & -- & -- & Cliente-Móvil & -- \\
+41 & -- & Recuperabilidad offline & Bodega & EV-13 & RNF-14 & CU-01/03 & Ppal. & HU-21 & CA-21 & Cliente-Offline & -- \\
+42 & -- & Calidad código MVP & Docente & EV-16 & RNF-15 & -- & -- & -- & -- & MVP & -- \\
 \hline
 \multicolumn{11}{|l|}{\textbf{Extensión IA -- filas 43--60}} \\
 \hline
-43 & -- & Predicción demanda semanal & Propietaria & EV-08 & RF-IA-01 & -- & -- & -- & IA-PredictorDemanda & -- \\
-44 & -- & Intervalo de confianza pred. & Propietaria & EV-08 & RF-IA-02 & -- & -- & -- & IA-PredictorDemanda & -- \\
-45 & -- & Fallback predictor & Propietaria & EV-08,12 & RF-IA-03 & -- & -- & -- & IA-PredictorDemanda & -- \\
-46 & -- & MAE predictor $\leq$10 lb & Propietaria & EV-08 & RNF-IA-01 & -- & -- & -- & IA-PredictorDemanda & -- \\
-47 & -- & Inferencia $<$5s predictor & Propietaria & EV-08 & RNF-IA-02 & -- & -- & -- & IA-PredictorDemanda & -- \\
-48 & -- & Escalabilidad predictor & Propietaria & EV-08 & RNF-IA-03 & -- & -- & -- & IA-PredictorDemanda & -- \\
-49 & -- & Equidad por temporada & Propietaria & EV-08 & RNF-IA-04 & -- & -- & -- & IA-PredictorDemanda & -- \\
-50 & -- & Equidad por tipo corte & Propietaria & EV-08 & RNF-IA-05 & -- & -- & -- & IA-PredictorDemanda & -- \\
-51 & -- & Explicabilidad pred. & Propietaria & EV-08 & RNF-IA-06 & -- & -- & -- & IA-PredictorDemanda & -- \\
-52 & -- & Clasificar riesgo incidente & Admin. gral. & EV-12 & RF-IA-04 & CU-10 & -- & -- & IA-DetectorAnomalias & -- \\
-53 & -- & Prob. y recomendación & Admin. gral. & EV-12 & RF-IA-05 & CU-10 & -- & -- & IA-DetectorAnomalias & -- \\
-54 & Art.38 & Registrar decisión admin. & Admin. gral. & EV-12 & RF-IA-06 & CU-10 & -- & -- & IA-DetectorAnomalias & -- \\
-55 & -- & Recall $\geq$0.90 detector & Admin. gral. & EV-12 & RNF-IA-07 & -- & -- & -- & IA-DetectorAnomalias & -- \\
-56 & -- & Inferencia $<$2s detector & Admin. gral. & EV-12 & RNF-IA-08 & -- & -- & -- & IA-DetectorAnomalias & -- \\
-57 & -- & Fallback $<$500ms & Admin. gral. & EV-12 & RNF-IA-09 & -- & -- & -- & IA-DetectorAnomalias & -- \\
-58 & -- & Equidad por producto & Admin. gral. & EV-12 & RNF-IA-10 & -- & -- & -- & IA-DetectorAnomalias & -- \\
-59 & -- & Equidad por horario & Admin. gral. & EV-12 & RNF-IA-11 & -- & -- & -- & IA-DetectorAnomalias & -- \\
-60 & Art.38 & Explicabilidad detector & Admin. gral. & EV-12 & RNF-IA-12 & -- & -- & -- & IA-DetectorAnomalias & -- \\
+43 & -- & Predicción demanda semanal & Propietaria & EV-08 & RF-IA-01 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+44 & -- & Intervalo de confianza pred. & Propietaria & EV-08 & RF-IA-02 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+45 & -- & Fallback predictor & Propietaria & EV-08,12 & RF-IA-03 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+46 & -- & MAE predictor $\leq$10 lb & Propietaria & EV-08 & RNF-IA-01 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+47 & -- & Inferencia $<$5s predictor & Propietaria & EV-08 & RNF-IA-02 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+48 & -- & Escalabilidad predictor & Propietaria & EV-08 & RNF-IA-03 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+49 & -- & Equidad por temporada & Propietaria & EV-08 & RNF-IA-04 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+50 & -- & Equidad por tipo corte & Propietaria & EV-08 & RNF-IA-05 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+51 & -- & Explicabilidad pred. & Propietaria & EV-08 & RNF-IA-06 & -- & -- & -- & -- & IA-PredictorDemanda & -- \\
+52 & -- & Clasificar riesgo incidente & Admin. gral. & EV-12 & RF-IA-04 & CU-10 & Ppal. & -- & -- & IA-DetectorAnomalias & -- \\
+53 & -- & Prob. y recomendación & Admin. gral. & EV-12 & RF-IA-05 & CU-10 & Ppal. & -- & -- & IA-DetectorAnomalias & -- \\
+54 & Art.38 & Registrar decisión admin. & Admin. gral. & EV-12 & RF-IA-06 & CU-10 & Ppal. & -- & -- & IA-DetectorAnomalias & -- \\
+55 & -- & Recall $\geq$0.90 detector & Admin. gral. & EV-12 & RNF-IA-07 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+56 & -- & Inferencia $<$2s detector & Admin. gral. & EV-12 & RNF-IA-08 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+57 & -- & Fallback $<$500ms & Admin. gral. & EV-12 & RNF-IA-09 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+58 & -- & Equidad por producto & Admin. gral. & EV-12 & RNF-IA-10 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+59 & -- & Equidad por horario & Admin. gral. & EV-12 & RNF-IA-11 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+60 & Art.38 & Explicabilidad detector & Admin. gral. & EV-12 & RNF-IA-12 & -- & -- & -- & -- & IA-DetectorAnomalias & -- \\
+\hline
+\multicolumn{12}{|l|}{\textbf{Extensión flujos alternativos y excepciones -- filas 61--84 (examen suspenso, 16/09/2026)}} \\
+\hline
+61 &  & Arete inexistente en histórico del proveedor & Bodega & EV-03 & RF-03 & CU-01 & Alt. & HU-03 & CA-03 & Backend-Ingresos & MU-06 \\
+62 &  & Guía sin firma veterinaria registrada & Bodega & EV-02 & RF-02 & CU-01 & Exc. & HU-03 & CA-03 & Backend-Guias & MU-05 \\
+63 &  & Proveedor no registrado al ingresar guía & Propietaria & EV-01 & RF-01 & CU-02 & Alt. & HU-02 & CA-02 & Backend-Proveedores & MU-04 \\
+64 &  & Sello veterinario no válido o servicio no responde & Propietaria & EV-02 & RF-02 & CU-02 & Exc. & HU-02 & CA-02 & Backend-Guias & MU-05 \\
+65 &  & Pesaje fuera del rango esperado & Bodega & EV-04 & RF-04 & CU-03 & Alt. & HU-04 & CA-04 & Backend-Pesaje & MU-07 \\
+66 &  & Precio vigente no configurado & Propietaria & EV-11 & RF-19 & CU-03 & Exc. & HU-19 & CA-19 & Backend-Precios & MU-07 \\
+67 &  & Margen de merma por agotarse & Carniceros & EV-05 & RF-06 & CU-04 & Alt. & HU-06 & CA-06 & Backend-Despiece & MU-08 \\
+68 &  & Suma de cortes excede margen de merma & Carniceros & EV-05 & RF-06 & CU-04 & Exc. & HU-06 & CA-06 & Backend-Despiece & MU-08 \\
+69 &  & Corte sin categoría de venta vigente & Carniceros & EV-05 & RF-06 & CU-05 & Alt. & HU-05 & CA-05 & Backend-Despiece & MU-08 \\
+70 &  & Doble categoría asignada al mismo corte & Carniceros & EV-05 & RF-06 & CU-05 & Exc. & HU-05 & CA-05 & Backend-Despiece & MU-08 \\
+71 &  & Cámara/sección destino a capacidad máxima & Admin. gral. & EV-06 & RF-07 & CU-06 & Alt. & HU-07 & CA-07 & Backend-Inventario & MU-09 \\
+72 &  & Producto sin parámetros de vida útil configurados & Admin. gral. & EV-06 & RF-08 & CU-06 & Exc. & HU-07 & CA-07 & Backend-VidaUtil & MU-11 \\
+73 &  & Caducidad vencida sin acción del administrador & Admin. gral. & EV-06 & RF-08 & CU-07 & Alt. & HU-08 & CA-08 & Backend-VidaUtil & MU-11 \\
+74 &  & Producto sin tipo configurado para vida útil & Admin. gral. & EV-06 & RF-08 & CU-07 & Exc. & HU-08 & CA-08 & Backend-VidaUtil & MU-11 \\
+75 &  & Trazabilidad compuesta (múltiples orígenes) & Agrocalidad & EV-03 & RF-11 & CU-08 & Alt. & HU-11 & CA-11 & Backend-Trazabilidad & MU-16 \\
+76 &  & Código de lote/arete inexistente & Agrocalidad & EV-03 & RF-11 & CU-08 & Exc. & HU-11 & CA-11 & Backend-Trazabilidad & MU-16 \\
+77 &  & Priorizar producto próximo a vencer en venta & Bodega & EV-08 & RF-10 & CU-09 & Alt. & HU-10 & CA-10 & Backend-Ventas & MU-14 \\
+78 &  & Inventario insuficiente para la venta & Bodega & EV-08 & RF-10 & CU-09 & Exc. & HU-10 & CA-10 & Backend-Ventas & MU-14 \\
+79 &  & Baja vinculada a incidente de corte de energía & Propietaria & EV-12 & RF-20 & CU-10 & Alt. & HU-20 & CA-20 & Backend-Incidentes & -- \\
+80 &  & Baja rechazada por el administrador & Admin. gral. & EV-07 & RF-09 & CU-10 & Exc. & HU-09 & CA-09 & Backend-Bajas & MU-13 \\
+81 &  & Diferencia significativa en conteo de inventario & Admin. gral. & EV-09 & RF-12 & CU-11 & Alt. & HU-12 & CA-12 & Backend-Inventario & MU-17 \\
+82 &  & Cámara sin inventario previo registrado & Admin. gral. & EV-09 & RF-12 & CU-11 & Exc. & HU-12 & CA-12 & Backend-Inventario & MU-17 \\
+83 &  & Rango de fechas sin datos para reporte & Propietaria & EV-08 & RF-13 & CU-12 & Alt. & HU-13 & CA-13 & Backend-Reportes & MU-18 \\
+84 &  & Falla en exportación de reporte a PDF & Propietaria & EV-08 & RF-13 & CU-12 & Exc. & HU-13 & CA-13 & Backend-Reportes & MU-18 \\
 \hline
 \end{longtable}
+\setlength{\tabcolsep}{6pt}
 \normalsize
 
 %==========================================================
@@ -2020,7 +2069,7 @@ Castro Bajaña Ariel Omar & Integración de Introducción y Metodología; actual
 \hline
 Crespo Espinoza Kleber Obed & Revisión UML v2.0; verificación ERS final; control de figuras/tablas; RNF actualizados. & Commits UML, RNF, figuras \\
 \hline
-Gamarra Araujo Edhu Xavier & Trazabilidad end-to-end 60 filas; estructura del repositorio; control de línea base; CHANGELOG. & Commits trazabilidad, repo \\
+Gamarra Araujo Edhu Xavier & Trazabilidad end-to-end 84 filas (60 base/IA + 24 de flujos); estructura del repositorio; control de línea base; CHANGELOG. & Commits trazabilidad, repo \\
 \hline
 Pérez Ruiz Carlos Andrés & Requisitos de IA (Sec.~8); auditoría de calidad M1--M6 (Sec.~9); conclusiones integradoras. & Commits IA, métricas \\
 \hline
