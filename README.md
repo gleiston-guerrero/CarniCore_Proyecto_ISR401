@@ -274,6 +274,13 @@ CarniCore\_Proyecto\_ISR401/
 > reconfigurar. `06\_Experimento/` conserva protocolo, registro OSF, desviaciones,
 > instrumentos y prompts.
 
+> **Desviación de numeración declarada.** La numeración original de la guía asume
+> `08_Etica/` y `09_Defensa/`. En este repositorio son `09_Etica/` y `11_Defensa/`: al
+> insertar `07_Datos/` (separado de `06_Experimento/` el 03/09/2026) y `10_Autoria/`
+> (creada el 04/09/2026) en la secuencia, las carpetas posteriores se recorrieron. No se
+> renumeraron para no romper las rutas ya versionadas en scripts, checksums y el ERS; esta
+> nota deja la desviación documentada, como exige el §2 de la guía de cierre.
+
 \---
 
 ## 8\. Componente empírico: qué se midió y qué salió
