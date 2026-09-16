@@ -786,6 +786,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 }
 
 \cuitem{CU-01}{Registrar ingreso de animal/lote}{Encargado de bodega}{Existe una guía de origen con firma veterinaria registrada (RF-02) para el proveedor.}{(1) El encargado selecciona ``Registrar ingreso''. (2) El sistema solicita proveedor, guía de origen y tipo de producto. (3) Para cerdo/res solicita arete por animal; para aves, la cantidad. (4) Flujo alternativo: si el proveedor tiene georreferencia registrada, se muestra en el mapa (RF-17). (5) El encargado confirma. (6) El sistema registra el lote/animal como disponible.}{El lote/animal queda disponible para el pesaje (CU-03).}
+\noindent\textbf{Flujo alternativo:} el arete no existe en el histórico del proveedor para el animal declarado (cerdo/res, paso 3). (a) El sistema no encuentra el arete registrado. (b) El encargado confirma con el proveedor y registra el arete como nuevo. (c) El sistema da de alta el arete y continúa el flujo principal en el paso 5.\\
+\textbf{Poscondición (flujo alternativo):} el arete queda dado de alta y disponible para futuros ingresos del mismo proveedor.\\
+\noindent\textbf{Excepción:} la guía de origen no tiene firma veterinaria registrada (RF-02) $\Rightarrow$ el sistema rechaza el registro y solicita completar la guía antes de continuar.\\
+\textbf{Poscondición (excepción):} el ingreso no se registra hasta que la guía cuente con firma veterinaria válida.
+\vspace{0.35cm}
 
 \cuitem{CU-02}{Registrar guía de origen}{Encargado de bodega}{El proveedor está registrado (RF-01).}{(1) El encargado ingresa número de guía, cantidad de canales y confirma la firma del médico veterinario (digitalizada, RFC-03). (2) El sistema invoca ``Validar sellos veterinarios'' (\textit{include}). (3) El sistema almacena la guía.}{La guía queda disponible para asociarse a un ingreso (CU-01).}
 \noindent\textbf{Flujo alternativo:} el proveedor aún no está registrado en el sistema (RF-01). (a) El sistema detecta que el proveedor no existe. (b) El encargado registra el proveedor mínimo (nombre, identificación) antes de continuar. (c) El sistema reanuda el registro de la guía con el proveedor recién creado.\\
