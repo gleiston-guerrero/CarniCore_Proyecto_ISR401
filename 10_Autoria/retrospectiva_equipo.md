@@ -147,4 +147,4 @@ línea por persona, en un commit separado), no en un commit único hecho por el 
 | # | Integrante | Firma/Conformidad | 
 |---|---|---|---|
 | 1 | Gamarra Araujo Edhu Xavier | |
-| 2 | Quintero Gende Erick Jahir | |
+| 2 | Quintero Gende Erick Jahir | Erick Quintero |
