@@ -1,4 +1,4 @@
-ID,Ley-Art.,Objetivo,Interesado,EV,RF/RNF,CU,HU,CA,Componente,Mockup
+ID,Ley-Art.,Objetivo,Interesado,EV,RF/RNF,CU,Flujo,HU,CA,Componente,Mockup
 1,"Art.7,45-49",Trazabilidad de origen,Propietaria,EV-01,RF-01,CU-01,HU-01,CA-01,Backend-Proveedores,MU-04
 2,,Certificación sanitaria,Propietaria,EV-02,RF-02,CU-02,HU-02,CA-02,Backend-Guias,MU-05
 3,,Registro de ingreso,Bodega,EV-03,RF-03,CU-01,HU-03,CA-03,Backend-Ingresos,MU-06
