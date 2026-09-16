@@ -792,6 +792,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \cuitem{CU-03}{Registrar pesaje}{Encargado de bodega}{El lote/animal fue registrado previamente (CU-01).}{(1) El encargado selecciona el lote/animal. (2) Invoca ``Calcular costo por libra'' (\textit{include}) con el precio vigente (RF-19; no se aplican precios futuros pendientes). (3) Calcula costo total en $<$1s. (4) El encargado confirma. (5) El sistema emite el comprobante (RF-05).}{El producto queda disponible para despiece (CU-04) o almacenamiento directo.}
 
 \cuitem{CU-04}{Registrar despiece/cortes}{Carnicero}{El animal fue pesado (CU-03).}{(1) El carnicero registra cada corte (tipo, peso). (2) El sistema valida que la suma de pesos no exceda el peso del animal más el margen de merma de despiece (defecto 3\%, configurable 1--8\%). (3) El sistema almacena los cortes.}{Los cortes quedan disponibles para clasificación (CU-05).}
+\noindent\textbf{Flujo alternativo:} la suma de pesos de los cortes se acerca al límite superior del margen de merma configurado (1--8\%). (a) El sistema advierte al carnicero que el margen está por agotarse. (b) El carnicero decide continuar registrando cortes o cerrar el despiece.\\
+\textbf{Poscondición (flujo alternativo):} el despiece continúa dentro del margen permitido, con la advertencia registrada.\\
+\noindent\textbf{Excepción:} la suma de pesos excede el peso del animal más el margen de merma $\Rightarrow$ el sistema rechaza el registro del corte y exige corregir el peso o el margen configurado.\\
+\textbf{Poscondición (excepción):} el corte no se almacena hasta que la suma sea válida.
+\vspace{0.35cm}
 
 \cuitem{CU-05}{Clasificar producto por parte}{Carnicero}{Existen cortes registrados (CU-04).}{(1) El carnicero asigna una categoría de venta a cada corte. (2) El sistema asocia la categoría al corte.}{El producto clasificado queda disponible para ingreso a cámara (CU-06).}
 \noindent\textbf{Flujo alternativo:} el corte no corresponde a ninguna categoría de venta vigente. (a) El sistema no encuentra categoría aplicable. (b) El carnicero asigna la categoría ``por definir'' temporalmente. (c) Un administrador completa la categorización antes del ingreso a cámara (CU-06).\\
