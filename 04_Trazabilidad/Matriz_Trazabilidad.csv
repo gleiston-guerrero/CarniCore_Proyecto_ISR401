@@ -1,67 +1,91 @@
 ID,Ley-Art.,Objetivo,Interesado,EV,RF/RNF,CU,Flujo,HU,CA,Componente,Mockup
-1,"Art.7,45-49",Trazabilidad de origen,Propietaria,EV-01,RF-01,CU-01,HU-01,CA-01,Backend-Proveedores,MU-04
-2,,Certificación sanitaria,Propietaria,EV-02,RF-02,CU-02,HU-02,CA-02,Backend-Guias,MU-05
-3,,Registro de ingreso,Bodega,EV-03,RF-03,CU-01,HU-03,CA-03,Backend-Ingresos,MU-06
-4,,Cálculo de costo,Bodega,EV-04,RF-04,CU-03,HU-04,CA-04,Backend-Pesaje,MU-07
-5,,Comprobante físico,Bodega,EV-04,RF-05,CU-03,,,Backend-Pesaje,MU-19
-6,,Registro de cortes,Carniceros,EV-05,RF-06,CU-04,HU-06,CA-06,Backend-Despiece,MU-08
-7,,Control por cámara,Admin. gral.,EV-06,RF-07,CU-06,HU-07,CA-07,Backend-Inventario,MU-09
-8,,Evitar pérdidas,Admin. gral.,EV-06,RF-08,CU-07,HU-08,CA-08,Backend-VidaUtil,MU-11
-9,,Sustentar bajas,Admin. gral.,EV-07,RF-09,CU-10,HU-09,CA-09,Backend-Bajas,MU-13
-10,,Registrar ventas,Bodega / Cliente,EV-08,RF-10,CU-09,HU-10,CA-10,Backend-Ventas,MU-14
-11,,Historial completo,Agrocalidad,EV-03,RF-11,CU-08,HU-11,CA-11,Backend-Trazabilidad,MU-16
-12,,Diferencias inventario,Admin. gral.,EV-09,RF-12,CU-11,,,Backend-Inventario,MU-17
-13,Art.38,Decisiones gerenciales,Propietaria,EV-08,RF-13,CU-12,HU-13,CA-13,Backend-Reportes,MU-18
-14,,Desempeño del negocio,Propietaria,EV-08,RF-14,CU-12,,,Backend-Reportes,MU-02
-15,"Art.7,9,45-49",Delegar por rol,Propietaria,EV-01,RF-15,,HU-15,CA-15,Backend-Usuarios,MU-20
-16,,Stock por fecha,Propietaria,EV-09,RF-16,CU-06,HU-16,CA-16,Backend-Inventario,MU-15
-17,,Georreferencia,Admin. gral.,EV-10,RF-17,CU-01 alt.,,,Backend-Proveedores,MU-04
-18,,Historial de precios,Propietaria,EV-11,RF-18,,,,Backend-Precios,MU-14
-19,,Configurar precios,Propietaria,EV-11,RF-19,CU-03,HU-19,CA-19,Backend-Precios,MU-07
-20,,Registrar apagones,Propietaria,EV-12,RF-20,CU-10,HU-20,CA-20,Backend-Incidentes,
-21,,Continuidad operativa,Bodega,EV-13,RF-21,CU-01/03,HU-21,CA-21,Cliente-Offline,
-22,,Devoluciones,Bodega,EV-14,RF-22,CU-09,,,Backend-Ventas,MU-14
-23,,Auditoría Agrocalidad,Admin. gral.,EV-15,RF-23,CU-08,HU-23,CA-23,Backend-Trazabilidad,MU-16
-24,,Búsqueda de producto,Bodega,EV-09,RF-24,CU-06,,,Backend-Inventario,MU-10
-25,,QR de trazabilidad,Cliente,EV-03,RF-25,CU-08,,,Backend-Trazabilidad,MU-16
-26,Art.R26 LOPDP,Campos públicos QR,Cliente,CCB-D01,RF-26,CU-08,HU-26,CA-26,Backend-QrPublico,MU-16
-27,,Filtro por proveedor,Propietaria,CCB-RFC01,RF-27,CU-12,HU-27,CA-27,Backend-Reportes,MU-18
-28,,Rendimiento pesaje,Bodega,EV-04,RNF-01,CU-03,,,Backend-Pesaje,
-29,,Disponibilidad,Todos,,RNF-02,,,,Infraestructura,
-30,Art.30,Autenticación segura,Admin. gral.,EV-01,RNF-03,,,,Backend-Usuarios,
-31,,Usabilidad bodega,Bodega,EV-09,RNF-04,CU-01,,,Cliente-Web/Móvil,
-32,,Arquitectura mantenible,Equipo,,RNF-05,,,,Backend (todos),
-33,,Acceso multi-navegador,Todos,,RNF-06,,,,Cliente-Web,
-34,Art.38,Auditoría de bajas,Admin. gral.,EV-07,RNF-07,CU-10,,,Backend-Bajas,
-35,,Cobertura RF Must MVP,Docente,EV-16,RNF-08,,,,MVP,
-36,,Integración báscula,Bodega,,RNF-09,CU-03,,,Backend-Pesaje,
-37,,Nuevos tipos producto,Propietaria,EV-11,RNF-10,,,,Backend-Precios,
-38,,Reportes alto volumen,Propietaria,EV-08,RNF-11,CU-12,,,Backend-Reportes,
-39,Art.30,Cifrado datos,Todos,,RNF-12,,,,Backend/BD,
-40,,Accesibilidad táctil,Bodega,EV-09,RNF-13,CU-01,,,Cliente-Móvil,
-41,,Recuperabilidad offline,Bodega,EV-13,RNF-14,CU-01/03,HU-21,CA-21,Cliente-Offline,
-42,,Calidad código MVP,Docente,EV-16,RNF-15,,,,MVP,
-43,,Predicción demanda semanal,Propietaria,EV-08,RF-IA-01,,,,IA-PredictorDemanda,
-44,,Intervalo de confianza pred.,Propietaria,EV-08,RF-IA-02,,,,IA-PredictorDemanda,
-45,,Fallback predictor,Propietaria,"EV-08,12",RF-IA-03,,,,IA-PredictorDemanda,
-46,,MAE predictor <=10 lb,Propietaria,EV-08,RNF-IA-01,,,,IA-PredictorDemanda,
-47,,Inferencia <5s predictor,Propietaria,EV-08,RNF-IA-02,,,,IA-PredictorDemanda,
-48,,Escalabilidad predictor,Propietaria,EV-08,RNF-IA-03,,,,IA-PredictorDemanda,
-49,,Equidad por temporada,Propietaria,EV-08,RNF-IA-04,,,,IA-PredictorDemanda,
-50,,Equidad por tipo corte,Propietaria,EV-08,RNF-IA-05,,,,IA-PredictorDemanda,
-51,,Explicabilidad pred.,Propietaria,EV-08,RNF-IA-06,,,,IA-PredictorDemanda,
-52,,Clasificar riesgo incidente,Admin. gral.,EV-12,RF-IA-04,CU-10,,,IA-DetectorAnomalias,
-53,,Prob. y recomendación,Admin. gral.,EV-12,RF-IA-05,CU-10,,,IA-DetectorAnomalias,
-54,,Registrar decisión admin.,Admin. gral.,EV-12,RF-IA-06,CU-10,,,IA-DetectorAnomalias,
-55,,Recall >=0.90 detector,Admin. gral.,EV-12,RNF-IA-07,,,,IA-DetectorAnomalias,
-56,,Inferencia <2s detector,Admin. gral.,EV-12,RNF-IA-08,,,,IA-DetectorAnomalias,
-57,,Fallback <500ms,Admin. gral.,EV-12,RNF-IA-09,,,,IA-DetectorAnomalias,
-58,,Equidad por producto,Admin. gral.,EV-12,RNF-IA-10,,,,IA-DetectorAnomalias,
-59,,Equidad por horario,Admin. gral.,EV-12,RNF-IA-11,,,,IA-DetectorAnomalias,
-60,,Explicabilidad detector,Admin. gral.,EV-12,RNF-IA-12,,,,IA-DetectorAnomalias,
-61,,Exactitud del detector de ambigüedad,Verificador de calidad,EV-12,RNF-IA-13,,,CP-IA-13,DET-01,
-62,,Supervisión humana de marcas del detector,Admin. gral.,EV-12,RNF-IA-14,,,CP-IA-14,DET-01,
-63,,Monitoreo continuo en producción,Admin. gral.,EV-12,RNF-IA-15,,,CP-IA-15,DET-01,
-64,,Clasificación y revisión del nivel de riesgo,Líder del equipo,EV-12,RNF-IA-16,,,CP-IA-16,DET-01,
-65,,Explicabilidad del detector de ambigüedad,Documentador del equipo,EV-12,RNF-IA-17,,,CP-IA-17,DET-01,
-66,,Equidad del detector entre categorías de requisito,Verificador de calidad,EV-12,RNF-IA-18,,,CP-IA-18,DET-01,
+1,"Art.7,45-49",Trazabilidad de origen,Propietaria,EV-01,RF-01,CU-01,Principal,HU-01,CA-01,Backend-Proveedores,MU-04
+2,,Certificación sanitaria,Propietaria,EV-02,RF-02,CU-02,Principal,HU-02,CA-02,Backend-Guias,MU-05
+3,,Registro de ingreso,Bodega,EV-03,RF-03,CU-01,Principal,HU-03,CA-03,Backend-Ingresos,MU-06
+4,,Cálculo de costo,Bodega,EV-04,RF-04,CU-03,Principal,HU-04,CA-04,Backend-Pesaje,MU-07
+5,,Comprobante físico,Bodega,EV-04,RF-05,CU-03,Principal,,,Backend-Pesaje,MU-19
+6,,Registro de cortes,Carniceros,EV-05,RF-06,CU-04,Principal,HU-06,CA-06,Backend-Despiece,MU-08
+7,,Control por cámara,Admin. gral.,EV-06,RF-07,CU-06,Principal,HU-07,CA-07,Backend-Inventario,MU-09
+8,,Evitar pérdidas,Admin. gral.,EV-06,RF-08,CU-07,Principal,HU-08,CA-08,Backend-VidaUtil,MU-11
+9,,Sustentar bajas,Admin. gral.,EV-07,RF-09,CU-10,Principal,HU-09,CA-09,Backend-Bajas,MU-13
+10,,Registrar ventas,Bodega / Cliente,EV-08,RF-10,CU-09,Principal,HU-10,CA-10,Backend-Ventas,MU-14
+11,,Historial completo,Agrocalidad,EV-03,RF-11,CU-08,Principal,HU-11,CA-11,Backend-Trazabilidad,MU-16
+12,,Diferencias inventario,Admin. gral.,EV-09,RF-12,CU-11,Principal,,,Backend-Inventario,MU-17
+13,Art.38,Decisiones gerenciales,Propietaria,EV-08,RF-13,CU-12,Principal,HU-13,CA-13,Backend-Reportes,MU-18
+14,,Desempeño del negocio,Propietaria,EV-08,RF-14,CU-12,Principal,,,Backend-Reportes,MU-02
+15,"Art.7,9,45-49",Delegar por rol,Propietaria,EV-01,RF-15,,,HU-15,CA-15,Backend-Usuarios,MU-20
+16,,Stock por fecha,Propietaria,EV-09,RF-16,CU-06,Principal,HU-16,CA-16,Backend-Inventario,MU-15
+17,,Georreferencia,Admin. gral.,EV-10,RF-17,CU-01,"Alternativo (georreferencia, RF-17)",,,Backend-Proveedores,MU-04
+18,,Historial de precios,Propietaria,EV-11,RF-18,,,,,Backend-Precios,MU-14
+19,,Configurar precios,Propietaria,EV-11,RF-19,CU-03,Principal,HU-19,CA-19,Backend-Precios,MU-07
+20,,Registrar apagones,Propietaria,EV-12,RF-20,CU-10,Principal,HU-20,CA-20,Backend-Incidentes,
+21,,Continuidad operativa,Bodega,EV-13,RF-21,CU-01/03,Principal,HU-21,CA-21,Cliente-Offline,
+22,,Devoluciones,Bodega,EV-14,RF-22,CU-09,Principal,,,Backend-Ventas,MU-14
+23,,Auditoría Agrocalidad,Admin. gral.,EV-15,RF-23,CU-08,Principal,HU-23,CA-23,Backend-Trazabilidad,MU-16
+24,,Búsqueda de producto,Bodega,EV-09,RF-24,CU-06,Principal,,,Backend-Inventario,MU-10
+25,,QR de trazabilidad,Cliente,EV-03,RF-25,CU-08,Principal,,,Backend-Trazabilidad,MU-16
+26,Art.R26 LOPDP,Campos públicos QR,Cliente,CCB-D01,RF-26,CU-08,Principal,HU-26,CA-26,Backend-QrPublico,MU-16
+27,,Filtro por proveedor,Propietaria,CCB-RFC01,RF-27,CU-12,Principal,HU-27,CA-27,Backend-Reportes,MU-18
+28,,Rendimiento pesaje,Bodega,EV-04,RNF-01,CU-03,Principal,,,Backend-Pesaje,
+29,,Disponibilidad,Todos,,RNF-02,,,,,Infraestructura,
+30,Art.30,Autenticación segura,Admin. gral.,EV-01,RNF-03,,,,,Backend-Usuarios,
+31,,Usabilidad bodega,Bodega,EV-09,RNF-04,CU-01,Principal,,,Cliente-Web/Móvil,
+32,,Arquitectura mantenible,Equipo,,RNF-05,,,,,Backend (todos),
+33,,Acceso multi-navegador,Todos,,RNF-06,,,,,Cliente-Web,
+34,Art.38,Auditoría de bajas,Admin. gral.,EV-07,RNF-07,CU-10,Principal,,,Backend-Bajas,
+35,,Cobertura RF Must MVP,Docente,EV-16,RNF-08,,,,,MVP,
+36,,Integración báscula,Bodega,,RNF-09,CU-03,Principal,,,Backend-Pesaje,
+37,,Nuevos tipos producto,Propietaria,EV-11,RNF-10,,,,,Backend-Precios,
+38,,Reportes alto volumen,Propietaria,EV-08,RNF-11,CU-12,Principal,,,Backend-Reportes,
+39,Art.30,Cifrado datos,Todos,,RNF-12,,,,,Backend/BD,
+40,,Accesibilidad táctil,Bodega,EV-09,RNF-13,CU-01,Principal,,,Cliente-Móvil,
+41,,Recuperabilidad offline,Bodega,EV-13,RNF-14,CU-01/03,Principal,HU-21,CA-21,Cliente-Offline,
+42,,Calidad código MVP,Docente,EV-16,RNF-15,,,,,MVP,
+43,,Predicción demanda semanal,Propietaria,EV-08,RF-IA-01,,,,,IA-PredictorDemanda,
+44,,Intervalo de confianza pred.,Propietaria,EV-08,RF-IA-02,,,,,IA-PredictorDemanda,
+45,,Fallback predictor,Propietaria,"EV-08,12",RF-IA-03,,,,,IA-PredictorDemanda,
+46,,MAE predictor <=10 lb,Propietaria,EV-08,RNF-IA-01,,,,,IA-PredictorDemanda,
+47,,Inferencia <5s predictor,Propietaria,EV-08,RNF-IA-02,,,,,IA-PredictorDemanda,
+48,,Escalabilidad predictor,Propietaria,EV-08,RNF-IA-03,,,,,IA-PredictorDemanda,
+49,,Equidad por temporada,Propietaria,EV-08,RNF-IA-04,,,,,IA-PredictorDemanda,
+50,,Equidad por tipo corte,Propietaria,EV-08,RNF-IA-05,,,,,IA-PredictorDemanda,
+51,,Explicabilidad pred.,Propietaria,EV-08,RNF-IA-06,,,,,IA-PredictorDemanda,
+52,,Clasificar riesgo incidente,Admin. gral.,EV-12,RF-IA-04,CU-10,Principal,,,IA-DetectorAnomalias,
+53,,Prob. y recomendación,Admin. gral.,EV-12,RF-IA-05,CU-10,Principal,,,IA-DetectorAnomalias,
+54,,Registrar decisión admin.,Admin. gral.,EV-12,RF-IA-06,CU-10,Principal,,,IA-DetectorAnomalias,
+55,,Recall >=0.90 detector,Admin. gral.,EV-12,RNF-IA-07,,,,,IA-DetectorAnomalias,
+56,,Inferencia <2s detector,Admin. gral.,EV-12,RNF-IA-08,,,,,IA-DetectorAnomalias,
+57,,Fallback <500ms,Admin. gral.,EV-12,RNF-IA-09,,,,,IA-DetectorAnomalias,
+58,,Equidad por producto,Admin. gral.,EV-12,RNF-IA-10,,,,,IA-DetectorAnomalias,
+59,,Equidad por horario,Admin. gral.,EV-12,RNF-IA-11,,,,,IA-DetectorAnomalias,
+60,,Explicabilidad detector,Admin. gral.,EV-12,RNF-IA-12,,,,,IA-DetectorAnomalias,
+61,,Exactitud del detector de ambigüedad,Verificador de calidad,EV-12,RNF-IA-13,,,,CP-IA-13,DET-01,
+62,,Supervisión humana de marcas del detector,Admin. gral.,EV-12,RNF-IA-14,,,,CP-IA-14,DET-01,
+63,,Monitoreo continuo en producción,Admin. gral.,EV-12,RNF-IA-15,,,,CP-IA-15,DET-01,
+64,,Clasificación y revisión del nivel de riesgo,Líder del equipo,EV-12,RNF-IA-16,,,,CP-IA-16,DET-01,
+65,,Explicabilidad del detector de ambigüedad,Documentador del equipo,EV-12,RNF-IA-17,,,,CP-IA-17,DET-01,
+66,,Equidad del detector entre categorías de requisito,Verificador de calidad,EV-12,RNF-IA-18,,,,CP-IA-18,DET-01,
+67,,Arete inexistente en el histórico del proveedor,Bodega,EV-03,RF-03,CU-01,Alternativo,HU-03,CA-03,Backend-Ingresos,MU-06
+68,,Guía sin firma veterinaria registrada,Bodega,EV-02,RF-02,CU-01,Excepción,,,Backend-Guias,MU-05
+69,,Proveedor no registrado al ingresar guía,Propietaria,EV-01,RF-01,CU-02,Alternativo,,,Backend-Proveedores,MU-04
+70,,Sello veterinario no válido o servicio no responde,Propietaria,EV-02,RF-02,CU-02,Excepción,HU-02,CA-02,Backend-Guias,MU-05
+71,,Pesaje fuera del rango esperado,Bodega,EV-04,RF-04,CU-03,Alternativo,HU-04,CA-04,Backend-Pesaje,MU-07
+72,,Precio vigente no configurado,Propietaria,EV-11,RF-19,CU-03,Excepción,HU-19,CA-19,Backend-Precios,MU-07
+73,,Margen de merma por agotarse,Carniceros,EV-05,RF-06,CU-04,Alternativo,HU-06,CA-06,Backend-Despiece,MU-08
+74,,Suma de cortes excede margen de merma,Carniceros,EV-05,RF-06,CU-04,Excepción,,,Backend-Despiece,MU-08
+75,,Corte sin categoría de venta vigente,Carniceros,EV-05,RF-06,CU-05,Alternativo,,,Backend-Despiece,MU-08
+76,,Doble categoría asignada al mismo corte,Carniceros,EV-05,RF-06,CU-05,Excepción,,,Backend-Despiece,MU-08
+77,,Cámara/sección destino a capacidad máxima,Admin. gral.,EV-06,RF-07,CU-06,Alternativo,HU-07,CA-07,Backend-Inventario,MU-09
+78,,Producto sin parámetros de vida útil configurados,Admin. gral.,EV-06,RF-08,CU-06,Excepción,,,Backend-VidaUtil,MU-11
+79,,Caducidad vencida sin acción del administrador,Admin. gral.,EV-06,RF-08,CU-07,Alternativo,HU-08,CA-08,Backend-VidaUtil,MU-11
+80,,Producto sin tipo configurado para vida útil,Admin. gral.,EV-06,RF-08,CU-07,Excepción,,,Backend-VidaUtil,MU-11
+81,,Trazabilidad compuesta (múltiples orígenes),Agrocalidad,EV-03,RF-11,CU-08,Alternativo,HU-11,CA-11,Backend-Trazabilidad,MU-16
+82,,Código de lote/arete inexistente,Agrocalidad,EV-03,RF-11,CU-08,Excepción,,,Backend-Trazabilidad,MU-16
+83,,Priorizar producto próximo a vencer en venta,Bodega / Cliente,EV-08,RF-10,CU-09,Alternativo,HU-10,CA-10,Backend-Ventas,MU-14
+84,,Inventario insuficiente para la venta,Bodega / Cliente,EV-08,RF-10,CU-09,Excepción,,,Backend-Ventas,MU-14
+85,,Baja vinculada a incidente de corte de energía,Propietaria,EV-12,RF-20,CU-10,Alternativo,HU-20,CA-20,Backend-Incidentes,
+86,,Baja sin aprobación no afecta inventario,Admin. gral.,EV-07,RF-09,CU-10,Excepción,HU-09,CA-09,Backend-Bajas,MU-13
+87,,Diferencia significativa en conteo de inventario,Admin. gral.,EV-09,RF-12,CU-11,Alternativo,,,Backend-Inventario,MU-17
+88,,Cámara sin inventario previo registrado,Admin. gral.,EV-09,RF-12,CU-11,Excepción,,,Backend-Inventario,MU-17
+89,,Rango de fechas sin datos para reporte,Propietaria,EV-08,RF-13,CU-12,Alternativo,HU-13,CA-13,Backend-Reportes,MU-18
+90,,Falla en exportación de reporte a PDF,Propietaria,EV-08,RF-13,CU-12,Excepción,,,Backend-Reportes,MU-18
