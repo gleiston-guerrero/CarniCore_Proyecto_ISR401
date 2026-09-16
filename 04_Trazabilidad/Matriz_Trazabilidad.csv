@@ -66,26 +66,26 @@ ID,Ley-Art.,Objetivo,Interesado,EV,RF/RNF,CU,Flujo,HU,CA,Componente,Mockup
 65,,Explicabilidad del detector de ambigüedad,Documentador del equipo,EV-12,RNF-IA-17,,,,CP-IA-17,DET-01,
 66,,Equidad del detector entre categorías de requisito,Verificador de calidad,EV-12,RNF-IA-18,,,,CP-IA-18,DET-01,
 67,,Arete inexistente en el histórico del proveedor,Bodega,EV-03,RF-03,CU-01,Alternativo,HU-03,CA-03,Backend-Ingresos,MU-06
-68,,Guía sin firma veterinaria registrada,Bodega,EV-02,RF-02,CU-01,Excepción,,,Backend-Guias,MU-05
-69,,Proveedor no registrado al ingresar guía,Propietaria,EV-01,RF-01,CU-02,Alternativo,,,Backend-Proveedores,MU-04
+68,,Guía sin firma veterinaria registrada,Bodega,EV-02,RF-02,CU-01,Excepción,HU-03,CA-03,Backend-Guias,MU-05
+69,,Proveedor no registrado al ingresar guía,Propietaria,EV-01,RF-01,CU-02,Alternativo,HU-02,CA-02,Backend-Proveedores,MU-04
 70,,Sello veterinario no válido o servicio no responde,Propietaria,EV-02,RF-02,CU-02,Excepción,HU-02,CA-02,Backend-Guias,MU-05
 71,,Pesaje fuera del rango esperado,Bodega,EV-04,RF-04,CU-03,Alternativo,HU-04,CA-04,Backend-Pesaje,MU-07
 72,,Precio vigente no configurado,Propietaria,EV-11,RF-19,CU-03,Excepción,HU-19,CA-19,Backend-Precios,MU-07
 73,,Margen de merma por agotarse,Carniceros,EV-05,RF-06,CU-04,Alternativo,HU-06,CA-06,Backend-Despiece,MU-08
-74,,Suma de cortes excede margen de merma,Carniceros,EV-05,RF-06,CU-04,Excepción,,,Backend-Despiece,MU-08
-75,,Corte sin categoría de venta vigente,Carniceros,EV-05,RF-06,CU-05,Alternativo,,,Backend-Despiece,MU-08
-76,,Doble categoría asignada al mismo corte,Carniceros,EV-05,RF-06,CU-05,Excepción,,,Backend-Despiece,MU-08
+74,,Suma de cortes excede margen de merma,Carniceros,EV-05,RF-06,CU-04,Excepción,HU-06,CA-06,Backend-Despiece,MU-08
+75,,Corte sin categoría de venta vigente,Carniceros,EV-05,RF-06,CU-05,Alternativo,HU-05,CA-05,Backend-Despiece,MU-08
+76,,Doble categoría asignada al mismo corte,Carniceros,EV-05,RF-06,CU-05,Excepción,HU-05,CA-05,Backend-Despiece,MU-08
 77,,Cámara/sección destino a capacidad máxima,Admin. gral.,EV-06,RF-07,CU-06,Alternativo,HU-07,CA-07,Backend-Inventario,MU-09
-78,,Producto sin parámetros de vida útil configurados,Admin. gral.,EV-06,RF-08,CU-06,Excepción,,,Backend-VidaUtil,MU-11
+78,,Producto sin parámetros de vida útil configurados,Admin. gral.,EV-06,RF-08,CU-06,Excepción,HU-07,CA-07,Backend-VidaUtil,MU-11
 79,,Caducidad vencida sin acción del administrador,Admin. gral.,EV-06,RF-08,CU-07,Alternativo,HU-08,CA-08,Backend-VidaUtil,MU-11
-80,,Producto sin tipo configurado para vida útil,Admin. gral.,EV-06,RF-08,CU-07,Excepción,,,Backend-VidaUtil,MU-11
+80,,Producto sin tipo configurado para vida útil,Admin. gral.,EV-06,RF-08,CU-07,Excepción,HU-08,CA-08,Backend-VidaUtil,MU-11
 81,,Trazabilidad compuesta (múltiples orígenes),Agrocalidad,EV-03,RF-11,CU-08,Alternativo,HU-11,CA-11,Backend-Trazabilidad,MU-16
-82,,Código de lote/arete inexistente,Agrocalidad,EV-03,RF-11,CU-08,Excepción,,,Backend-Trazabilidad,MU-16
+82,,Código de lote/arete inexistente,Agrocalidad,EV-03,RF-11,CU-08,Excepción,HU-11,CA-11,Backend-Trazabilidad,MU-16
 83,,Priorizar producto próximo a vencer en venta,Bodega / Cliente,EV-08,RF-10,CU-09,Alternativo,HU-10,CA-10,Backend-Ventas,MU-14
-84,,Inventario insuficiente para la venta,Bodega / Cliente,EV-08,RF-10,CU-09,Excepción,,,Backend-Ventas,MU-14
+84,,Inventario insuficiente para la venta,Bodega / Cliente,EV-08,RF-10,CU-09,Excepción,HU-10,CA-10,Backend-Ventas,MU-14
 85,,Baja vinculada a incidente de corte de energía,Propietaria,EV-12,RF-20,CU-10,Alternativo,HU-20,CA-20,Backend-Incidentes,
 86,,Baja sin aprobación no afecta inventario,Admin. gral.,EV-07,RF-09,CU-10,Excepción,HU-09,CA-09,Backend-Bajas,MU-13
-87,,Diferencia significativa en conteo de inventario,Admin. gral.,EV-09,RF-12,CU-11,Alternativo,,,Backend-Inventario,MU-17
-88,,Cámara sin inventario previo registrado,Admin. gral.,EV-09,RF-12,CU-11,Excepción,,,Backend-Inventario,MU-17
+87,,Diferencia significativa en conteo de inventario,Admin. gral.,EV-09,RF-12,CU-11,Alternativo,HU-12,CA-12,Backend-Inventario,MU-17
+88,,Cámara sin inventario previo registrado,Admin. gral.,EV-09,RF-12,CU-11,Excepción,HU-12,CA-12,Backend-Inventario,MU-17
 89,,Rango de fechas sin datos para reporte,Propietaria,EV-08,RF-13,CU-12,Alternativo,HU-13,CA-13,Backend-Reportes,MU-18
-90,,Falla en exportación de reporte a PDF,Propietaria,EV-08,RF-13,CU-12,Excepción,,,Backend-Reportes,MU-18
+90,,Falla en exportación de reporte a PDF,Propietaria,EV-08,RF-13,CU-12,Excepción,HU-13,CA-13,Backend-Reportes,MU-18
