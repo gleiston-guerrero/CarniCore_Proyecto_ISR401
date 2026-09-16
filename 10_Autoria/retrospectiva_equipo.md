@@ -115,8 +115,8 @@ que su contenido refleja el desarrollo real del proyecto.
 
 | Integrante | Firma / conformidad |
 |---|---|
-| Castro Bajaña Ariel Omar | |
-| Crespo Espinoza Kleber Obed | |
+| Castro Bajaña Ariel Omar | Castro Bajaña Ariel Omar |
+| Crespo Espinoza Kleber Obed | Crespo Espinoza Kleber Obed |
 | Gamarra Araujo Edhu Xavier | |
-| Pérez Ruiz Carlos Andrés | |
+| Pérez Ruiz Carlos Andrés | Pérez Ruiz Carlos Andrés |
 | Quintero Gende Erick Jahir | |
