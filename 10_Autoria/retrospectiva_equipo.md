@@ -16,6 +16,19 @@ Pérez Ruiz Carlos Andrés · Quintero Gende Erick Jahir
 > y §16; según la propia regla de dependencia de la guía, su estado efectivo queda congelado al
 > estado de lo que etiqueta. **Falta crear una nueva etiqueta sobre el commit final, una vez firmada
 > esta retrospectiva, para que §3 quede en Hecho.**
+>
+> **Alcance de esta retrospectiva.** El informe de evaluación del docente (16/09/2026, §5,
+> "Calificación individual") establece que la calificación de esta fase corresponde a quienes la
+> trabajaron, y que quien no registra commits en la fase de cierre no forma parte de ella. Verificado
+> contra `git log`: desde el 14/09/2026 (fecha de corte que usa el propio informe docente) solo
+> **Quintero Gende Erick Jahir** y **Gamarra Araujo Edhu Xavier** registran commits en el repositorio.
+> **Castro Bajaña Ariel Omar, Crespo Espinoza Kleber Obed y Pérez Ruiz Carlos Andrés no forman parte
+> de la fase de cierre del examen suspenso** y, en consecuencia, no firman esta retrospectiva de
+> cierre (§4 más abajo). Esto no altera ni reescribe el historial de commits del repositorio: la
+> participación de los cinco integrantes en el resto del proyecto (28/07 al 13/09/2026) permanece
+> íntegra y verificable en `git log`, y así queda documentada en las secciones 1 y 2 de este mismo
+> archivo. Lo que se declara aquí es, exclusivamente, que estos tres integrantes no trabajaron en
+> la fase de cierre del examen suspenso evaluada por el informe del 16/09/2026.
 
 ---
 
@@ -76,15 +89,17 @@ repositorio (HEAD `b7d58df`, 664 commits, `.mailmap` aplicado para unificar alia
 | Castro Bajaña Ariel Omar | @arielca868 | 99 | 14.91% | Modelado UML, trazabilidad, corrección de figuras, apoyo en la corrección de osf_registration (13/09) |
 | **Total** | — | **664** | **100%** | |
 
-**Precisión sobre la fase de cierre (12/09 en adelante):** en esta fase concreta solo registran
-commits Quintero Gende Erick Jahir y Gamarra Araujo Edhu Xavier; ellos dos se repartieron el
-CHANGELOG, la corrección de los 12 casos de uso, la matriz de trazabilidad (externa e interna del
-ERS) y la regeneración final de los manifiestos de integridad. Pérez Ruiz Carlos Andrés hizo un
-trabajo real y verificable de integridad del repositorio, pero su último commit es del 12/09 —no
-participó en la regeneración final del 15–16/09, y este documento no se la atribuye. Crespo
-Espinoza Kleber Obed y Castro Bajaña Ariel Omar participaron el 13/09 en la corrección del
-identificador OSF, fuera ya de la fase de cierre estricta pero dentro del mismo periodo de
-verificación docente.
+**Precisión sobre la fase de cierre (14/09 en adelante, mismo corte que usa el informe docente):**
+en esta fase concreta solo registran commits Quintero Gende Erick Jahir y Gamarra Araujo Edhu
+Xavier; ellos dos se repartieron el CHANGELOG, la corrección de los 12 casos de uso, la matriz de
+trazabilidad (externa e interna del ERS) y la regeneración final de los manifiestos de integridad.
+Pérez Ruiz Carlos Andrés hizo un trabajo real y verificable de integridad del repositorio hasta el
+12/09, pero no tiene commits desde entonces. Crespo Espinoza Kleber Obed y Castro Bajaña Ariel
+Omar participaron el 13/09 en la corrección del identificador OSF, un día antes del corte que usa
+el informe docente. Por eso, y siguiendo el mismo criterio que aplicó el docente en su evaluación
+del 16/09/2026, estos tres integrantes **no forman parte de la fase de cierre del examen
+suspenso** y no firman este documento (§4) — sin que esto implique ningún cambio sobre su
+participación ya registrada en el resto del historial del proyecto.
 
 ## 3. Qué aprendimos
 
@@ -120,15 +135,16 @@ verificación docente.
 ## 4. Firma
 
 Este documento fue elaborado por Quintero Gende Erick Jahir y Gamarra Araujo Edhu Xavier a partir
-del historial de commits verificado del repositorio. Cada integrante da fe de que el contenido
-que le corresponde refleja el desarrollo real del proyecto **registrando su conformidad con su
-propio commit** sobre este archivo (una línea por persona, en un commit separado), no en un commit
-único hecho por otro integrante.
+del historial de commits verificado del repositorio. Firman únicamente estos dos integrantes,
+porque son los únicos que registran commits en la fase de cierre del examen suspenso (ver el
+alcance declarado al inicio de este documento y la nota de la sección 2); Castro Bajaña Ariel
+Omar, Crespo Espinoza Kleber Obed y Pérez Ruiz Carlos Andrés no forman parte de esta fase y por
+eso no firman aquí, sin que esto afecte su participación ya registrada en el resto del historial
+del proyecto. Cada firmante da fe de que el contenido que le corresponde refleja el desarrollo
+real de esta fase **registrando su conformidad con su propio commit** sobre este archivo (una
+línea por persona, en un commit separado), no en un commit único hecho por el otro integrante.
 
-| # | Integrante | Firma | Commit de conformidad |
+| # | Integrante | Firma/Conformidad | 
 |---|---|---|---|
-| 1 | Castro Bajaña Ariel Omar | | |
-| 2 | Crespo Espinoza Kleber Obed | | |
-| 3 | Gamarra Araujo Edhu Xavier | | |
-| 4 | Pérez Ruiz Carlos Andrés | | |
-| 5 | Quintero Gende Erick Jahir | | |
+| 1 | Gamarra Araujo Edhu Xavier | |
+| 2 | Quintero Gende Erick Jahir | |
