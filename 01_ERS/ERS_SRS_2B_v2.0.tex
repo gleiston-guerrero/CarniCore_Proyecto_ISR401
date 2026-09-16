@@ -808,6 +808,11 @@ Se redactan historias de usuario para cada RF de prioridad \textit{Must}, verifi
 \cuitem{CU-11}{Realizar conteo de inventario}{Administrador general}{Existe inventario registrado por cámara (CU-06).}{(1) El administrador registra el conteo físico semanal por cámara. (2) El sistema compara el conteo contra el inventario registrado. (3) Calcula y muestra la diferencia en libras y en valor monetario.}{Las diferencias quedan documentadas.}
 
 \cuitem{CU-12}{Generar reportes gerenciales}{Propietaria}{Existen ventas, compras y bajas registradas en el período consultado.}{(1) La propietaria selecciona rango de fechas, tipo de producto y opcionalmente proveedor (RF-27). (2) El sistema calcula totales. (3) Exporta el reporte en PDF.}{Ninguna (operación de solo lectura); el reporte queda disponible para descarga.}
+\noindent\textbf{Flujo alternativo:} el rango de fechas seleccionado no tiene ventas, compras ni bajas registradas. (a) El sistema informa que no hay datos para el período. (b) Sugiere el rango más cercano con datos disponibles.\\
+\textbf{Poscondición (flujo alternativo):} el reporte no se genera; se informa la ausencia de datos.\\
+\noindent\textbf{Excepción:} la exportación a PDF falla por error del generador de reportes $\Rightarrow$ el sistema conserva los totales ya calculados y permite reintentar la exportación sin recalcular.\\
+\textbf{Poscondición (excepción):} los totales calculados no se pierden ante un fallo de exportación.
+\vspace{0.35cm}
 
 \subsection{Diagrama de clases refinado (v2.0)}
 
