@@ -6,21 +6,28 @@
 
 **Institución:** Universidad Técnica Estatal de Quevedo (UTEQ) — Ecuador
 
-**Total de commits analizados:** 514
-**Rango de fechas:** 2026-07-28 → 2026-09-08 (UTC-5 Ecuador)
+**Total de commits analizados:** 652
+**Rango de fechas:** 2026-07-28 → 2026-09-16 (UTC-5 Ecuador)
+
+> **Nota de actualización (cierre del examen suspenso):** este documento se generó originalmente
+> el 08/09/2026 sobre 514 commits. Se actualizó el 16/09/2026 incorporando los 123 commits
+> posteriores. Los totales por integrante de la tabla y de cada sección se recalcularon
+> directamente sobre `git log` (fuente autoritativa); pueden diferir en 2-6 commits de la suma
+> "histórico + nuevos" porque `.mailmap` consolidó algunos alias de Git después de generado el
+> conteo original del 08/09, lo que cambió la atribución de un puñado de commits antiguos.
 
 ---
 
 ## Resumen cuantitativo
 
-| Integrante | GitHub | Commits | % |
-|---|---|---:|---:|
-| Edhu Xavier Gamarra Araujo | @EdhuXav | 96 | 18.7% |
-| Carlos Andrés Pérez Ruiz | @cperezr3 | 115 | 22.4% |
-| Kleber Obed Crespo Espinoza | @kcrespoe | 116 | 22.6% |
-| Ariel Omar Castro Bajaña | @arielca868 | 94 | 18.3% |
-| Erick Jahir Quintero Gende | @equinteroj | 93 | 18.1% |
-| **Total** | — | **514** | **100%** |
+| Integrante | GitHub | Commits (08/09) | Commits nuevos | Commits totales (16/09) | % |
+|---|---|---:|---:|---:|---:|
+| Pérez Ruiz Carlos Andrés | @cperezr3 | 115 | 27 | **144** | 22.09% |
+| Quintero Gende Erick Jahir | @equinteroj | 93 | 43 | **142** | 21.78% |
+| Gamarra Araujo Edhu Xavier | @EdhuXav | 96 | 42 | **141** | 21.63% |
+| Crespo Espinoza Kleber Obed | @kcrespoe | 116 | 8 | **126** | 19.33% |
+| Castro Bajaña Ariel Omar | @arielca868 | 94 | 3 | **99** | 15.18% |
+| **Total** | — | **514** | **123 (netos; hay pequeños ajustes de .mailmap, ver nota)** | **652** | **100%** |
 
 ---
 
@@ -29,7 +36,7 @@
 - **ORCID:** [0009-0001-8312-9656](https://orcid.org/0009-0001-8312-9656)
 - **Correo institucional:** `egamarraa@uteq.edu.ec`
 - **Rol en el equipo:** Líder técnico · Gestión de evidencias y trazabilidad ética
-- **Commits acreditados:** **96**
+- **Commits acreditados (histórico al 08/09):** 96 · **Total actualizado al 16/09:** **141**
 
 ### Áreas de trabajo y artefactos producidos
 
@@ -277,12 +284,67 @@
 
 ---
 
+### Actualización — cierre del examen suspenso (09/09 al 16/09/2026)
+
+**Commits nuevos en este período:** 42 · **Total acreditado ahora: 141** (antes 96; 96+42=138 por suma simple, la diferencia de 3 es por consolidación de `.mailmap` — ver nota al inicio del documento)
+
+**Carpetas/archivos tocados:** 10_Autoria (8); 01_ERS (8); checksums.sha256 (5); 06_Experimento (5); 07_Datos (4); 08_Publicacion (4); README.md (2); 02_Evidencias (2); CHANGELOG.md (1); CITATION.cff (1); exif_inventario.csv (1)
+
+**Commits:**
+
+| Hash | Fecha | Mensaje |
+|---|---|---|
+| `83a9ef5` | 2026-09-12 00:49 | corregir imagenes evidecias de encuestado |
+| `61fcf27` | 2026-09-12 00:50 | actualiza exif_inventario.csv |
+| `df1cfb9` | 2026-09-12 00:55 | Actualiza exif_inventario.csv |
+| `fc6c7a8` | 2026-09-14 15:13 | Update CITATION.cff |
+| `d384760` | 2026-09-14 15:44 | Actualizar consentimiento de ENTR-07 |
+| `0ad9389` | 2026-09-14 15:55 | Actualizar osf_deviations.tex |
+| `0e49add` | 2026-09-14 15:56 | Actualizar osf_deviations.pdf |
+| `424ebb2` | 2026-09-14 17:05 | Deposita la consulta a la API publica de OSF para el registro yp7t3 |
+| `bef3634` | 2026-09-14 17:28 | Actualizar desviaciones.md |
+| `becad28` | 2026-09-14 17:36 | Regenera checksums finales |
+| `e1fe913` | 2026-09-14 17:46 | Corrige segunda fecha erronea en osf_deviations.tex (18/09 -> 14/09) |
+| `3904c86` | 2026-09-14 17:48 | Regenera checksums finales tras corregir segunda fecha |
+| `b430538` | 2026-09-14 17:55 | Merge branch 'main' of https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401 |
+| `2a13a02` | 2026-09-14 19:13 | Corrige verificacion de DEV-01 tras la eliminacion de rf25.json |
+| `e32526c` | 2026-09-14 19:19 | Corrige referencia a rf25.json en manuscrito_final.tex |
+| `22099ae` | 2026-09-14 19:21 | Quita rf25.json del listado de datos/ en README_dataset.md |
+| `791f52c` | 2026-09-14 19:26 | Corrige rutas, URL y nota de rf25.json en README_dataset.md |
+| `573ee75` | 2026-09-14 19:35 | Actualiza README de scripts tras eliminar rf25.json (parte 2) |
+| `57e7c44` | 2026-09-14 19:38 | Correccion de URL en README.md |
+| `413c5ae` | 2026-09-14 19:47 | Cambiar URL de repositorio |
+| `0a43dd3` | 2026-09-14 19:49 | Actualizar URL de repositorio en aporte_individual.md |
+| `9c26f60` | 2026-09-14 20:05 | corregir error en README.md |
+| `456d109` | 2026-09-14 20:55 | Actualizar .tex del ERS |
+| `61fb2ba` | 2026-09-14 23:02 | Regenera checksums.sha256 sobre el estado actual del repositorio |
+| `c4f25db` | 2026-09-14 23:03 | Merge branch 'main' of https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401 |
+| `1d20991` | 2026-09-14 23:05 | Regenera checksums.sha256 tras el merge |
+| `f88d191` | 2026-09-15 20:55 | Agregar flujo alternativo de CU-12 |
+| `9636209` | 2026-09-15 20:55 | Agregar flujo alternativo de CU-11 |
+| `3db4f2e` | 2026-09-15 20:57 | Agregar flujo alternativo de CU-10 |
+| `a67429f` | 2026-09-15 20:58 | Agregar flujo alternativo de CU-09 |
+| `63cbc2f` | 2026-09-15 20:58 | Agregar flujo alternativo y excepción de CU-08 |
+| `9fe7c9b` | 2026-09-15 20:59 | Agregar flujo alternativo de CU-07 |
+| `40a7c8e` | 2026-09-15 21:34 | Actualizar ERS SRS 2B v2.0 con flujos alternativos y excepcioes en los CU |
+| `27371b0` | 2026-09-15 22:13 | Actualizar checksum.sha256 |
+| `898f98b` | 2026-09-15 22:35 | Actualizar retrospectiva |
+| `5c18cf6` | 2026-09-15 22:36 | Agregar firma/conformidad en retrospectiva_equipo |
+| `ce435b9` | 2026-09-15 22:41 | Completar CHANGELOG |
+| `d6970ea` | 2026-09-15 22:42 | Actualizar documentación de README.md |
+| `7a31dc4` | 2026-09-15 23:31 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_1.jpeg |
+| `d70dd82` | 2026-09-15 23:31 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_2.jpeg |
+| `2839f0a` | 2026-09-15 23:37 | Agregar fotos del equipo entorno_7 |
+| `5acb33f` | 2026-09-15 23:38 | Agregar fotos del equipo entorno_8 |
+
+---
+
 ## Carlos Andrés Pérez Ruiz (@cperezr3)
 
 - **ORCID:** [0009-0003-6741-9391](https://orcid.org/0009-0003-6741-9391)
 - **Correo institucional:** `cperezr3@uteq.edu.ec`
 - **Rol en el equipo:** Ingeniero de requisitos · Pipeline experimental y FAIR
-- **Commits acreditados:** **115**
+- **Commits acreditados (histórico al 08/09):** 115 · **Total actualizado al 16/09:** **144**
 
 ### Áreas de trabajo y artefactos producidos
 
@@ -592,12 +654,52 @@
 
 ---
 
+### Actualización — cierre del examen suspenso (09/09 al 16/09/2026)
+
+**Commits nuevos en este período:** 27 · **Total acreditado ahora: 144** (antes 115; 115+27=142 por suma simple, la diferencia de 2 es por consolidación de `.mailmap` — ver nota al inicio del documento)
+
+**Carpetas/archivos tocados:** checksums.sha256 (12); 07_Datos (7); 08_Publicacion (6); 10_Autoria (5); README.md (3); exif_inventario.csv (2); 05_MVP (1); 02_Evidencias (1)
+
+**Commits:**
+
+| Hash | Fecha | Mensaje |
+|---|---|---|
+| `c05c011` | 2026-09-08 20:30 | Regenera resultados del pipeline antes del cierre de entrega |
+| `55fb3b8` | 2026-09-08 20:34 | Regenera resultados del pipeline antes del cierre de entrega |
+| `3055cfb` | 2026-09-08 20:38 | Regenera resultados del pipeline antes del cierre de entrega |
+| `6d196c1` | 2026-09-08 20:39 | Regenera checksums.sha256 y checksums_datos.sha256 (solo archivos rastreados, tras redaccion final de consentimientos) |
+| `8634d0a` | 2026-09-08 20:43 | Regenera resultados del pipeline antes del cierre de entrega |
+| `5f627be` | 2026-09-08 20:44 | Regenera checksums.sha256 y checksums_datos.sha256 (solo archivos rastreados, tras redaccion final de consentimientos) |
+| `b7aff07` | 2026-09-09 14:20 | Fuerza LF (no CRLF) en las salidas del pipeline: csv.DictWriter lineterminator y newline='' en open()/write_text() |
+| `fc6eb47` | 2026-09-09 14:22 | Regenera resultados del pipeline antes del cierre de entrega |
+| `1fd8d36` | 2026-09-09 14:22 | Renormaliza EOL (LF) de archivos de texto generados por el pipeline, segun .gitattributes |
+| `7c299a5` | 2026-09-09 14:26 | Regenera checksums.sha256 y checksums_datos.sha256 (solo archivos rastreados, tras redaccion final de consentimientos) |
+| `73f280a` | 2026-09-09 14:30 | Regenera resultados del pipeline antes del cierre de entrega |
+| `f3643f4` | 2026-09-09 14:31 | Regenera checksums.sha256 y checksums_datos.sha256 (solo archivos rastreados, tras redaccion final de consentimientos) |
+| `0d50136` | 2026-09-11 23:48 | Recorta grabaciones de sesion a <=15 min segun guia |
+| `5925b91` | 2026-09-11 23:48 | Merge branch 'main' of https://github.com/EdhuXav/CarniCore_Proyecto_ISR401 |
+| `0364c97` | 2026-09-12 01:58 | Actualizar declaracion_uso_ia.md |
+| `c4d50bb` | 2026-09-12 02:03 | Regenera manifiestos de integridad sobre el estado final del repositorio |
+| `a06d4fd` | 2026-09-12 02:17 | Actualizar README.md |
+| `2e51dff` | 2026-09-12 02:54 | Regenera manifiestos de integridad tras correccion final del README |
+| `8ac05b3` | 2026-09-12 03:04 | Regenera manifiestos de integridad desde un clon limpio |
+| `19c5d2f` | 2026-09-12 03:13 | Corrige BOM en manifiestos de checksums |
+| `9f59bc5` | 2026-09-12 03:16 | Update README.md |
+| `81409b4` | 2026-09-12 03:17 | Update declaracion_uso_ia.md |
+| `c5c367b` | 2026-09-12 03:20 | Regenera checksums finales y normaliza EOL de exif_inventario.csv |
+| `cc25fea` | 2026-09-12 03:25 | Regenera checksums finales desde clon limpio, sin BOM ni residuos de EOL |
+| `b626b5c` | 2026-09-12 03:28 | Corrige EOL de checksums (LF explicito, sin depender de Environment.NewLine) |
+| `7a4f321` | 2026-09-12 03:33 | Referencia el tag v2.3.2 sin hash embebido, para evitar autorreferencia |
+| `e2b1166` | 2026-09-12 03:34 | Regenera checksums finales para v2.3.2 |
+
+---
+
 ## Kleber Obed Crespo Espinoza (@kcrespoe)
 
 - **ORCID:** [0009-0000-9145-1357](https://orcid.org/0009-0000-9145-1357)
 - **Correo institucional:** `kcrespoe@uteq.edu.ec`
 - **Rol en el equipo:** Modelado UML · Análisis de resultados y manuscrito
-- **Commits acreditados:** **116**
+- **Commits acreditados (histórico al 08/09):** 116 · **Total actualizado al 16/09:** **126**
 
 ### Áreas de trabajo y artefactos producidos
 
@@ -894,12 +996,33 @@
 
 ---
 
+### Actualización — cierre del examen suspenso (09/09 al 16/09/2026)
+
+**Commits nuevos en este período:** 8 · **Total acreditado ahora: 126** (antes 116; 116+8=124 por suma simple, la diferencia de 2 es por consolidación de `.mailmap` — ver nota al inicio del documento)
+
+**Carpetas/archivos tocados:** 06_Experimento (5); checksums.sha256 (2); README.md (1)
+
+**Commits:**
+
+| Hash | Fecha | Mensaje |
+|---|---|---|
+| `74ce064` | 2026-09-13 20:42 | update  osf_detalle_registro.png |
+| `2626e85` | 2026-09-13 20:44 | Corrige identificador OSF en osf_registration.tex |
+| `83f27f3` | 2026-09-13 20:45 | update osf_registration.pdf |
+| `4bf4efc` | 2026-09-13 20:50 | update  osf_registration.tex |
+| `5804d53` | 2026-09-13 20:52 | update  osf_registration.pdf |
+| `d022dbc` | 2026-09-13 21:02 | Update README.md |
+| `6be0913` | 2026-09-13 21:09 | Regenera checksums.sha256 |
+| `d3dbdde` | 2026-09-13 21:13 | Corrige hash de README.md en checksums.sha256 |
+
+---
+
 ## Ariel Omar Castro Bajaña (@arielca868)
 
 - **ORCID:** [0009-0005-1575-8935](https://orcid.org/0009-0005-1575-8935)
 - **Correo institucional:** `acastrob@uteq.edu.ec`
 - **Rol en el equipo:** Ética, consentimientos y protocolo OSF
-- **Commits acreditados:** **94**
+- **Commits acreditados (histórico al 08/09):** 94 · **Total actualizado al 16/09:** **99**
 
 ### Áreas de trabajo y artefactos producidos
 
@@ -1137,12 +1260,28 @@
 
 ---
 
+### Actualización — cierre del examen suspenso (09/09 al 16/09/2026)
+
+**Commits nuevos en este período:** 3 · **Total acreditado ahora: 99** (antes 94; 94+3=97 por suma simple, la diferencia de 2 es por consolidación de `.mailmap` — ver nota al inicio del documento)
+
+**Carpetas/archivos tocados:** 06_Experimento (2); 04_Trazabilidad (1)
+
+**Commits:**
+
+| Hash | Fecha | Mensaje |
+|---|---|---|
+| `ade0715` | 2026-09-11 21:54 | Actualizar matriz de trazabilidad |
+| `27f687a` | 2026-09-13 21:03 | actualizar osf_registration |
+| `5ca6b88` | 2026-09-13 21:04 | actualizar osf_registration en pdf |
+
+---
+
 ## Erick Jahir Quintero Gende (@equinteroj)
 
 - **ORCID:** [0009-0000-6032-4179](https://orcid.org/0009-0000-6032-4179)
 - **Correo institucional:** `equinterog@uteq.edu.ec`
 - **Rol en el equipo:** Análisis cuantitativo · Manometría y figuras del manuscrito
-- **Commits acreditados:** **93**
+- **Commits acreditados (histórico al 08/09):** 93 · **Total actualizado al 16/09:** **142**
 
 ### Áreas de trabajo y artefactos producidos
 
@@ -1379,6 +1518,62 @@
 
 ---
 
+### Actualización — cierre del examen suspenso (09/09 al 16/09/2026)
+
+**Commits nuevos en este período:** 43 · **Total acreditado ahora: 142** (antes 93; 93+43=136 por suma simple, la diferencia de 6 es por consolidación de `.mailmap` — ver nota al inicio del documento)
+
+**Carpetas/archivos tocados:** 10_Autoria (15); 01_ERS (8); 07_Datos (7); 06_Experimento (6); 04_Trazabilidad (2); 08_Publicacion (2); README.md (2); 02_Evidencias (1)
+
+**Commits:**
+
+| Hash | Fecha | Mensaje |
+|---|---|---|
+| `274ef4d` | 2026-09-11 22:07 | Corrige ruta obsoleta en Makefile |
+| `3540f72` | 2026-09-11 22:44 | fija reproducibilidad de figuras PDF |
+| `69db84f` | 2026-09-14 15:09 | Update de link de repositorio |
+| `10f6225` | 2026-09-14 15:40 | actualizar anonimizacion de consentimiento |
+| `0cb7480` | 2026-09-14 15:55 | actualizar registros dentro de bitácora sesiones |
+| `c9e90f0` | 2026-09-14 15:57 | actualizar datos del rf27 |
+| `6bc9295` | 2026-09-14 15:58 | Delete rf25.json |
+| `77a497d` | 2026-09-14 16:40 | Create file registro_previo |
+| `d53071f` | 2026-09-14 16:45 | agregar comprobante externo con sello |
+| `8dd3a1d` | 2026-09-14 17:41 | actualización de datos en osf_deviations |
+| `3441a2f` | 2026-09-14 17:43 | actualización de pdf osf_deviations |
+| `41b4e1a` | 2026-09-14 17:47 | agregar fecha actualizada osf_deviations |
+| `084bf13` | 2026-09-14 19:23 | actualización DEV-01 tras la eliminacion de rf25 |
+| `ca7f6d5` | 2026-09-14 19:30 | actualización referencia rf25 en manuscrito final |
+| `a970e85` | 2026-09-14 19:34 | Actualiza README de scripts tras eliminar rf25.json (parte 1) |
+| `c1a3333` | 2026-09-14 19:37 | Update README URL |
+| `d70265d` | 2026-09-14 19:48 | Update registro_deposito.md |
+| `c723bd4` | 2026-09-14 19:54 | update usage declaration |
+| `8c3f911` | 2026-09-14 20:01 | actualización de repositorio manuscrito final |
+| `13dd44c` | 2026-09-14 21:07 | actualización del ERS_SRS_2B_v2.0 final |
+| `7a5b49c` | 2026-09-14 22:08 | actualización del documento ERS final |
+| `fb9a863` | 2026-09-15 21:15 | agregar flujo alternativo y excepción de CU-06 |
+| `84874d0` | 2026-09-15 21:16 | agregar flujo alternativo y excepción de CU-05 |
+| `b45221f` | 2026-09-15 21:17 | agregar flujo alternativo y excepción de CU-04 |
+| `5024d3d` | 2026-09-15 21:18 | agregar flujo alternativo y excepción de CU-03 |
+| `437740d` | 2026-09-15 21:19 | agregar flujo alternativo y excepción de CU-02 |
+| `9d35a98` | 2026-09-15 21:20 | agregar flujo alternativo y excepción de CU-01 |
+| `065633d` | 2026-09-15 21:43 | agregar nuevo encabezado para las columnas nuevas |
+| `7fe89c9` | 2026-09-15 21:46 | agregar nuevas columnas con los flujos alternativo |
+| `db51466` | 2026-09-15 22:14 | actualización con el corpus verificado sincronizado |
+| `3cf3c43` | 2026-09-15 22:31 | agregar documento de la retrospectiva del equipo |
+| `323f3a9` | 2026-09-15 22:43 | agregar firma de conformidad |
+| `2f96496` | 2026-09-15 23:31 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_3.jpeg |
+| `0a275e4` | 2026-09-15 23:32 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_4.jpeg |
+| `fe90f32` | 2026-09-15 23:32 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_5.jpeg |
+| `19ca22c` | 2026-09-15 23:32 | Delete 10_Autoria/fotos_equipo/2026-08-02_entorno_6.jpeg |
+| `651efbf` | 2026-09-15 23:34 | Agregar fotos del equipo entorno_1 |
+| `cb3461b` | 2026-09-15 23:35 | Agregar fotos del equipo entorno_2 |
+| `524404c` | 2026-09-15 23:36 | Agregar fotos del equipo entorno_3 |
+| `d050f9c` | 2026-09-15 23:36 | Agregar fotos del equipo entorno_4 |
+| `da35d36` | 2026-09-15 23:36 | Agregar fotos del equipo entorno_5 |
+| `dc91e90` | 2026-09-15 23:37 | Agregar fotos del equipo entorno_6 |
+| `6afa2a0` | 2026-09-16 00:25 | actualizar exif inventario con nuevas fotos del equipo |
+
+---
+
 ## Anexo — Trazabilidad cruzada
 
 Mapa rápido: área → integrantes responsables (por commits de creación/edición principales).
@@ -1402,12 +1597,6 @@ Mapa rápido: área → integrantes responsables (por commits de creación/edici
 | Ética / OSF | Edhu Xavier Gamarra Araujo, Carlos Andrés Pérez Ruiz, Kleber Obed Crespo Espinoza, Ariel Omar Castro Bajaña, Erick Jahir Quintero Gende |
 | Integración (merge) | Carlos Andrés Pérez Ruiz |
 | Cumplimiento FAIR | Edhu Xavier Gamarra Araujo, Ariel Omar Castro Bajaña |
-
----
-
-## Firmas de los cinco integrantes
-
-Declaramos que la información de aportes individuales descrita en este documento refleja fielmente las contribuciones registradas en el repositorio `EdhuXav/CarniCore_Proyecto_ISR401` mediante los identificadores de commit listados. Cada autor firma en señal de conformidad.
 
 ---
 
@@ -1472,4 +1661,8 @@ Fecha: _08_ / _09_ / 2026
 ---
 
 
-> Documento generado a partir del historial de commits de `EdhuXav/CarniCore_Proyecto_ISR401` (rama `main`, 514 commits, 2026-07-28 a 2026-09-08, UTC-5 Ecuador).
+> Documento generado originalmente a partir del historial de commits de
+> `EdhuXav/CarniCore_Proyecto_ISR401` (rama `main`, 514 commits, 2026-07-28 a 2026-09-08,
+> UTC-5 Ecuador) y actualizado el 16/09/2026 sobre `gleiston-guerrero/CarniCore_Proyecto_ISR401`
+> (652 commits, 2026-07-28 a 2026-09-16, UTC-5 Ecuador), tras el cambio de propietario del
+> repositorio del 14/09/2026.
