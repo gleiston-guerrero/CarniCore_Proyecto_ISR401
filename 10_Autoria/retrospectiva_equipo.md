@@ -2,15 +2,16 @@
 
 **Asignatura:** Ingeniería de Requisitos (ISR-401 / 20303) — 2026–2027 PPA
 **Repositorio:** https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401
-**Fecha:** 2026-09-15 *(actualizar a la fecha real del commit de cierre antes de firmar)*
+**Fecha:** 2026-09-16 *(actualizar a la fecha real del commit de cierre antes de firmar)*
 **Integrantes:** Castro Bajaña Ariel Omar · Crespo Espinoza Kleber Obed · Gamarra Araujo Edhu Xavier ·
 Pérez Ruiz Carlos Andrés · Quintero Gende Erick Jahir
-**Estado del repositorio a la fecha de este documento:** HEAD `db51466`, 631 commits totales.
+**Estado del repositorio a la fecha de este documento:** HEAD `6afa2a0`, 652 commits totales.
 
 > Este documento se redacta después de aplicar las correcciones de cierre del examen suspenso
-> (§4 flujos alternativos y matriz de trazabilidad, §12 paquete de datos) y antes de completar
-> §2 (CHANGELOG), regenerar los manifiestos finales y crear la etiqueta anotada de cierre (§3),
-> conforme al orden de ejecución de la guía.
+> (§4 flujos alternativos y matriz de trazabilidad, §12 paquete de datos, §16 esta misma
+> retrospectiva, §2 CHANGELOG) y antes de la regeneración final de los manifiestos de integridad
+> y la creación de la etiqueta anotada de cierre (§3), conforme al orden de ejecución de la guía.
+> **§3 es, a la fecha de esta versión, el único punto de la rúbrica que sigue pendiente.**
 
 ---
 
@@ -43,40 +44,52 @@ organizó en cuatro bloques:
   mantenimiento manual del corpus por `extraer_rf_desde_tex.py`, un extractor determinista que
   lo regenera directamente desde el `.tex` fuente.
 
-- **Cierre del examen suspenso (15/09/2026, 17 commits, `9d35a98`…`db51466`):** se añadió a
-  cada uno de los 12 casos de uso del ERS un flujo alternativo y una excepción explícitos
-  (commits `9d35a98` a `f88d191`, uno por CU, más la recompilación `40a7c8e`); se amplió la
-  matriz de trazabilidad de 66 a 90 filas con una columna `Flujo` nueva que traza cada flujo
-  alternativo y excepción a su requisito y componente (`065633d`, `7fe89c9`); y se regeneró el
-  manifiesto de integridad (`27371b0`) tras confirmar, reejecutando el pipeline completo sobre
-  el corpus vigente, que ninguna cifra publicada cambia (`db51466`).
+- **Cierre del examen suspenso (12/09 – 16/09/2026):** corrección del identificador y la fecha
+  de `osf_registration`/`osf_deviations` (Crespo Espinoza Kleber Obed, Gamarra Araujo Edhu
+  Xavier); corrección de la URL canónica del repositorio en `CITATION.cff`, `README.md` y
+  `registro_deposito.md` tras el cambio de propietario (Gamarra Araujo Edhu Xavier, Quintero
+  Gende Erick Jahir); eliminación de `rf25.json` y depósito del comprobante externo del
+  registro previo de OSF (Quintero Gende Erick Jahir); a cada uno de los 12 casos de uso del
+  ERS se añadió un flujo alternativo y una excepción explícitos (commits `9d35a98` a
+  `f88d191`, uno por CU, recompilación en `40a7c8e`); se amplió la matriz de trazabilidad de
+  66 a 90 filas con una columna `Flujo` nueva (`065633d`, `7fe89c9`); se redactó y firmaron
+  los cinco integrantes de esta misma retrospectiva (`3cf3c43`, `323f3a9`); se completó el
+  `CHANGELOG.md` con las versiones 2.2.1 a 2.3.2 y la entrada de cierre 2.4.0, y se documentó
+  en el `README.md` la desviación de numeración de `09_Etica`/`11_Defensa` (`ce435b9`,
+  `d6970ea`); y se actualizaron las fotografías del entorno y su inventario EXIF
+  (`2839f0a`…`6afa2a0`).
 
-Quedan pendientes, según el orden de ejecución de la guía: completar el CHANGELOG con la entrada
-del examen suspenso (§2), la regeneración final de ambos manifiestos ya con este documento y el
-CHANGELOG incluidos, y la etiqueta anotada de cierre sobre el último commit (§3).
+Queda pendiente un solo punto, según el orden de ejecución de la guía: **regenerar por última
+vez `checksums.sha256` y `checksums_datos.sha256`** (ahora mismo el manifiesto raíz falla,
+porque el CHANGELOG, el README, el ERS y las fotos cambiaron después de la última regeneración)
+**y crear la etiqueta anotada de cierre (§3)** sobre el commit que resulte de esa regeneración.
+Con eso, los cinco puntos de la rúbrica del examen suspenso quedan en Hecho.
 
 ## 2. Quién hizo qué
 
 Distribución real de commits, contada directamente sobre `git log` sobre el estado actual del
-repositorio (HEAD `db51466`, 631 commits, `.mailmap` aplicado para unificar alias de usuario) —
-no sobre el conteo de `aporte_individual.md`, que quedó fijado el 08/09 y no incluye ni las
-sesiones SES-010 a SES-016 ni el cierre del 15/09:
+repositorio (HEAD `6afa2a0`, 652 commits, `.mailmap` aplicado para unificar alias de usuario) —
+no sobre el conteo de `aporte_individual.md`, cuyo total histórico (514, al 08/09) se actualizó
+en paralelo a este documento; ver la nota de esa actualización para el detalle de por qué los
+totales no son una simple suma "histórico + nuevos":
 
 | Integrante | GitHub | Commits | % | Rol principal observado en la bitácora |
 |---|---|---:|---:|---|
-| Pérez Ruiz Carlos Andrés | @cperezr3 | 144 | 22.8% | Integridad del repositorio: manifiestos de checksums, registro de depósito, cierre del pipeline |
-| Gamarra Araujo Edhu Xavier | @EdhuXav | 133 | 21.1% | Liderazgo técnico, estructura del repositorio, evidencias, ética y cierre de flujos CU-07 a CU-12 |
-| Quintero Gende Erick Jahir | @equinteroj | 129 | 20.4% | Entrevistas de campo, notas de campo, documentación OSF, matriz de trazabilidad y flujos CU-01 a CU-06 |
-| Crespo Espinoza Kleber Obed | @kcrespoe | 126 | 20.0% | Componente empírico: panel de expertos, kappa, matriz de confusión |
-| Castro Bajaña Ariel Omar | @arielca868 | 99 | 15.7% | Modelado UML, trazabilidad, corrección de figuras |
-| **Total** | — | **631** | **100%** | |
+| Pérez Ruiz Carlos Andrés | @cperezr3 | 144 | 22.09% | Integridad del repositorio: manifiestos de checksums, registro de depósito, cierre del pipeline |
+| Quintero Gende Erick Jahir | @equinteroj | 142 | 21.78% | Entrevistas de campo, notas de campo, documentación OSF, matriz de trazabilidad, flujos CU-01 a CU-06, DEV-03 y retrospectiva |
+| Gamarra Araujo Edhu Xavier | @EdhuXav | 141 | 21.63% | Liderazgo técnico, estructura del repositorio, evidencias, ética, cambio de URL del repo y flujos CU-07 a CU-12 |
+| Crespo Espinoza Kleber Obed | @kcrespoe | 126 | 19.33% | Componente empírico: panel de expertos, kappa, matriz de confusión, corrección de osf_registration |
+| Castro Bajaña Ariel Omar | @arielca868 | 99 | 15.18% | Modelado UML, trazabilidad, corrección de figuras |
+| **Total** | — | **652** | **100%** | |
 
-La distribución sigue siendo equilibrada (entre 15.7% y 22.8%); ningún integrante concentra el
-trabajo crítico de un único entregable. Esto se sostuvo incluso en el cierre del examen suspenso
-del 15/09: los flujos alternativos de los CU se repartieron entre Erick Jahir Quintero Gende
-(CU-01 a CU-06) y Edhu Xavier Gamarra Araujo (CU-07 a CU-12), y la regeneración final de
-checksums quedó, como el resto del trabajo de integridad del proyecto, a cargo de Carlos Andrés
-Pérez Ruiz.
+La distribución sigue siendo equilibrada (entre 15.18% y 22.09%); ningún integrante concentra el
+trabajo crítico de un único entregable. Esto se sostuvo hasta el final del cierre del examen
+suspenso: los flujos alternativos de los CU se repartieron entre Erick Jahir Quintero Gende
+(CU-01 a CU-06) y Edhu Xavier Gamarra Araujo (CU-07 a CU-12); la corrección DEV-03 y el comprobante
+del registro previo quedaron a cargo de Erick Jahir Quintero Gende; la corrección del identificador
+OSF, a cargo de Kleber Obed Crespo Espinoza; y la regeneración final de checksums y el CHANGELOG,
+como el resto del trabajo de integridad del proyecto, a cargo de Carlos Andrés Pérez Ruiz y
+Edhu Xavier Gamarra Araujo.
 
 *(Sustituir o ampliar esta sección con el detalle de tareas puntuales — por ejemplo, quién
 redactó qué caso de uso o qué script — según lo recuerde cada integrante; la bitácora completa
