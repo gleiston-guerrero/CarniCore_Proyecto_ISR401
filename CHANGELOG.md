@@ -19,14 +19,95 @@ Correspondencia entre versiones y entregas del PFC:
 |2.3.1|Estabilización de manifiestos de integridad (BOM/EOL)|19|
 |2.3.2|Manifiestos finales sin autorreferencia|19|
 |2.4.0|Correcciones del examen suspenso (guía del 18/09/2026)|20|
+|2.4.1|Correcciones de contenido tras informe docente del 16/09/2026|20|
+
+---
+
+## [2.4.1] — 2026-09-16 — Correcciones de contenido tras informe de evaluación
+
+> Responde al informe de evaluación del examen suspenso (revisión docente del 16/09/2026,
+> 18:18 Ecuador), que encontró que el ERS y la matriz cumplían el conteo mecánico de la guía
+> pero no el contenido exigido, y que esta misma entrada del CHANGELOG (entonces 2.4.0)
+> afirmaba cosas que el repositorio desmentía. Etiqueta anotada `v2.4.0` **ya creada** sobre
+> el commit `785b86d`; ver "Pendiente real" al final de esta entrada para la etiqueta de
+> cierre sobre el commit final, posterior a esta corrección.
+
+### Corregido
+
+* **Los 12 casos de uso del ERS, contenido real (no solo conteo).** El informe encontró que
+  CU-07, CU-09 y CU-10 no tenían una excepción propia con poscondición (estaba embebida sin
+  estructura dentro del flujo principal), y que cinco flujos se disparaban bajo una condición
+  que la propia precondición del caso de uso ya excluía (CU-01, CU-02, CU-08, CU-11, CU-12).
+  Se dio a CU-07, CU-09 y CU-10 su excepción en bloque propio, con disparo y poscondición; se
+  relajaron las cinco precondiciones contradictorias; y se incorporó la georreferencia de
+  RF-17 como segundo flujo alternativo propio de CU-01, que antes solo la mencionaba dentro
+  del flujo principal sin especificarla. `01_ERS/ERS_SRS_2B_v2.0.tex` recompilado (142
+  páginas). (Gamarra Araujo Edhu Xavier; Quintero Gende Erick Jahir)
+* **Matriz de trazabilidad, huecos de HU/CA.** De las 24 filas nuevas de flujos y excepciones,
+  12 no tenían historia de usuario ni criterio de aceptación. Se completaron reutilizando la
+  HU/CA del caso de uso base donde existía, y se crearon **HU-05** y **HU-12** —con su
+  Dado/Cuando/Entonces— para CU-05 y CU-11, que no tenían historia de usuario propia.
+  (Quintero Gende Erick Jahir)
+* **Tabla de trazabilidad interna del ERS desincronizada de la matriz externa.** La Sección 5
+  del ERS seguía en 60 filas y sin columna `Flujo`, aunque `04_Trazabilidad/Matriz_Trazabilidad.csv`
+  ya tenía 90. Se sincronizó a 84 filas (60 base/IA + 24 de flujos y excepciones), con columna
+  `Flujo` añadida, y se agregó la entrada de historial de versiones v2.1 del propio ERS
+  documentando el cambio. (Gamarra Araujo Edhu Xavier)
+* **La entrada `[2.4.0]` de este mismo archivo afirmaba cosas que el repositorio desmentía,
+  señalado en la revisión docente del 16/09/2026:** decía "Pendiente de etiquetar" cuando la
+  etiqueta `v2.4.0` ya existía; atribuía a Pérez Ruiz Carlos Andrés la regeneración de
+  `checksums_datos.sha256` y de `checksums.sha256` sin BOM, cuando su último commit es del
+  12/09 y esos cambios los hicieron Quintero Gende Erick Jahir (`db51466`, `4142f7b`) y
+  Gamarra Araujo Edhu Xavier (`785b86d`, `1e3c1f8`, `27371b0`); y daba como ejemplo de flujo
+  del ERS "proveedor sin georreferencia", que ningún flujo trata (el flujo real es el caso
+  contrario: georreferencia sí registrada). Las tres afirmaciones se corrigieron directamente
+  en la entrada `[2.4.0]` de arriba, en vez de dejarlas y solo señalarlas aquí.
+* **`README.md`, ítem P6 y oración truncada.** Al declarar `v2.4.0` como línea base vigente se
+  perdió por error la línea de cierre de la oración de verificación (`10_Autoria/verificacion_previa.pdf`)
+  y el criterio de piso **P6** completo, quedando **P5** duplicado en su lugar. Restaurados
+  ambos. (Gamarra Araujo Edhu Xavier)
+
+### Añadido
+
+* **Retrospectiva del equipo, reescrita.** `10_Autoria/retrospectiva_equipo.md` tenía
+  instrucciones de plantilla sin resolver ("actualizar a la fecha real...", "sustituir o
+  ampliar esta sección..."), atribuía a Pérez Ruiz Carlos Andrés la regeneración final de
+  manifiestos y el CHANGELOG sin tener commits en esta fase, y sus cinco firmas las había
+  escrito una sola persona en un único commit. Reescrita sin texto de plantilla, con autoría
+  verificada contra `git log`, y con una firma por commit: Gamarra Araujo Edhu Xavier y
+  Quintero Gende Erick Jahir firmaron cada uno el suyo. El documento declara además, con base
+  en el mismo corte que usa el informe docente (14/09/2026), que Castro Bajaña Ariel Omar,
+  Crespo Espinoza Kleber Obed y Pérez Ruiz Carlos Andrés no tienen commits en esta fase de
+  cierre y por eso no firman, sin que eso altere su participación ya registrada en el resto
+  del historial. (Gamarra Araujo Edhu Xavier; Quintero Gende Erick Jahir)
+* **`10_Autoria/aporte_individual.md` actualizado** con los commits del cierre por integrante.
+  (Quintero Gende Erick Jahir)
+* **`10_Autoria/bitacora_sesiones.csv` completada** con las sesiones del 15 y 16 de septiembre,
+  que faltaban. (Quintero Gende Erick Jahir)
+* **Fotografías del entorno reemplazadas** (`10_Autoria/fotos_equipo/`): las seis del 02/08 se
+  retiraron y se agregaron ocho nuevas del 15/09, con `exif_inventario.csv` regenerado a partir
+  de los metadatos reales de las fotos vigentes. (Quintero Gende Erick Jahir; Gamarra Araujo
+  Edhu Xavier)
+* **`declaracion_uso_ia.md`** corregido tras el reemplazo de `exif_inventario.csv` para que su
+  referencia siga apuntando al archivo vigente. (Gamarra Araujo Edhu Xavier)
+
+### Pendiente real (requiere acción adicional del equipo antes del corte)
+
+* **Nueva etiqueta anotada de cierre** sobre el commit final, posterior a esta entrada del
+  CHANGELOG. La etiqueta `v2.4.0` existe pero apunta a `785b86d`, anterior a las correcciones
+  de contenido de §4 y §16 documentadas arriba; por la regla de dependencia de la guía, su
+  estado efectivo queda congelado al estado de lo que etiqueta. Se propone `v2.4.1` para la
+  nueva etiqueta, en consistencia con esta entrada.
+* Regenerar `checksums.sha256` y `checksums_datos.sha256` una vez más después de comitear esta
+  entrada, y antes de crear `v2.4.1`.
 
 ---
 
 ## [2.4.0] — 2026-09-15 — Correcciones del examen suspenso
 
 > Responde a la guía de cierre y rúbrica del examen suspenso (verificación docente del
-> 15/09/2026, corte 18/09/2026 23:55). **Pendiente de etiquetar** — ver "Pendiente real" al
-> final de esta entrada.
+> 15/09/2026, corte 18/09/2026 23:55). Etiqueta anotada `v2.4.0` creada sobre el commit
+> `785b86d` (ver entrada `[2.4.1]` para las correcciones de contenido posteriores).
 
 ### Corregido
 
@@ -41,12 +122,12 @@ Correspondencia entre versiones y entregas del PFC:
   (Quintero Gende Erick Jahir; Gamarra Araujo Edhu Xavier)
 * **`checksums_datos.sha256` desincronizado.** `registro_deposito.md` y `scripts/README.md`
   se habían editado después de firmar el manifiesto de datos. Regenerado tras confirmar que
-  el contenido de ambos archivos ya era correcto. (Pérez Ruiz Carlos Andrés)
+  el contenido de ambos archivos ya era correcto. (Quintero Gende Erick Jahir)
 * **`checksums.sha256` con BOM en la primera línea.** El BOM al inicio del archivo hacía que
   `sha256sum -c` reportara esa línea como mal formada y la omitiera silenciosamente de la
   verificación, sin comprobar ese archivo. Regenerado sin BOM y con terminador de línea LF
   puro en las 625 entradas; `sha256sum -c checksums.sha256 --quiet` ahora no imprime nada.
-  (Pérez Ruiz Carlos Andrés)
+  (Gamarra Araujo Edhu Xavier)
 * **URL canónica del repositorio.** Corregida en `CITATION.cff`, `README.md`,
   `registro_deposito.md` y `10_Autoria/aporte_individual.md` tras el cambio de propietario
   del repositorio. (Gamarra Araujo Edhu Xavier; Quintero Gende Erick Jahir)
@@ -66,7 +147,7 @@ Correspondencia entre versiones y entregas del PFC:
 
 * **Flujo alternativo y excepción en los 12 casos de uso del ERS** (CU-01 a CU-12), exigidos
   por ISO/IEC/IEEE 29148 para especificar el comportamiento cuando el flujo principal no se
-  cumple (arete inexistente, pesaje fuera de rango, proveedor sin georreferencia, caducidad
+  cumple (arete inexistente, pesaje fuera de rango, georreferencia del proveedor, caducidad
   vencida, entre otros). `01_ERS/ERS_SRS_2B_v2.0.tex` recompilado.
   (Quintero Gende Erick Jahir: CU-01 a CU-06; Gamarra Araujo Edhu Xavier: CU-07 a CU-12)
 * **Columna `Flujo` en la matriz de trazabilidad** y 24 filas nuevas (un flujo alternativo y
@@ -83,15 +164,11 @@ Correspondencia entre versiones y entregas del PFC:
   `registro_osf.pdf`), con fecha de registro anterior al panel de expertos.
   (Quintero Gende Erick Jahir)
 
-### Pendiente real (requiere acción adicional del equipo antes del corte)
+### Cierre de esta versión
 
-* **Etiqueta anotada de cierre** (`git tag -a`) sobre el último commit del examen suspenso,
-  aún no creada. Se propone `v2.4.0` para mantener consistencia con esta entrada; si el
-  equipo usa otro número, actualícese también el encabezado de esta versión y la tabla de
-  correspondencia al inicio del archivo.
-* Regenerar `checksums.sha256` y `checksums_datos.sha256` **una vez más** después de comitear
-  esta entrada del CHANGELOG (el manifiesto debe incluir el propio CHANGELOG actualizado),
-  y antes de crear la etiqueta.
+* Etiqueta anotada `v2.4.0` creada y publicada sobre el último commit de esta entrada
+  (`785b86d`). Las correcciones de contenido encontradas en la revisión docente posterior se
+  documentan en la entrada `[2.4.1]`.
 
 ---
 
