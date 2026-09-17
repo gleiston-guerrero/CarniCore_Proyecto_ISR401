@@ -1,0 +1,141 @@
+{
+  "n_rf": 27,
+  "bootstrap": {
+    "n_replicas": 10000,
+    "semilla": 42,
+    "metodo": "percentil 2,5 y 97,5"
+  },
+  "prevalencias": {
+    "experto_1": 6,
+    "experto_2": 3,
+    "experto_3": 6,
+    "consenso": 4,
+    "detector": 0
+  },
+  "detector_vs_consenso": {
+    "kappa_cohen": 0.0,
+    "ic95_bootstrap": [
+      -0.0,
+      0.0
+    ],
+    "acuerdo_bruto": 0.8519,
+    "acuerdo_esperado_pe": 0.8519,
+    "nota": "El detector no marca ningún requisito, de modo que su columna es constante: kappa vale exactamente 0 y la hipótesis registrada H1 (kappa > 0) no puede sostenerse. No hace falta prueba: el valor no es estimado, es forzado por una columna sin variación."
+  },
+  "panel": {
+    "cohen_pares": {
+      "experto_1_vs_experto_2": {
+        "kappa_cohen": 0.3478,
+        "ic95_bootstrap": [
+          -0.0976,
+          0.7805
+        ],
+        "acuerdo_bruto": 0.8148,
+        "acuerdo_esperado_pe": 0.716
+      },
+      "experto_1_vs_experto_3": {
+        "kappa_cohen": 0.3571,
+        "ic95_bootstrap": [
+          -0.1143,
+          0.7429
+        ],
+        "acuerdo_bruto": 0.7778,
+        "acuerdo_esperado_pe": 0.6543
+      },
+      "experto_2_vs_experto_3": {
+        "kappa_cohen": 0.087,
+        "ic95_bootstrap": [
+          -0.2,
+          0.5091
+        ],
+        "acuerdo_bruto": 0.7407,
+        "acuerdo_esperado_pe": 0.716
+      }
+    },
+    "bonferroni_3_pares": {
+      "alfa_nominal": 0.05,
+      "alfa_corregido": 0.0167
+    },
+    "fleiss": {
+      "kappa": 0.2636,
+      "ic95_bootstrap": [
+        -0.0519,
+        0.5533
+      ],
+      "acuerdo_medio_observado": 0.7778,
+      "acuerdo_esperado_pe": 0.6982,
+      "proporcion_media_de_marcas": 0.1852,
+      "contraste_kappa_igual_0": {
+        "metodo": "error estándar asintótico bajo H0 (Fleiss, 1971): sqrt(2/(N·m·(m-1)))",
+        "se0": 0.1111,
+        "z": 2.3727,
+        "p_bilateral": 0.0177
+      }
+    },
+    "robustos_a_la_prevalencia": {
+      "pabak": 0.5556,
+      "gwet_ac1": 0.6817
+    }
+  },
+  "diagnostico": {
+    "matriz": {
+      "vp": 0,
+      "fp": 0,
+      "fn": 4,
+      "vn": 23
+    },
+    "precision": {
+      "estimacion": null,
+      "nota": "indefinida: VP + FP = 0"
+    },
+    "exhaustividad_recall": {
+      "estimacion": 0.0,
+      "ic95_exacto": [
+        0.0,
+        0.6024
+      ],
+      "n": 4
+    },
+    "especificidad": {
+      "estimacion": 1.0,
+      "ic95_exacto": [
+        0.8518,
+        1.0
+      ],
+      "n": 23
+    },
+    "valor_predictivo_negativo": {
+      "estimacion": 0.8519,
+      "ic95_exacto": [
+        0.6627,
+        0.9581
+      ],
+      "n": 27
+    },
+    "prevalencia_por_consenso": {
+      "estimacion": 0.1481,
+      "ic95_exacto": [
+        0.0419,
+        0.3373
+      ],
+      "n": 27
+    }
+  },
+  "kappa_minimo_detectable": {
+    "publicado": {
+      "formula": "error estándar de kappa de Cohen bajo H0 para una tabla 2x2, aplicado a las marginales del consenso y del experto_1",
+      "p1_consenso": 0.1481,
+      "p2_experto_1": 0.2222,
+      "pe": 0.6955,
+      "se0": 0.1867,
+      "kappa_minimo": 0.523,
+      "objecion": "El kappa informado es el de Fleiss, de tres evaluadores; este error estándar es de dos, y el par elegido (consenso y experto 1) no es independiente, porque el consenso se deriva de los tres."
+    },
+    "coherente_con_fleiss": {
+      "formula": "error estándar asintótico de Fleiss bajo H0: sqrt(2/(N·m·(m-1)))",
+      "se0": 0.1111,
+      "kappa_minimo": 0.3113,
+      "n_para_kappa_0_40": 17
+    }
+  }
+}
