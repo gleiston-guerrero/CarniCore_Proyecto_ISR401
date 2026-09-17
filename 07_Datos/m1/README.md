@@ -108,6 +108,36 @@ Hechos que se desprenden de la tabla:
 
 ---
 
+## Fase 2 — Tabla S1: diferencias entre T_A y T_B
+
+```bash
+python 07_Datos/m1/m1_04_tabla_S1.py
+```
+
+| Produce | SHA-256 |
+|---|---|
+| `tabla_S1_diferencias_TA_TB.csv` | `8ff423318036ad2580415370c02fd345faeafa8b4f2f660feeea1dcac5f7069b` |
+| `codificacion_S1_plantilla.csv` | `324681f687e3278f265dd3fc89076e581b5437a19b6a39dd4c2fe2410c0c5054` |
+
+- 6 RF idénticos (RF-03, RF-07, RF-10, RF-14, RF-26, RF-27) y 21 con cambios.
+  De estos, 4 solo añaden texto (RF-09, RF-11, RF-15, RF-22) y 17 eliminan o
+  sustituyen palabras.
+- Recorriendo las 22 versiones del ERS en el historial, la redacción T_B de
+  los 21 RF que cambian aparece por primera vez en el commit `446a828`
+  (2026-09-01 17:46 UTC-5), después de la evaluación del panel.
+
+### Codificación del tipo de cambio
+
+El tipo de cambio de cada RF es un juicio humano. Lo codifican dos personas
+por separado, según `codificacion_S1/libro_codigos_S1.md`, en cuatro
+dimensiones binarias: `L` (léxico impreciso), `R` (restricción añadida),
+`G` (agente) y `C` (cosmético o referencial). El libro de códigos y la
+plantilla se congelan con commit **antes** de que empiece la codificación.
+
+**Estado:** codificación pendiente.
+
+---
+
 ## Desviaciones del registro detectadas en esta fase
 
 - **Orden de presentación.** El registro OSF indica que el orden de los
