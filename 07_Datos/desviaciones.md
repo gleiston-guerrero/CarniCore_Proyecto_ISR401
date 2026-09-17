@@ -5,8 +5,9 @@
 **Documento extenso equivalente:** `06_Experimento/osf_deviations.pdf` (fuente versionada en `06_Experimento/osf_deviations.tex`)
 
 Este archivo es el exigido por el §7 de la guía dentro de `07_Datos/`. Recoge las
-desviaciones ya documentadas en `osf_deviations.pdf` (DEV-01, DEV-02, COR-01) y añade
-la detectada en la auditoría del 3 de septiembre de 2026 (DEV-03).
+desviaciones ya documentadas en `osf_deviations.pdf` (DEV-01, DEV-02, COR-01), la
+detectada en la auditoría del 3 de septiembre de 2026 (DEV-03) y la detectada durante la
+revisión del manuscrito el 17 de septiembre de 2026 (DEV-04).
 
 Declarar una desviación no invalida el pre-registro. Lo que sí lo invalidaría sería
 ejecutar un análisis distinto del registrado y no decirlo.
@@ -93,6 +94,75 @@ El `docstring` de `detector_ambiguedad.py` y el `README` del pipeline, que afirm
 
 ---
 
+## DEV-04 — La corrección de DEV-03 dejó al panel y al detector evaluando textos distintos
+
+| Campo | Contenido |
+|---|---|
+| **Fecha de detección** | 17 de septiembre de 2026 |
+| **Momento** | Durante la revisión del manuscrito, después de dar DEV-03 por mitigada |
+| **Gravedad** | Mayor (afecta a la validez de la comparación, no a las cifras) |
+| **Evidencia** | `07_Datos/m1/`, en particular `cronologia_corpus.csv`, `tabla_S1_diferencias_TA_TB.csv` y `resultados_TA/` |
+
+**Qué ocurrió.** DEV-03 sustituyó el corpus por el texto del ERS v2.0 el 14-09-2026
+(commit `c9e90f0`). El panel de expertos había clasificado el 31-08-2026, y lo que
+clasificó fue la redacción anterior. Al cambiar el corpus no se repitió la clasificación,
+así que desde esa fecha las etiquetas humanas y las predicciones del detector
+corresponden a **textos distintos**. Llamamos T_A al texto evaluado por el panel y T_B al
+del ERS v2.0.
+
+**Alcance, medido.** 21 de los 27 requisitos difieren entre T_A y T_B, y entre ellos están
+**los cuatro que el panel marcó como ambiguos** (RF-08, RF-17, RF-21, RF-22). En dos de
+ellos la v2.0 elimina precisamente una expresión vaga: «aproximadas» en RF-17 y «próximo
+a vencer» en RF-08. Tres personas ajenas al proyecto codificaron los 21 cambios de forma
+independiente, con un libro de códigos congelado antes de empezar, y coincidieron por
+unanimidad en que esos dos son los únicos casos de eliminación de léxico impreciso.
+
+**Cronología, verificada contra `git log`.**
+
+| Fecha | Hecho |
+|---|---|
+| 02-08-2026 | Registro OSF; `rf25.json` y el ERS 2A contienen la redacción T_A |
+| 31-08-2026 | El panel clasifica 27 ítems con la redacción T_A |
+| 01-09-2026 13:43 | Se crea `rf27.json` con T_A (commit `a2fea20`) |
+| 01-09-2026 17:46 | El ERS pasa a 2B v2.0 y aparece la redacción T_B (commit `446a828`) |
+| 14-09-2026 15:57 | `rf27.json` se sustituye por T_B (commit `c9e90f0`): aquí nace la desviación |
+
+**Mitigación aplicada.**
+
+1. Se congeló el estado previo (etiqueta `m1-estado-inicial`, `07_Datos/m1/hashes_estado_inicial.sha256`).
+2. Se reconstruyó T_A por programa desde las plantillas del panel (`m1_01_extraer_TA.py`).
+3. Se reconstruyó la clave ítem → RF, que no se conservó, y se validó contra las 81 marcas
+   (`m1_02_reconstruir_clave.py`). Se declara como **reconstruida**.
+4. Se documentaron las diferencias requisito por requisito (`m1_04_tabla_S1.py`) y se
+   codificó su tipo con tres personas externas (`codificacion_S1/`).
+5. Se ejecutó el pipeline publicado, **sin modificar ninguna línea**, sobre T_A
+   (`m1_07_ruta_A.py`), en un espacio de trabajo temporal.
+
+**Efecto sobre los resultados — verificado.** Ninguno.
+
+```
+Sobre T_B (publicado): detector 0/27 · VP=0 FP=0 FN=4 VN=23 · P=R=F1=0,0000 · κ Fleiss=0,2636
+Sobre T_A (evaluado) : detector 0/27 · VP=0 FP=0 FN=4 VN=23 · P=R=F1=0,0000 · κ Fleiss=0,2636
+```
+
+Los siete artefactos resultaron **idénticos byte a byte**.
+
+**Efecto sobre la interpretación — sí lo hay.** El análisis primario pasa a ser el
+realizado sobre T_A, que es el texto que el panel evaluó. Y deja de sostenerse la
+afirmación de que el corpus no contiene marcadores: en T_A los hay, pero el inventario no
+los reconoce. Incluye `\baproximadamente\b` y no «aproximad[oa]s»; no incluye «próximo a».
+Comprobado patrón por patrón sobre T_A: ninguno de los 26 coincide. El 0 de 27 es un
+problema de **cobertura léxica del inventario**, no de ausencia de marcadores en el texto.
+
+**Desviación adicional detectada al reconstruir la clave.** El registro OSF declara que el
+orden de los requisitos se aleatoriza *para cada evaluador* con una semilla fija. Las tres
+plantillas presentan el mismo orden, y no se conservaron ni la semilla ni la clave
+original. La clave publicada es una reconstrucción validada, no la original.
+
+**Pendiente.** Reflejar DEV-04 en el registro OSF y en `06_Experimento/osf_deviations.tex`.
+
+---
+
 ## DEV-01, DEV-02 y COR-01
 
 Documentadas en `06_Experimento/osf_deviations.pdf`, versión 1.0, y replicadas en la
@@ -112,5 +182,7 @@ páginas. Cumple el criterio de piso P2.
 | 2026-09-02 | Redacción inicial de `osf_deviations.pdf` v1.0 (DEV-01, DEV-02, COR-01) | Castro Bajaña Ariel Omar | Sí |
 | 2026-09-03 | DEV-03 detectada y extractor escrito | Pérez Ruiz Carlos Andrés | — |
 | 2026-09-14 | DEV-03 mitigada: `rf27.json` regenerado, `rf25.json` eliminado, pipeline reejecutado | Quintero Gende Erick Jahir | **Pendiente** |
+| 2026-09-17 | DEV-04 detectada: el panel y el detector evaluaron textos distintos | Guerrero-Ulloa Gleiston C. | **Pendiente** |
+| 2026-09-17 | DEV-04 mitigada: T_A reconstruido, clave y Tabla S1 publicadas, codificación externa y pipeline reejecutado sobre T_A (`07_Datos/m1/`) | Guerrero-Ulloa Gleiston C. | **Pendiente** |
 
 
