@@ -134,6 +134,25 @@ dimensiones binarias: `L` (léxico impreciso), `R` (restricción añadida),
 `G` (agente) y `C` (cosmético o referencial). El libro de códigos y la
 plantilla se congelan con commit **antes** de que empiece la codificación.
 
+Para facilitar la tarea, cada persona codificadora recibe
+`codificacion_S1/herramienta_codificacion_S1.html`, generada con:
+
+```bash
+python 07_Datos/m1/m1_05_herramienta_codificacion.py
+```
+
+Es un único archivo HTML que funciona sin conexión:
+- muestra cada RF con T_A y T_B lado a lado y los cambios resaltados;
+- presenta L, R, G y C como casillas, con la definición completa;
+- guarda el avance en el navegador;
+- al terminar descarga `hoja_codificador_A.csv` o `hoja_codificador_B.csv`
+  y muestra su SHA-256.
+
+Los textos, las definiciones y las reglas se toman literalmente de la Tabla S1,
+la plantilla y el libro de códigos. La hoja descargada tiene exactamente el
+formato de `codificacion_S1_plantilla.csv`, así que se puede usar la herramienta
+o editar la plantilla a mano con el mismo resultado.
+
 **Estado:** codificación pendiente.
 
 ---
