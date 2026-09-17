@@ -185,7 +185,41 @@ concordancia se informa por dimensión (acuerdo bruto, κ de Cohen por pares y
 κ de Fleiss), y las discrepancias se documentan sin modificar las hojas
 originales.
 
-**Estado:** hojas recibidas y registradas; falta calcular la concordancia.
+#### Concordancia y consenso
+
+```bash
+python 07_Datos/m1/m1_06_acuerdo_codificacion.py
+```
+
+| Produce | SHA-256 |
+|---|---|
+| `codificacion_S1/codificacion_S1_consenso.csv` | `ab418320…` |
+| `codificacion_S1/discrepancias_S1.csv` | `b64f79f7…` |
+| `codificacion_S1/acuerdo_S1.json` | `5dab613e…` |
+
+| Dim. | Marcas A/B/C | Unánime | PABAK | κ de Fleiss | κ de Cohen (A-B, A-C, B-C) | Consenso |
+|---|---|---|---|---|---|---|
+| L | 4/4/2 | 0,8095 | 0,6190 | 0,5245 | 0,3824 · 0,6182 · 0,6182 | 2 |
+| R | 19/19/19 | 1,0000 | 1,0000 | 1,0000 | 1,0000 · 1,0000 · 1,0000 | 19 |
+| G | 1/1/1 | 1,0000 | 1,0000 | 1,0000 | 1,0000 · 1,0000 · 1,0000 | 1 |
+| C | 11/9/12 | 0,7143 | 0,4286 | 0,6190 | 0,6216 · 0,7123 · 0,5333 | 12 |
+
+De las 84 decisiones (21 RF × 4 dimensiones), 74 son unánimes y 10 se resuelven
+por mayoría; 15 de los 21 RF son unánimes en las cuatro dimensiones. Las
+discrepancias se concentran en L y C, y ninguna afecta a R ni a G.
+
+Lectura de los valores de consenso:
+
+- **L = 1 solo en RF-08 y RF-17**, con acuerdo unánime de las tres personas. Son
+  los dos requisitos en los que la v2.0 elimina una expresión vaga
+  («próximo a vencer» y «aproximadas»), y ambos están entre los cuatro que el
+  panel de expertos marcó como ambiguos.
+- **G = 1 solo en RF-19**, donde la v2.0 elimina el agente explícito
+  («a la propietaria o al administrador general»).
+- **R = 1 en 19 de 21**: el cambio dominante es añadir umbrales, condiciones y
+  reglas.
+
+**Estado:** Fase 2 completa.
 
 ---
 

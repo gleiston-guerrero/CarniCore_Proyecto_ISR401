@@ -1,0 +1,124 @@
+{
+  "n_rf": 21,
+  "codificadores": [
+    "A",
+    "B",
+    "C"
+  ],
+  "regla_consenso": "mayoría simple (>= 2 de 3)",
+  "hojas": {
+    "A": "aaa44384a922dd60dfd626aa96f9b459d8f3f357aa4324d17e4af2c4d551d7a2",
+    "B": "de6a0e0440d1961cecf7b03dc717542712e8ff8f0a0e00000d0aee1a513330bb",
+    "C": "4f6c55c4516e040067a8530b5a7a99783d8e794258d76ba6bb404e31b9e95d0c"
+  },
+  "dimensiones": {
+    "L": {
+      "marcas_por_codificador": {
+        "A": 4,
+        "B": 4,
+        "C": 2
+      },
+      "acuerdo_unanime": 0.8095,
+      "pabak_unanime": 0.619,
+      "pares": {
+        "A_vs_B": {
+          "kappa_cohen": 0.3824,
+          "acuerdo_bruto": 0.8095
+        },
+        "A_vs_C": {
+          "kappa_cohen": 0.6182,
+          "acuerdo_bruto": 0.9048
+        },
+        "B_vs_C": {
+          "kappa_cohen": 0.6182,
+          "acuerdo_bruto": 0.9048
+        }
+      },
+      "kappa_fleiss": 0.5245,
+      "acuerdo_medio_fleiss": 0.873
+    },
+    "R": {
+      "marcas_por_codificador": {
+        "A": 19,
+        "B": 19,
+        "C": 19
+      },
+      "acuerdo_unanime": 1.0,
+      "pabak_unanime": 1.0,
+      "pares": {
+        "A_vs_B": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        },
+        "A_vs_C": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        },
+        "B_vs_C": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        }
+      },
+      "kappa_fleiss": 1.0,
+      "acuerdo_medio_fleiss": 1.0
+    },
+    "G": {
+      "marcas_por_codificador": {
+        "A": 1,
+        "B": 1,
+        "C": 1
+      },
+      "acuerdo_unanime": 1.0,
+      "pabak_unanime": 1.0,
+      "pares": {
+        "A_vs_B": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        },
+        "A_vs_C": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        },
+        "B_vs_C": {
+          "kappa_cohen": 1.0,
+          "acuerdo_bruto": 1.0
+        }
+      },
+      "kappa_fleiss": 1.0,
+      "acuerdo_medio_fleiss": 1.0
+    },
+    "C": {
+      "marcas_por_codificador": {
+        "A": 11,
+        "B": 9,
+        "C": 12
+      },
+      "acuerdo_unanime": 0.7143,
+      "pabak_unanime": 0.4286,
+      "pares": {
+        "A_vs_B": {
+          "kappa_cohen": 0.6216,
+          "acuerdo_bruto": 0.8095
+        },
+        "A_vs_C": {
+          "kappa_cohen": 0.7123,
+          "acuerdo_bruto": 0.8571
+        },
+        "B_vs_C": {
+          "kappa_cohen": 0.5333,
+          "acuerdo_bruto": 0.7619
+        }
+      },
+      "kappa_fleiss": 0.619,
+      "acuerdo_medio_fleiss": 0.8095
+    }
+  },
+  "rf_unanimes": 15,
+  "n_discrepancias": 10,
+  "marcas_consenso": {
+    "L": 2,
+    "R": 19,
+    "G": 1,
+    "C": 12
+  }
+}
