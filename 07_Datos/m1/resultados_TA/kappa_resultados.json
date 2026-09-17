@@ -1,0 +1,11 @@
+{
+  "n_rf": 27,
+  "n_expertos": 3,
+  "cohen_pares": {
+    "experto_1_vs_experto_2": 0.3478,
+    "experto_1_vs_experto_3": 0.3571,
+    "experto_2_vs_experto_3": 0.087
+  },
+  "fleiss_consenso": 0.2636,
+  "interpretacion_nota": "Referencia estándar Landis & Koch (1977): <0=pobre, 0.00-0.20=leve, 0.21-0.40=aceptable, 0.41-0.60=moderada, 0.61-0.80=sustancial, 0.81-1.00=casi perfecta. La interpretación textual para el manuscrito debe redactarse manualmente citando el valor real obtenido aquí -- este script no la genera automáticamente para evitar frases pre-armadas que no reflejen matices del caso real."
+}

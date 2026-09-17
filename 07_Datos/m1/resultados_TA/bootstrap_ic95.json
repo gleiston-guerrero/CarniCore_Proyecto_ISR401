@@ -1,0 +1,23 @@
+{
+  "n_rf": 27,
+  "n_replicas": 10000,
+  "seed": 42,
+  "metricas": {
+    "precision": {
+      "punto_estimado": 0.0,
+      "ic95_low": 0.0,
+      "ic95_high": 0.0
+    },
+    "recall": {
+      "punto_estimado": 0.0,
+      "ic95_low": 0.0,
+      "ic95_high": 0.0
+    },
+    "f1": {
+      "punto_estimado": 0.0,
+      "ic95_low": 0.0,
+      "ic95_high": 0.0
+    }
+  },
+  "nota_metodologica": "N=27 es la población completa de RF de la v2.0, no una muestra de una población mayor. El bootstrap cuantifica la sensibilidad de las métricas a la composición de este conjunto específico de 27 RF, no una generalización estadística a un universo más amplio de requisitos."
+}

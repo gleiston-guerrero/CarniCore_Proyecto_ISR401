@@ -1,0 +1,39 @@
+{
+  "corpus_T_A": {
+    "descripcion": "texto evaluado por el panel el 31-08-2026",
+    "archivo": "07_Datos/m1/corpus_TA_rf.json",
+    "sha256": "4d45a04acbdcb0c3a15f1ebbe3871d5e4e9b4ee0e2889a9d7f2f9bac6dc3a1f6",
+    "rf_marcados_por_el_detector": 0,
+    "matriz_confusion": {
+      "verdaderos_negativos": 23,
+      "falsos_positivos": 0,
+      "falsos_negativos": 4,
+      "verdaderos_positivos": 0
+    },
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "kappa_fleiss_panel": 0.2636
+  },
+  "corpus_T_B": {
+    "descripcion": "ERS v2.0, corpus del análisis publicado",
+    "archivo": "07_Datos/scripts/rf27.json",
+    "sha256": "0fe2d4260cd24963f24453dc4b542316b07b2433b9ef70081755c1dca3135d25",
+    "matriz_confusion": {
+      "verdaderos_negativos": 23,
+      "falsos_positivos": 0,
+      "falsos_negativos": 4,
+      "verdaderos_positivos": 0
+    },
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "kappa_fleiss_panel": 0.2636
+  },
+  "etiquetas_del_panel": {
+    "archivo": "07_Datos/datos_procesados/etiquetas_expertos.csv",
+    "sha256": "5ae0b4826e685ad78bc18e44fdff31c4be7625141fca9e9ff6b7b500c3fcb6b6",
+    "nota": "las mismas en ambos análisis; solo cambia el texto al que corresponden"
+  },
+  "pipeline": "07_Datos/scripts, sin modificar; paso 05 (figuras) omitido"
+}

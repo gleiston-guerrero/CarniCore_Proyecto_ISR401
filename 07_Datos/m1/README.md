@@ -223,6 +223,63 @@ Lectura de los valores de consenso:
 
 ---
 
+## Fase 3 — Ruta A: el detector registrado sobre el texto evaluado
+
+```bash
+python 07_Datos/m1/m1_07_ruta_A.py
+```
+
+Requiere las dependencias de `../scripts/requirements.txt` (pandas,
+scikit-learn, statsmodels, scipy, numpy, matplotlib).
+
+`m1_07_ruta_A.py` **no modifica ni una línea del pipeline publicado**: crea un
+espacio de trabajo temporal con la misma estructura de carpetas, copia allí los
+scripts tal cual, sustituye solo el corpus (`rf27.json` ← T_A) y ejecuta los
+mismos pasos en el mismo orden. Omite el paso 05 (figuras), que no aporta
+cifras. Las etiquetas del panel son las mismas: lo único que cambia es el texto
+al que corresponden. Salidas en `resultados_TA/` y `comparacion_TA_TB.json`.
+
+### El detector es el registrado
+
+Comparando el código sin comentarios, los 26 patrones de C1, los umbrales de C2
+y la lógica de C3 son **idénticos** a los del commit `a757588` (02-08-2026, día
+del registro). Entre esa versión y la actual solo cambiaron el nombre del
+archivo de entrada (`rf25.json` → `rf27.json`) y el fin de línea del CSV.
+
+### Resultado
+
+| Medida | T_A (evaluado por el panel) | T_B (publicado) |
+|---|---|---|
+| RF marcados por el detector | 0 de 27 | 0 de 27 |
+| VP / FP / FN / VN | 0 / 0 / 4 / 23 | 0 / 0 / 4 / 23 |
+| Precisión · Recall · F1 | 0,0000 | 0,0000 |
+| κ de Fleiss del panel | 0,2636 | 0,2636 |
+
+Los siete artefactos del análisis sobre T_A son **idénticos byte a byte** a los
+publicados, incluido `clasificaciones_detector.csv`.
+
+### Qué cambia entonces
+
+Las cifras no cambian; cambia lo que significan y lo que puede afirmarse.
+
+1. **La comparación pasa a ser válida.** Antes cruzaba etiquetas humanas de un
+   texto con predicciones del detector sobre otro. Ahora ambas corresponden a
+   T_A, y ese es el análisis primario.
+2. **«No hay marcadores en el corpus» deja de sostenerse.** En T_A sí los hay:
+   RF-17 dice «coordenadas geográficas *aproximadas*» y RF-08, «cuando esté
+   *próximo a vencer*». Los tres codificadores externos coincidieron por
+   unanimidad en que la v2.0 elimina una expresión vaga exactamente en esos dos
+   requisitos, y ambos están entre los cuatro que el panel marcó.
+3. **El 0 de 27 es un problema de cobertura léxica, no de ausencia de
+   marcadores.** El inventario incluye `\baproximadamente\b`, pero no
+   «aproximad[oa]s»; y no incluye «próximo a». Comprobado patrón por patrón
+   sobre el texto evaluado: ninguno de los 26 coincide.
+
+El detector no está «inerte porque el corpus no tiene marcadores»: no reconoce
+los que hay.
+
+---
+
 ## Desviaciones del registro detectadas en esta fase
 
 - **Orden de presentación.** El registro OSF indica que el orden de los

@@ -1,0 +1,46 @@
+{
+  "alfa": 0.05,
+  "potencia_objetivo": 0.8,
+  "marco": "Análisis de sensibilidad (no potencia post-hoc). Hoenig y Heisey (2001).",
+  "A_referencia_guia": {
+    "descripcion": "Referencia normativa de la guía ISR-401 (Sección 3): d de Cohen = 0,50, alfa = 0,05, potencia = 0,80.",
+    "d_cohen": 0.5,
+    "n_por_grupo_dos_muestras": 63,
+    "n_pares_muestras_apareadas": 32,
+    "nota": "Cálculo canónico de referencia. NO es el diseño de este estudio, que es un censo de N=27 RF con clasificación binaria apareada, no una comparación de medias."
+  },
+  "B_mcnemar_exacta": {
+    "descripcion": "Prueba de McNemar exacta (binomial sobre discordantes) entre la clasificación del detector y el consenso experto.",
+    "discordantes_detector_si_consenso_no": 0,
+    "discordantes_detector_no_consenso_si": 4,
+    "n_discordantes": 4,
+    "p_valor_exacto_bilateral": 0.125,
+    "significativo_alfa_005": false,
+    "n_discordantes_minimo_para_significacion": 6,
+    "tasa_discordancia_observada": 0.1481,
+    "n_rf_necesario_a_esa_tasa": 41,
+    "interpretacion": "Con 4 pares discordantes, todos en la misma dirección, la prueba exacta arroja p = 0.1250. Se necesitan al menos 6 discordantes unidireccionales para alcanzar p < 0.05. A la tasa de discordancia observada (0.1481), eso equivale a un corpus de aproximadamente 41 RF. El corpus de 27 RF es, por tanto, insuficiente para declarar significativa la diferencia de prevalencia, aunque la dirección del efecto sea inequívoca."
+  },
+  "C_sensibilidad_kappa": {
+    "descripcion": "Análisis de sensibilidad del contraste kappa != 0 con el N real del censo.",
+    "n_rf": 27,
+    "prevalencia_consenso": 0.1481,
+    "acuerdo_esperado_por_azar_pe": 0.6955,
+    "se_kappa_bajo_h0": 0.1867,
+    "kappa_minimo_detectable_n27": 0.523,
+    "kappa_observado_fleiss": 0.2636,
+    "kappa_objetivo_moderado": 0.4,
+    "n_rf_necesario_para_kappa_040": 47,
+    "interpretacion": "Con N = 27 RF y alfa = 0.05, el menor kappa detectable con potencia 0.8 es aproximadamente 0.5230. El kappa de Fleiss observado (0.2636) queda por debajo de ese umbral, de modo que el acuerdo del panel no es estadísticamente distinguible del azar con este tamaño de corpus. Detectar un acuerdo moderado (kappa = 0.4) con potencia 0.8 exigiría del orden de 47 RF."
+  },
+  "D_prevalencia_exhaustividad": {
+    "descripcion": "Efecto de la prevalencia sobre la precisión con que puede estimarse la exhaustividad.",
+    "positivos_segun_consenso": 4,
+    "exhaustividad_puntual": 0.0,
+    "ic95_exacto_exhaustividad": [
+      0.0,
+      0.6024
+    ],
+    "interpretacion": "La exhaustividad se estima sobre solo 4 casos positivos. Aun con cero aciertos, el intervalo de confianza exacto al 95 % llega hasta 0.6024: el estudio no puede descartar que un detector con exhaustividad moderada hubiera producido este resultado por azar. Este es el límite estadístico principal del diseño y debe declararse como amenaza a la validez de conclusión."
+  }
+}
