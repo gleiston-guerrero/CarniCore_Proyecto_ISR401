@@ -1,0 +1,110 @@
+[
+  {
+    "item": "01",
+    "descripcion": "El sistema deberá permitir asociar coordenadas geográficas aproximadas de la granja de origen al perfil del proveedor, para enriquecer la consulta de trazabilidad."
+  },
+  {
+    "item": "02",
+    "descripcion": "El sistema deberá generar reportes filtrables por rango de fechas y tipo de producto, mostrando totales de ventas, compras y pérdidas por baja de producto."
+  },
+  {
+    "item": "03",
+    "descripcion": "El sistema deberá permitir registrar la salida de un producto por venta a un cliente o sucursal, referenciando el número de factura del sistema contable externo."
+  },
+  {
+    "item": "04",
+    "descripcion": "El sistema deberá permitir filtrar los reportes gerenciales (RF-13) por proveedor, generando un desglose de ventas, compras y pérdidas asociadas a cada proveedor dentro del período seleccionado."
+  },
+  {
+    "item": "05",
+    "descripcion": "El sistema deberá permitir registrar un incidente de corte de energía eléctrica, indicando fecha, hora de inicio, hora de restablecimiento y cámaras afectadas, como insumo para sustentar posibles bajas de producto."
+  },
+  {
+    "item": "06",
+    "descripcion": "El sistema deberá permitir registrar el ingreso de un producto a una cámara frigorífica específica, indicando sección (cerdo o res) y fecha de ingreso."
+  },
+  {
+    "item": "07",
+    "descripcion": "El sistema deberá permitir registrar los cortes obtenidos al despostar un animal (brazos, piernas, costillas, lomos, cabezas) y su peso individual."
+  },
+  {
+    "item": "08",
+    "descripcion": "El sistema deberá permitir consultar, a partir del número de arete o código de lote, la cadena completa de trazabilidad: granja de origen, guía de origen, faenamiento, pesaje, cámara y venta."
+  },
+  {
+    "item": "09",
+    "descripcion": "El sistema deberá registrar cada ingreso y egreso de producto por cámara y fecha, permitiendo consultar el stock disponible en cada local en un momento determinado."
+  },
+  {
+    "item": "10",
+    "descripcion": "El sistema deberá permitir exportar, en PDF o CSV, la cadena de trazabilidad completa de un lote o animal para su presentación ante auditorías de Agrocalidad."
+  },
+  {
+    "item": "11",
+    "descripcion": "El sistema deberá permitir registrar un conteo físico semanal de inventario por cámara y comparar el resultado contra el inventario del sistema, calculando diferencias."
+  },
+  {
+    "item": "12",
+    "descripcion": "El sistema deberá permitir a la propietaria o al administrador general configurar el precio por libra vigente para cada tipo de producto, con posibilidad de definir una fecha de vigencia futura."
+  },
+  {
+    "item": "13",
+    "descripcion": "El sistema deberá permitir registrar la guía de origen entregada por el proveedor, incluyendo número de guía, cantidad de canales y confirmación de firma del médico veterinario de planta."
+  },
+  {
+    "item": "14",
+    "descripcion": "El sistema deberá permitir crear, editar y desactivar usuarios, asignándoles uno de los roles definidos (propietaria, administrador general, encargado de bodega, carnicero)."
+  },
+  {
+    "item": "15",
+    "descripcion": "El sistema deberá generar un código QR asociado a cada lote o animal que, al ser escaneado, dirija a la consulta pública de trazabilidad (RF-11) con los datos autorizados para consulta externa."
+  },
+  {
+    "item": "16",
+    "descripcion": "El sistema deberá presentar un panel gráfico con las ventas por tipo de producto, el cliente que más compró y el producto de mayor rotación en un período determinado."
+  },
+  {
+    "item": "17",
+    "descripcion": "El sistema deberá permitir registrar el ingreso de un lote (aves) o de animales individuales (cerdo, res) identificados por número de arete, incluyendo fecha, cantidad y tipo de producto."
+  },
+  {
+    "item": "18",
+    "descripcion": "El sistema deberá permitir consultar el histórico de precios por libra configurados para cada tipo de producto en un rango de fechas."
+  },
+  {
+    "item": "19",
+    "descripcion": "El sistema deberá exponer, a través del enlace generado por el código QR (RF-25), únicamente los siguientes campos de la cadena de trazabilidad: nombre del proveedor, tipo de producto, fecha de ingreso a cámara, fecha de venta y número de guía de origen. No se exponen costos internos, datos personales de clientes ni información de inventario."
+  },
+  {
+    "item": "20",
+    "descripcion": "El sistema deberá generar un comprobante (ticket) con peso, precio por libra y costo total, imprimible o exportable en formato digital."
+  },
+  {
+    "item": "21",
+    "descripcion": "El sistema deberá permitir registrar la devolución total o parcial de un producto vendido, reingresándolo al inventario o dándolo de baja según su estado."
+  },
+  {
+    "item": "22",
+    "descripcion": "El sistema deberá calcular los días restantes de vida útil de un producto según su tipo (por ejemplo, máximo 3 días para pollo) y generar una alerta visual cuando esté próximo a vencer."
+  },
+  {
+    "item": "23",
+    "descripcion": "El sistema deberá permitir registrar la baja de un producto por vencimiento o mal estado, adjuntando peso, motivo y evidencia fotográfica, con aprobación del administrador general."
+  },
+  {
+    "item": "24",
+    "descripcion": "El sistema deberá permitir buscar y filtrar productos almacenados en cámaras frigoríficas por código de lote, tipo de producto o sección."
+  },
+  {
+    "item": "25",
+    "descripcion": "El sistema deberá permitir registrar un proveedor de animales o derivados cárnicos, almacenando su RUC, nombre y estado de regularización ante el SRI."
+  },
+  {
+    "item": "26",
+    "descripcion": "El sistema deberá permitir registrar el peso en libras de un producto y calcular automáticamente el costo total según el precio por libra configurado."
+  },
+  {
+    "item": "27",
+    "descripcion": "El sistema deberá permitir registrar operaciones críticas de bodega (ingreso, pesaje) sin conexión a internet y sincronizarlas automáticamente al restablecerse la conectividad."
+  }
+]
