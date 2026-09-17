@@ -46,6 +46,29 @@ PLANTILLA = M1 / "codificacion_S1_plantilla.csv"
 LIBRO = M1 / "codificacion_S1" / "libro_codigos_S1.md"
 DIMENSIONES = ["L", "R", "G", "C"]
 CAMPOS_DEFINICION = ["Definición", "Incluye", "Excluye", "Ejemplo ancla (ficticio)"]
+EJEMPLOS = [
+    {
+        "texto_TA": "El sistema deberá permitir al supervisor aprobar pronto las solicitudes de vacaciones.",
+        "texto_TB": "El sistema deberá permitir aprobar las solicitudes de vacaciones en un máximo de "
+                    "48 horas; las solicitudes rechazadas se archivan.",
+        "decisiones": {
+            "L": [1, "Se elimina «pronto», una expresión de tiempo sin valor concreto."],
+            "R": [1, "Se añaden un límite («48 horas») y una regla nueva (las rechazadas se archivan)."],
+            "G": [1, "Desaparece quién aprueba («al supervisor») y aparece «se archivan», sin decir quién lo hace."],
+            "C": [0, "No hay cambios que sean solo de redacción ni referencias a otros requisitos."],
+        },
+    },
+    {
+        "texto_TA": "El sistema deberá mostrar el listado (tabla) de clientes activos.",
+        "texto_TB": "El sistema deberá mostrar la lista de clientes activos (ver RF-90).",
+        "decisiones": {
+            "L": [0, "No se elimina ninguna expresión vaga."],
+            "R": [0, "No se añade ninguna condición ni regla: el sistema debe hacer lo mismo."],
+            "G": [0, "No cambia quién realiza la acción."],
+            "C": [1, "Cambia «listado» por «lista», se quita una aclaración entre paréntesis y se añade una referencia (RF-90)."],
+        },
+    },
+]
 PREGUNTAS = {
     "L": "¿T_B elimina o sustituye una expresión vaga de T_A?",
     "R": "¿T_B añade un umbral, condición, regla o comportamiento?",
@@ -109,10 +132,28 @@ def leer_libro():
 
 
 def segmentos(a, b):
-    pa, pb = a.split(), b.split()
+    """Diferencia para el resaltado visual.
+
+    Separa palabras, signos de puntuación y espacios, para que "RUC," frente a
+    "RUC (…)," no se muestre como si "RUC" se hubiera eliminado. Después funde en
+    un solo bloque los cambios separados solo por espacios o por palabras de
+    uno o dos caracteres, para que "esté próximo a vencer" se lea como una unidad.
+    Solo afecta a la presentación: la Tabla S1 no cambia.
+    """
+    ta = re.findall(r"\w+|[^\w\s]|\s+", a)
+    tb = re.findall(r"\w+|[^\w\s]|\s+", b)
+    crudos = [[op, "".join(ta[i1:i2]), "".join(tb[j1:j2])]
+              for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, ta, tb, autojunk=False).get_opcodes()]
+    for k in range(1, len(crudos) - 1):
+        if (crudos[k][0] == "equal" and len(crudos[k][1].strip()) <= 2
+                and crudos[k - 1][0] != "equal" and crudos[k + 1][0] != "equal"):
+            crudos[k][0] = "replace"
     salida = []
-    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, pa, pb, autojunk=False).get_opcodes():
-        salida.append([op, " ".join(pa[i1:i2]), " ".join(pb[j1:j2])])
+    for op, x, y in crudos:
+        if op != "equal" and salida and salida[-1][0] != "equal":
+            salida[-1] = ["replace", salida[-1][1] + x, salida[-1][2] + y]
+        else:
+            salida.append([op if op == "equal" else "replace", x, y])
     return salida
 
 
@@ -144,6 +185,7 @@ def main():
         "cabecera": ["rf_id", "palabras_eliminadas", "palabras_anadidas", *DIMENSIONES, "comentario"],
         "dimensiones": [{"codigo": d, "pregunta": PREGUNTAS[d], **definiciones[d]} for d in DIMENSIONES],
         "reglas": reglas,
+        "ejemplos": [{**e, "segmentos": segmentos(e["texto_TA"], e["texto_TB"])} for e in EJEMPLOS],
         "requisitos": requisitos,
     }
     json_datos = json.dumps(datos, ensure_ascii=False).replace("</", "<\\/")
@@ -227,6 +269,17 @@ textarea { width: 100%; font: inherit; min-height: 64px; border: 1px solid var(-
 .hash { font-family: ui-monospace, Consolas, monospace; word-break: break-all; background: var(--fondo); padding: 8px; border-radius: 6px; }
 ol li { margin-bottom: 6px; }
 .oculto { display: none; }
+.pasos li { margin-bottom: 8px; }
+.tabla-preguntas { width: 100%; border-collapse: collapse; margin: 6px 0 4px; }
+.tabla-preguntas td { border-top: 1px solid var(--borde); padding: 7px 8px; vertical-align: top; }
+.tabla-preguntas td:first-child { white-space: nowrap; font-weight: 600; }
+.ejemplo { border: 1px dashed var(--borde); border-radius: 10px; padding: 12px; margin: 10px 0; }
+.ejemplo .textos { margin: 8px 0; }
+.decision { display: grid; grid-template-columns: 110px 1fr; gap: 4px 10px; font-size: 15px; }
+.si { color: var(--ok); font-weight: 600; }
+.no { color: var(--suave); font-weight: 600; }
+.recordatorio { background: var(--acento-suave); border-radius: 8px; padding: 8px 12px; margin: 0 0 12px; font-size: 15px; }
+details.ayuda > summary { cursor: pointer; font-weight: 600; color: var(--acento); }
 </style>
 </head>
 <body>
@@ -239,11 +292,9 @@ ol li { margin-bottom: 6px; }
 
 <section id="inicio" class="panel">
   <h2>Antes de empezar</h2>
-  <p>Va a revisar <strong id="n-rf"></strong> requisitos de software. Cada uno aparece en dos versiones: <strong>T_A</strong> (anterior) y <strong>T_B</strong> (posterior). Para cada requisito, marque <strong>todas</strong> las dimensiones de cambio que estén presentes; al menos una.</p>
-  <h3>Reglas de aplicación</h3>
-  <ol id="reglas"></ol>
-  <p>Su avance se guarda automáticamente en este navegador. Puede cerrar y volver a abrir el archivo con el mismo navegador. Al terminar, la herramienta descargará su hoja para enviarla.</p>
-  <h3>¿Qué letra de codificador le asignaron?</h3>
+  <div id="instrucciones-inicio"></div>
+  <p>Su avance se guarda automáticamente en este navegador. Puede cerrar el archivo y continuar después, en el mismo computador y el mismo navegador. Al terminar, la herramienta descargará su hoja para que la envíe.</p>
+  <h3>¿Qué letra de codificador le asignaron? (se la indicaron en el correo)</h3>
   <div class="rol">
     <button class="primario" data-rol="A">Soy el codificador A</button>
     <button class="primario" data-rol="B">Soy el codificador B</button>
@@ -264,7 +315,9 @@ ol li { margin-bottom: 6px; }
       </div>
       <div class="panel">
         <h3>Dimensiones presentes (marque todas las que apliquen)</h3>
-        <div class="dims" id="dims"></div>
+        <p class="recordatorio">Responda cada pregunta por separado y marque la casilla si la respuesta es <strong>sí</strong>. Puede marcar varias; al menos una.</p>
+        <details class="ayuda"><summary>Ver de nuevo las instrucciones y los ejemplos resueltos</summary><div id="instrucciones-trabajo"></div></details>
+        <div class="dims" id="dims" style="margin-top:12px"></div>
         <h3 style="margin-top:14px">Comentario (solo si tiene una duda real)</h3>
         <textarea id="comentario" aria-label="Comentario"></textarea>
         <p class="aviso" id="aviso"></p>
@@ -319,7 +372,44 @@ const nCompletos = () => DATOS.requisitos.filter((q) => completo(q.rf_id)).lengt
 function escapar(t) {
   return t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
-function unir(partes) { return partes.filter((p) => p).join(" "); }
+function resaltar(segmentos) {
+  const a = [], b = [];
+  segmentos.forEach(([op, ta, tb]) => {
+    if (op === "equal") { a.push(escapar(ta)); b.push(escapar(tb)); return; }
+    a.push(ta.trim() ? `<del>${escapar(ta)}</del>` : escapar(ta));
+    b.push(tb.trim() ? `<ins>${escapar(tb)}</ins>` : escapar(tb));
+  });
+  return [a.join(""), b.join("")];
+}
+function instrucciones() {
+  const filas = DATOS.dimensiones.map((d) => `<tr><td>${d.codigo} · ${escapar(d.nombre)}</td><td>${escapar(d.pregunta)}</td></tr>`).join("");
+  const ejemplos = DATOS.ejemplos.map((e, i) => {
+    const [ha, hb] = resaltar(e.segmentos);
+    const dec = DATOS.dimensiones.map((d) => {
+      const [v, motivo] = e.decisiones[d.codigo];
+      return `<span>${d.codigo}: <span class="${v ? "si" : "no"}">${v ? "sí, marcar" : "no marcar"}</span></span><span>${escapar(motivo)}</span>`;
+    }).join("");
+    return `<div class="ejemplo"><strong>Ejemplo ${i + 1} (ficticio, no forma parte de la tarea)</strong>
+      <div class="textos"><div class="texto"><h3>T_A · versión anterior</h3>${ha}</div><div class="texto"><h3>T_B · versión posterior</h3>${hb}</div></div>
+      <div class="decision">${dec}</div></div>`;
+  }).join("");
+  const reglas = DATOS.reglas.map((t) => `<li>${escapar(t)}</li>`).join("");
+  return `
+    <h3>Qué tiene que hacer</h3>
+    <p>Va a revisar <strong>${N}</strong> requisitos de software. Cada uno aparece dos veces: su versión anterior (<strong>T_A</strong>) y su versión posterior (<strong>T_B</strong>). Su tarea <strong>no</strong> es juzgar si el requisito está bien o mal escrito, sino <strong>describir qué tipo de cambio hubo</strong> entre las dos versiones.</p>
+    <h3>Cómo decidir, paso a paso</h3>
+    <ol class="pasos">
+      <li>Lea completas las dos versiones. Los colores solo ayudan a localizar las diferencias: <del>tachado</del> es lo que desaparece y <ins>resaltado</ins> lo que aparece.</li>
+      <li>Responda por separado las cuatro preguntas de la tabla. Cada pregunta es independiente de las demás.</li>
+      <li>Marque la casilla de cada pregunta cuya respuesta sea <strong>sí</strong>. Puede marcar una, dos, tres o las cuatro, pero nunca ninguna, porque siempre hubo algún cambio.</li>
+      <li>Si duda, abra «Definición completa» bajo la casilla. Si la duda persiste, decida lo que le parezca más razonable y anótela en el comentario.</li>
+    </ol>
+    <table class="tabla-preguntas">${filas}</table>
+    <h3>Ejemplos resueltos</h3>
+    ${ejemplos}
+    <h3>Reglas del libro de códigos</h3>
+    <ol>${reglas}</ol>`;
+}
 
 function pintarProgreso() {
   const n = nCompletos();
@@ -342,14 +432,9 @@ function pintar() {
   const q = DATOS.requisitos[indice];
   const r = respuesta(q.rf_id);
   $("titulo").textContent = `${q.rf_id}  (${indice + 1} de ${N})`;
-  const a = [], b = [];
-  q.segmentos.forEach(([op, ta, tb]) => {
-    if (op === "equal") { a.push(escapar(ta)); b.push(escapar(tb)); }
-    if (op === "delete" || op === "replace") a.push(`<del>${escapar(ta)}</del>`);
-    if (op === "insert" || op === "replace") b.push(`<ins>${escapar(tb)}</ins>`);
-  });
-  $("texto-a").innerHTML = unir(a);
-  $("texto-b").innerHTML = unir(b);
+  const [ha, hb] = resaltar(q.segmentos);
+  $("texto-a").innerHTML = ha;
+  $("texto-b").innerHTML = hb;
 
   $("dims").innerHTML = "";
   DATOS.dimensiones.forEach((d, k) => {
@@ -454,8 +539,8 @@ function descargar() {
   $("entrega").classList.remove("oculto");
 }
 
-$("n-rf").textContent = N;
-DATOS.reglas.forEach((t) => { const li = document.createElement("li"); li.textContent = t; $("reglas").appendChild(li); });
+$("instrucciones-inicio").innerHTML = instrucciones();
+$("instrucciones-trabajo").innerHTML = instrucciones();
 document.querySelectorAll("[data-rol]").forEach((b) => b.onclick = () => {
   rol = b.dataset.rol; cargar();
   $("inicio").classList.add("oculto"); $("trabajo").classList.remove("oculto");
