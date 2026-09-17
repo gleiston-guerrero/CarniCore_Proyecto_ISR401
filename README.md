@@ -4,7 +4,7 @@
 > Universidad Técnica Estatal de Quevedo (UTEQ) · Facultad de Ciencias de la Computación
 > Período 2026–2027 PPA · Docente: PhD. Gleiston Cicerón Guerrero Ulloa
 
-**Repositorio:** https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git
+**Repositorio:** https://github.com/gleiston-guerrero/carnicore-requirements-ambiguity.git
 
 \---
 
@@ -322,7 +322,7 @@ en `07\_Datos/resultados/`.
 
 |Plataforma|Identificador|Objeto|
 |-|-|-|
-|GitHub|https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401.git|Repositorio|
+|GitHub|https://github.com/gleiston-guerrero/carnicore-requirements-ambiguity.git|Repositorio|
 |OSF|**https://osf.io/yp7t3**|**Registro** previo del protocolo|
 |Zenodo|`10.5281/zenodo.22225854`|Paquete de replicación|
 |Software Heritage|`swh:1:dir:5741b167af89a201c815b061cc965309d8167069`|Árbol de código|
@@ -436,7 +436,7 @@ verificación, responsable y frecuencia de medición
   version = {2.0.0},
   year    = {2026},
   doi     = {10.5281/zenodo.22225854},
-  url     = {https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401}
+  url     = {https://github.com/gleiston-guerrero/carnicore-requirements-ambiguity}
 }
 ```
 

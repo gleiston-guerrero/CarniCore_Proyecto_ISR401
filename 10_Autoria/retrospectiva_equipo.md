@@ -1,7 +1,7 @@
 # Retrospectiva del equipo — Proyecto CarniCore
 
 **Asignatura:** Ingeniería de Requisitos (ISR-401 / 20303) — 2026–2027 PPA
-**Repositorio:** https://github.com/gleiston-guerrero/CarniCore_Proyecto_ISR401
+**Repositorio:** https://github.com/gleiston-guerrero/carnicore-requirements-ambiguity
 **Fecha:** 16 de septiembre de 2026
 **Integrantes:** Castro Bajaña Ariel Omar · Crespo Espinoza Kleber Obed · Gamarra Araujo Edhu Xavier ·
 Pérez Ruiz Carlos Andrés · Quintero Gende Erick Jahir
