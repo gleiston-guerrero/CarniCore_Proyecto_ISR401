@@ -153,7 +153,39 @@ la plantilla y el libro de códigos. La hoja descargada tiene exactamente el
 formato de `codificacion_S1_plantilla.csv`, así que se puede usar la herramienta
 o editar la plantilla a mano con el mismo resultado.
 
-**Estado:** codificación pendiente.
+#### Hojas recibidas
+
+| Hoja | SHA-256 | L | R | G | C |
+|---|---|---|---|---|---|
+| `codificacion_S1/hoja_codificador_A.csv` | `aaa44384…` | 4 | 19 | 1 | 11 |
+| `codificacion_S1/hoja_codificador_B.csv` | `de6a0e04…` | 4 | 19 | 1 | 9 |
+| `codificacion_S1/hoja_codificador_C.csv` | `4f6c55c4…` | 2 | 19 | 1 | 12 |
+
+Las tres se registran sin abrirlas ni modificarlas. Verificación de formato: 21
+filas en el orden de la plantilla, solo valores 0 y 1, al menos una marca por
+fila y columnas de origen intactas.
+
+Procedimiento realmente seguido, que se desvía del previsto en el libro de
+códigos en dos puntos:
+
+- **Tres personas codificadoras, no dos.** Las tres son ajenas al proyecto:
+  no participaron en la especificación, ni en el panel de expertos, ni en el
+  análisis. En el repositorio se identifican solo como A, B y C.
+- **Herramienta en lugar de edición manual** de la plantilla
+  (`herramienta_codificacion_S1.html`), que produce el mismo formato.
+
+Trabajaron de forma independiente. Consultaron el significado de algunos
+términos, pero no consultaron ninguna decisión de codificación. Las tres
+hojas traen comentario en los 21 requisitos, más extensos de lo previsto para
+un campo pensado para dudas puntuales.
+
+**Regla de consenso, fijada antes de calcular nada:** para cada requisito y
+cada dimensión, el valor de consenso es la mayoría simple (≥ 2 de 3). La
+concordancia se informa por dimensión (acuerdo bruto, κ de Cohen por pares y
+κ de Fleiss), y las discrepancias se documentan sin modificar las hojas
+originales.
+
+**Estado:** hojas recibidas y registradas; falta calcular la concordancia.
 
 ---
 
